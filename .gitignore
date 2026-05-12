@@ -40,4 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# data repo clone (created by scripts/clone-data.mjs at build time)
+/data

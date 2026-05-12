@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/clone-data.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "summary": "tsx scripts/print-index-summary.ts"
   },
   "dependencies": {
     "js-yaml": "^4.1.1",

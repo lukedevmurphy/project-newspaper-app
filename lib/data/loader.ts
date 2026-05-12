@@ -29,7 +29,12 @@ const PAGE_FILES_ALLOWED = new Set(['page_metadata.yaml']);
 
 // ---- Path resolution ---------------------------------------------------
 
-const DEFAULT_DATA_PATHS = ['../project-newspaper-data', '../newspaper'];
+// Default locations to look for the data repo, in order:
+//   1. ./data                          — where scripts/clone-data.mjs lands the
+//                                        clone during a Vercel / CI build.
+//   2. ../project-newspaper-data       — standard sibling clone.
+//   3. ../newspaper                    — the developer's current local layout.
+const DEFAULT_DATA_PATHS = ['./data', '../project-newspaper-data', '../newspaper'];
 
 export function resolveDataRoot(): string {
   const fromEnv = process.env.NEWSPAPER_DATA_PATH;

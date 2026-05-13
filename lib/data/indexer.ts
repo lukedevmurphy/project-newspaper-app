@@ -5,6 +5,7 @@ import type {
   Archive,
   ArchiveStats,
   Clipping,
+  DerivedEvent,
   MentionedLink,
   PageRecord,
   PersonRecord,
@@ -121,10 +122,30 @@ export function buildIndex(input: {
     latest: dates[dates.length - 1] ?? null,
   };
 
+  // ---- Derived events -------------------------------------------------
+  // One event per source. cluster_id groups crossref-linked sources via
+  // connected components in the crossref graph (treated as undirected).
+  // The book wants each source citable separately; clustering is for
+  // visual proximity on the timeline, not collapse.
+
+  const clusterByEventId = computeCrossrefClusters(sources, sourcesById);
+
+  const events: DerivedEvent[] = sources.map(s => deriveEvent(s, clusterByEventId.get(eventIdFor(s.id))!));
+  const eventsById = new Map(events.map(e => [e.id, e]));
+  const eventsByClusterId = new Map<string, DerivedEvent[]>();
+  for (const e of events) {
+    const bucket = eventsByClusterId.get(e.cluster_id) ?? [];
+    bucket.push(e);
+    eventsByClusterId.set(e.cluster_id, bucket);
+  }
+
+  const totalBookSubjects = people.filter(p => p.is_book_subject === true).length;
+
   const stats: ArchiveStats = {
     totalSources: sources.length,
     sourcesByType,
     totalPeople: people.length,
+    totalBookSubjects,
     peopleByConfidenceBand,
     totalPlaces: places.length,
     totalThemes: themes.length,
@@ -132,6 +153,8 @@ export function buildIndex(input: {
     totalSourceTypes: sourceTypes.length,
     totalThreads: threads.length,
     totalPages: pages.length,
+    totalEvents: events.length,
+    totalEventClusters: eventsByClusterId.size,
     vocabUsage,
     dateRange,
   };
@@ -145,6 +168,87 @@ export function buildIndex(input: {
     pages, pagesById,
     sourcesByPersonId, sourcesByPlaceId, sourcesByTheme, sourcesByThread,
     mentionedByName,
+    events, eventsById, eventsByClusterId,
     stats,
   };
+}
+
+// ---- Event derivation helpers -------------------------------------------
+
+function eventIdFor(sourceId: string): string {
+  return `event_${sourceId}`;
+}
+
+function deriveEvent(source: Source, clusterId: string): DerivedEvent {
+  return {
+    id: eventIdFor(source.id),
+    source_id: source.id,
+    date: source.date,
+    date_confidence: source.date_confidence,
+    title: titleFor(source),
+    summary: source.summary,
+    places: source.places,
+    people: source.people,
+    themes: source.themes,
+    story_threads: source.story_threads,
+    cluster_id: clusterId,
+  };
+}
+
+function titleFor(source: Source): string {
+  if (source.type === 'clipping' && source.headline) {
+    return (source as Clipping).headline.split('/').map(p => p.trim()).filter(Boolean)[0] ?? source.headline;
+  }
+  // Fall back to the first sentence of the summary, capped.
+  const s = source.summary.trim();
+  if (!s) return source.id;
+  const firstSentence = s.match(/^[^.!?]+[.!?]/)?.[0] ?? s;
+  return firstSentence.length > 100 ? firstSentence.slice(0, 100) + '…' : firstSentence;
+}
+
+/**
+ * Build connected components on the crossref graph (treated as
+ * undirected — if A.crossrefs contains B OR B.crossrefs contains A,
+ * they're connected).
+ *
+ * Returns a map from event_id → cluster_id. Cluster IDs are stable per
+ * component (deterministic: the alphabetically-first source ID in the
+ * component, prefixed "cluster_").
+ */
+function computeCrossrefClusters(sources: Source[], sourcesById: Map<string, Source>): Map<string, string> {
+  // Build undirected adjacency.
+  const adj = new Map<string, Set<string>>();
+  for (const s of sources) {
+    if (!adj.has(s.id)) adj.set(s.id, new Set());
+    for (const ref of s.crossrefs) {
+      if (!sourcesById.has(ref)) continue; // skip unresolved (predicted) IDs
+      adj.get(s.id)!.add(ref);
+      if (!adj.has(ref)) adj.set(ref, new Set());
+      adj.get(ref)!.add(s.id);
+    }
+  }
+
+  // DFS each unvisited node to find its component.
+  const visited = new Set<string>();
+  const result = new Map<string, string>(); // eventId -> clusterId
+  for (const s of sources) {
+    if (visited.has(s.id)) continue;
+    const component: string[] = [];
+    const stack = [s.id];
+    while (stack.length > 0) {
+      const id = stack.pop()!;
+      if (visited.has(id)) continue;
+      visited.add(id);
+      component.push(id);
+      for (const neighbor of adj.get(id) ?? []) {
+        if (!visited.has(neighbor)) stack.push(neighbor);
+      }
+    }
+    component.sort();
+    const clusterId = `cluster_${component[0]}`;
+    for (const sid of component) {
+      result.set(eventIdFor(sid), clusterId);
+    }
+  }
+  return result;
 }

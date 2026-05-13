@@ -265,7 +265,28 @@ export function loadPeople(dataRoot: string): PersonRecord[] {
     is_my_family: (p.is_my_family as boolean) ?? false,
     family_confidence: (p.family_confidence as number) ?? 0,
     family_notes: p.family_notes as string | undefined,
+    is_book_subject: (p.is_book_subject as boolean) ?? false,
+    residences: normalizeResidences(p.residences),
   }));
+}
+
+function normalizeResidences(raw: unknown): PersonRecord['residences'] {
+  if (!Array.isArray(raw)) return [];
+  return raw.map(item => {
+    const r = item as Record<string, unknown>;
+    const dr = (r.date_range as Record<string, unknown>) ?? {};
+    return {
+      place: String(r.place ?? ''),
+      address: typeof r.address === 'string' ? r.address : undefined,
+      date_range: {
+        from: dateToIso(dr.from),
+        to: dateToIso(dr.to),
+      },
+      sources: Array.isArray(r.sources) ? (r.sources as string[]) : [],
+      confidence: typeof r.confidence === 'number' ? r.confidence : 0,
+      notes: typeof r.notes === 'string' ? r.notes : undefined,
+    };
+  });
 }
 
 export function loadPlaces(dataRoot: string): PlaceRecord[] {

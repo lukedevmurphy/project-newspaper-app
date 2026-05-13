@@ -71,6 +71,18 @@ export interface PersonRelationship {
   person: string;              // person_id
 }
 
+export interface Residence {
+  place: string;                // place_id (preferred); free-text fallback allowed
+  address?: string;             // street address, neighborhood, or institutional name
+  date_range: {
+    from: string | null;        // ISO yyyy-mm-dd, or partial yyyy / yyyy-mm
+    to: string | null;
+  };
+  sources: string[];            // source IDs that establish this residence
+  confidence: number;           // 0–100; how sure we are about the residence fact
+  notes?: string;
+}
+
 export interface PersonRecord {
   id: string;
   display_name: string;
@@ -82,8 +94,10 @@ export interface PersonRecord {
   primary_residence: string | null;
   relationships: PersonRelationship[];
   is_my_family: boolean;
-  family_confidence: number;   // 0–100; see CLAUDE.md for the scale
+  family_confidence: number;    // 0–100; see CLAUDE.md for the scale
   family_notes?: string;
+  is_book_subject?: boolean;    // default false. Drives timeline top band.
+  residences?: Residence[];     // citation-backed place + date_range entries
 }
 
 export interface PlaceRecord {
@@ -119,12 +133,40 @@ export interface PageRecord {
   peripheral_items: PeripheralItem[];
 }
 
+// ---- Derived events ----------------------------------------------------
+
+// An "event" is the historical occurrence a source witnesses. v1 is
+// pure derivation: one event per source, with the source's
+// publication date as the event date. Crossref-linked sources share
+// a cluster_id so the timeline UI can group them visually without
+// collapsing them (the book wants each source citable individually).
+//
+// v2 (not implemented): a clipping may declare `events: [...]` in its
+// YAML to override this default and emit multiple finer-grained
+// events (e.g. the 1846 Times piece describes the Dec 10 works
+// stoppage, Sullivan's late-Dec death, AND Curtin's November death).
+
+export interface DerivedEvent {
+  id: string;                   // "event_" + source_id
+  source_id: string;            // the witnessing source
+  date: string | null;          // source.date
+  date_confidence: DateConfidence;
+  title: string;                // source.headline OR firstSentence(source.summary)
+  summary: string;              // source.summary (full)
+  places: PlaceLink[];          // from source
+  people: PersonLink[];         // from source
+  themes: string[];             // from source
+  story_threads: string[];      // from source
+  cluster_id: string;           // shared by sources mutually crossref-linked
+}
+
 // ---- Assembled archive --------------------------------------------------
 
 export interface ArchiveStats {
   totalSources: number;
   sourcesByType: Record<string, number>;
   totalPeople: number;
+  totalBookSubjects: number;
   peopleByConfidenceBand: {
     gte95: number;
     band75to94: number;
@@ -138,6 +180,8 @@ export interface ArchiveStats {
   totalSourceTypes: number;
   totalThreads: number;
   totalPages: number;
+  totalEvents: number;
+  totalEventClusters: number;
   vocabUsage: Record<string, { declared: number; used: number; unused: number; orphan: number }>;
   dateRange: { earliest: string | null; latest: string | null };
 }
@@ -167,6 +211,12 @@ export interface Archive {
   sourcesByTheme: Map<string, string[]>;
   sourcesByThread: Map<string, string[]>;
   mentionedByName: Map<string, { sourceId: string; mention: MentionedLink }[]>;
+
+  // Derived events (one per source). cluster_id groups crossref-linked
+  // sources for the timeline UI without collapsing them.
+  events: DerivedEvent[];
+  eventsById: Map<string, DerivedEvent>;
+  eventsByClusterId: Map<string, DerivedEvent[]>;
 
   stats: ArchiveStats;
 }

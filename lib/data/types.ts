@@ -148,6 +148,31 @@ export interface AiClippingSummary {
   generated_at: string;
 }
 
+// ---- AI-generated page summaries ---------------------------------------
+
+// Produced offline by scripts/generate-page-summaries.mjs (vision pass)
+// and cached per-page in data-cache/page-summaries/<id>.json. The
+// "wide angle" complement to AiClippingSummary's "close up".
+
+export type ClippingProminence = 'lead' | 'secondary' | 'buried';
+
+export interface ClippingPlacement {
+  clipping_id: string;
+  prominence: ClippingProminence;
+  column: string;
+  placement_note?: string;
+}
+
+export interface AiPageSummary {
+  id: string;
+  summary: string;
+  headlines: string[];
+  clipping_placements: ClippingPlacement[];
+  juxtapositions: string[];
+  model: string;
+  generated_at: string;
+}
+
 // ---- Derived events ----------------------------------------------------
 
 // An "event" is the historical occurrence a source witnesses. v1 is

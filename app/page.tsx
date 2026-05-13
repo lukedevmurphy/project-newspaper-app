@@ -184,6 +184,11 @@ export default function Home() {
               Timeline (list)
             </Link>
           </li>
+          <li>
+            <Link href="/curio" className="font-medium hover:underline">
+              Curio cabinet ✦
+            </Link>
+          </li>
         </ul>
       </section>
     </main>

@@ -8,8 +8,8 @@
 
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { loadArchive } from '@/lib/data';
-import type { Archive, Clipping, Source } from '@/lib/data';
+import { loadAiClippingSummary, loadArchive } from '@/lib/data';
+import type { AiClippingSummary, Archive, Clipping, Source } from '@/lib/data';
 
 type Params = { id: string };
 
@@ -33,14 +33,23 @@ export default async function SourcePage({
   // a renderer per type. TypeScript will then enforce exhaustiveness
   // on `source.type`.
   if (source.type === 'clipping') {
-    return <ClippingDetail source={source} archive={archive} />;
+    const aiSummary = loadAiClippingSummary(source.id);
+    return <ClippingDetail source={source} archive={archive} aiSummary={aiSummary} />;
   }
   return null;
 }
 
 // ---- Clipping renderer ----------------------------------------------------
 
-function ClippingDetail({ source, archive }: { source: Clipping; archive: Archive }) {
+function ClippingDetail({
+  source,
+  archive,
+  aiSummary,
+}: {
+  source: Clipping;
+  archive: Archive;
+  aiSummary: AiClippingSummary | null;
+}) {
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
       <nav className="mb-6 text-sm text-zinc-500">
@@ -54,6 +63,27 @@ function ClippingDetail({ source, archive }: { source: Clipping; archive: Archiv
       {source.summary && (
         <Section title="Summary">
           <p className="whitespace-pre-line text-zinc-700">{source.summary}</p>
+        </Section>
+      )}
+
+      {aiSummary && (
+        <Section title="Narrative">
+          <p className="text-zinc-700 leading-relaxed">{aiSummary.summary}</p>
+          {aiSummary.key_quotes.length > 0 && (
+            <ul className="mt-4 space-y-2">
+              {aiSummary.key_quotes.map((q, i) => (
+                <li
+                  key={i}
+                  className="border-l-2 border-zinc-300 pl-3 font-serif italic leading-7 text-zinc-700"
+                >
+                  &ldquo;{q}&rdquo;
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="mt-3 text-xs text-zinc-400">
+            AI-generated ({aiSummary.model}). Verify against the transcription before quoting.
+          </p>
         </Section>
       )}
 

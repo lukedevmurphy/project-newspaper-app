@@ -14,6 +14,8 @@ import {
 import { buildIndex } from './indexer';
 import type { Archive, Source } from './types';
 
+export { loadAiClippingSummary } from './ai-summaries';
+
 let cached: Archive | null = null;
 
 export function loadArchive(): Archive {
@@ -36,6 +38,7 @@ export function loadArchive(): Archive {
 }
 
 export type {
+  AiClippingSummary,
   Archive,
   ArchiveStats,
   Clipping,

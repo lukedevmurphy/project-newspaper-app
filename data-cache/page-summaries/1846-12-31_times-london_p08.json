@@ -1,0 +1,38 @@
+{
+  "id": "1846-12-31_times-london_p08",
+  "input_hash": "sha256:191d83dc979a6fa6",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:05:36.262Z",
+  "summary": "An interior news page of The Times for the last day of 1846, densely set in six columns of small type with no display advertising. The dominant content is Irish famine correspondence and legal reporting, with a long letter on the slave trade occupying the upper half of columns two and three, correspondent letters from Ireland filling column one, and court reports — including Admiralty, bankruptcy, and police proceedings — running through the right-hand columns. Editorial tone is characteristic mid-Victorian Times: sober, discursive, and heavily reliant on letters and verbatim court testimony. A brief naval intelligence item and stock and share market prices anchor the foot of column one.",
+  "headlines": [
+    "IRELAND",
+    "THE SLAVE-TRADE. TO THE EDITOR OF THE TIMES.",
+    "NEGLECT OF AGRICULTURE",
+    "ADMIRALTY COURT",
+    "COURT OF BANKRUPTCY",
+    "POLICE",
+    "NAVAL INTELLIGENCE",
+    "STOCK AND SHARE MARKETS—This Day.",
+    "LAW REPORT.",
+    "TO THE EDITOR OF THE NATIONAL GALLERY."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1846-12-31_times-london_berehaven-starvation",
+      "prominence": "secondary",
+      "column": "col 1",
+      "placement_note": "mid-column under the IRELAND section head, below a longer Castlebar/famine correspondent item, above the NEGLECT OF AGRICULTURE subhead"
+    }
+  ],
+  "juxtapositions": [
+    "The Berehaven correspondent's letter describing the halt of public works and Timothy Sullivan's starvation is immediately followed by a sub-section headed NEGLECT OF AGRICULTURE, which frames individual famine deaths within an editorial argument about Irish farming practice.",
+    "The Irish famine correspondence in column one — including the Berehaven letter — runs directly adjacent to the lengthy TO THE EDITOR letter on the Atlantic slave trade in columns two and three, placing two distinct humanitarian crises side by side without editorial comment."
+  ],
+  "usage": {
+    "input_tokens": 1856,
+    "output_tokens": 423,
+    "cache_creation_input_tokens": 2148,
+    "cache_read_input_tokens": 0
+  }
+}

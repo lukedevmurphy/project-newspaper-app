@@ -1,0 +1,17 @@
+{
+  "id": "1895-09-17_anaconda-standard_hudson-was-guilty",
+  "input_hash": "sha256:cdac05dbe282be99",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:49:29.068Z",
+  "summary": "A man who had been using the name Thomas Hudson was found guilty in connection with an attempted daylight bank robbery; his real name is Tim Murphy. He was not put on the stand, and the jury returned its verdict after approximately an hour and a half. [transcription partial — headlines only; body OCR-degraded]",
+  "key_quotes": [
+    "His Name Is Tim Murphy"
+  ],
+  "usage": {
+    "input_tokens": 2097,
+    "output_tokens": 88,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

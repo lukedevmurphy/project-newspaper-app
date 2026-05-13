@@ -1,0 +1,38 @@
+{
+  "id": "1892-09-14_anaconda-standard_p05",
+  "input_hash": "sha256:79428f54ad5fb233",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:15:26.186Z",
+  "summary": "An interior page of The Anaconda Standard for 14 September 1892, divided between local legal news, political commentary, and a large block of commercial advertising. The left two-thirds of the page carries dense columns of court reporting under 'TALES FROM THE COURT' and political gossip under 'THE POLITICAL ARENA', with miscellaneous notices, divorces, and local criminal cases filling the lower columns. The right third is dominated by a large display advertisement for D. J. Hennessy Mercantile Company's men's and boys' clothing, with further commercial notices for a trade company, a dentist, a grocer, and a school filling the far-right column below it.",
+  "headlines": [
+    "TALES FROM THE COURT",
+    "Investigation Into the Suicide of Mar-der Price.",
+    "CRIMINAL CASES TRIED",
+    "THE POLITICAL ARENA",
+    "Gossip About the Politicians and Their Doings.",
+    "FIXING FOR THE ELECTION",
+    "THE REPORT DENIED.",
+    "NORTHERN PACIFIC EXCURSIONS",
+    "FASHIONS FAST AND FURIOUS!",
+    "MEN'S AND BOYS' CLOTHING"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1892-09-14_anaconda-standard_dennis-j-murphy-divorce",
+      "prominence": "buried",
+      "column": "col 2",
+      "placement_note": "set among several short divorce decree notices in the lower half of a dense court-reporting column, below the main criminal cases"
+    }
+  ],
+  "juxtapositions": [
+    "The Dennis J. Murphy divorce notice — recording a Cork-born man whose wife's whereabouts are unknown — sits within a column of half-dozen similar divorce decrees, the cumulative effect making marital dissolution read as routine municipal business.",
+    "The dense, small-type court and divorce columns occupy the same page as a bold full-column advertisement proclaiming 'FASHIONS FAST AND FURIOUS!' for men's clothing, the contrast between domestic rupture and commercial aspiration sitting side by side."
+  ],
+  "usage": {
+    "input_tokens": 1774,
+    "output_tokens": 442,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

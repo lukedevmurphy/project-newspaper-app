@@ -1,0 +1,18 @@
+{
+  "id": "1883-09-28_jamestown-weekly-alert_mullane-billiards-at-murphys-saloon",
+  "input_hash": "sha256:3d0ebd1ffda15eae",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:01:41.222Z",
+  "summary": "H. A. Mullane played a match game of finger billiards at Murphy's saloon for a fifteen-dollar purse against five Jamestown gentlemen who were given cues. Mullane quickly cornered both reds and ran up fifty-two points before the crowd, finding the game stale, agreed to forfeit the stakes and let him give a free exhibition instead; no bets were laid during the exhibition, though Mullane made tempting invitations.",
+  "key_quotes": [
+    "the flip fingered gentleman got the two reds in one corner of the table where he kept them until he had made fifty-two points",
+    "the most prominent feature of which was a paying quantity of suckers who would bet on 'another man's game'"
+  ],
+  "usage": {
+    "input_tokens": 2307,
+    "output_tokens": 169,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

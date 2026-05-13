@@ -1,0 +1,19 @@
+{
+  "id": "1886-09-23_jamestown-weekly-alert_pat-murphy-wage-suit",
+  "input_hash": "sha256:05e1317124f9cfc5",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:01:49.642Z",
+  "summary": "Several new cases are before the Jamestown justice courts. In Judge Hamilton's court, Mr. Silver's case against Thos. Thompson over a pair of oxen ends with the defendant discharged after sharp legal argument, while Pat Murphy's wage claim against D. M. Kelleher is continued; in Judge McMillan's court, P. Aubertin's claim against Mr. McClure and Frank Colby's suit against George and Morris Creps for cutting his hay are both on the docket. A follow-up reports that Pat Murphy wins judgment for one hundred dollars against the War Horse, with Mr. Camp as his attorney.",
+  "key_quotes": [
+    "judgment was entered for one hundred dollars",
+    "sharp legal scrimmage",
+    "Pete, the old time Wood Butcher, ought to know that Mac's bill should certainly be considered in the nature of a stand-off"
+  ],
+  "usage": {
+    "input_tokens": 2502,
+    "output_tokens": 197,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

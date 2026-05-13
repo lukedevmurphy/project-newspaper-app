@@ -1,0 +1,19 @@
+{
+  "id": "1846-12-31_times-london_berehaven-starvation",
+  "input_hash": "sha256:8e98a86510e1ab0e",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:43:30.381Z",
+  "summary": "A correspondent writing from the Barony of Bere reports that roughly half the population of 25,000 to 30,000 souls remains without employment or relief, despite some 3,500 labourers working on public roads and in the Berehaven mines. All public works in the barony were simultaneously stopped on the 10th of December and not resumed until the following Monday, during which time Timothy Sullivan of Coulagh, parish of Kilcatherine — father of four children — died of starvation after repeated appeals for employment went unanswered; a post mortem examination conducted by Dr. Armstrong confirmed starvation as the cause of death. Humphry Curtin of Courough had died under identical circumstances a few weeks earlier, also after fruitless appeals for road work.",
+  "key_quotes": [
+    "he died on Tuesday last, solemnly declaring to the assembled neighbours that he had not tasted a morsel of food for four days before",
+    "Dr. Armstrong, in my presence, subsequently stated his conviction that starvation was the immediate cause of Sullivan's death",
+    "What utility is there in transforming your paper into a register of mortality?"
+  ],
+  "usage": {
+    "input_tokens": 2968,
+    "output_tokens": 261,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

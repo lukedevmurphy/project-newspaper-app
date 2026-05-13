@@ -1,0 +1,18 @@
+{
+  "id": "1883-08-31_jamestown-weekly-alert_klaus-vennum-hunting-spiritwood",
+  "input_hash": "sha256:759a97441f57f150",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:01:37.470Z",
+  "summary": "John Vennum, Marshall McClure, Tony Klaus, Charlie Rattinger, and two or three others set out on a several-days camping hunt, targeting hell-divers and gophers at a slough about seven miles north of Spiritwood Lake. Before departing they all signed the Murphy pledge and swore off drink — though they brought a five-gallon demijohn of snake bite medicine along for emergencies.",
+  "key_quotes": [
+    "They all signed the Murphy pledge and swore off before starting, and only took a five gallon demijohn of snake bite medicine along to \"kiver\" accidents",
+    "scene of their carnage of hell-divers and gophers"
+  ],
+  "usage": {
+    "input_tokens": 2202,
+    "output_tokens": 158,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

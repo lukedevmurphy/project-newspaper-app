@@ -1,0 +1,19 @@
+{
+  "id": "1881-12-24_leeds-mercury_reynolds-castletown-court",
+  "input_hash": "sha256:0812a7c8afef5e11",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:16.895Z",
+  "summary": "At Castletown Berehaven Petty Sessions on 23 December 1881, Miss Hannah M. Reynolds of the Dublin Ladies' Land League was charged with inciting Catherine Murphy, a tenant on the Earl of Bantry's estate, not to pay her rent, the offence alleged to have occurred during evictions on 18 December. Mr. Warburton, R.M., found the case proved and ordered Miss Reynolds to give bail to be of good behaviour for six months or face one month in County Cork Gaol; she refused bail, declared her intention of going to gaol, and was to be conveyed to Cork the following day under police escort. A crowd followed her from the courthouse cheering for the Land League and Miss Parnell, while a band that had intended to play in her honour stood down after being warned its members would face two months' imprisonment.",
+  "key_quotes": [
+    "her imprisonment would make thousands join the League, and that the whole affair was 'trumped up' to gratify the spleen of a petty magistrate and agent",
+    "there were better people in gaol than she",
+    "a large crowd of people followed, who cheered for the lady, the Land League, the suspects, and for Miss Parnell; and groans were given for Mr. Forster"
+  ],
+  "usage": {
+    "input_tokens": 3138,
+    "output_tokens": 295,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

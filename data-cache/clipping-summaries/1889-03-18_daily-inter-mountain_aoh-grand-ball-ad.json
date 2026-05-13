@@ -1,0 +1,17 @@
+{
+  "id": "1889-03-18_daily-inter-mountain_aoh-grand-ball-ad",
+  "input_hash": "sha256:d44b1ed3c9ec8b6b",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:38.384Z",
+  "summary": "Division No. 1 of the Ancient Order of Hibernians announces its annual ball at the Miners' Union Hall on Monday, March 18, 1889, with proceeds earmarked for the erection of a new hall. Patrick J. Murphy serves on the reception committee, alongside D. Driscoll, John Cadigan, John Downey, James H. Lynch, J. J. McHatton, Thomas Ferguson, Dennis Lynch, and E. D. Sullivan; D. J. Hennessy directs the floor, with J. J. Harrington, M. Burns, and others on the committee of arrangements.",
+  "key_quotes": [
+    "The proceeds to be applied to the erection of a new hall."
+  ],
+  "usage": {
+    "input_tokens": 2593,
+    "output_tokens": 169,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

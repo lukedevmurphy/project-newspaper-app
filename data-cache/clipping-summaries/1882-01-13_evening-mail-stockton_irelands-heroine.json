@@ -1,0 +1,18 @@
+{
+  "id": "1882-01-13_evening-mail-stockton_irelands-heroine",
+  "input_hash": "sha256:a2aa63a8fd3cfc60",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:21.412Z",
+  "summary": "The Stockton Evening Mail runs a wire item from Dublin under the headline 'Ireland's Heroine,' reporting on Miss Reynolds, identified as a leading member of the Ladies' Land League, and her imprisonment after actions that reportedly prevented the eviction of tenants. The body of the article, which touches on her influence over men and women, is too OCR-degraded for reliable transcription. [transcription partial — headlines and lead only; body requires manual transcription against page image]",
+  "key_quotes": [
+    "PRETTY MISS REYNOLDS, THE LADY LAND LEAGUER",
+    "Her Influence Over Men and Women — How She Prevented the Eviction of Tenants — At Last in Prison"
+  ],
+  "usage": {
+    "input_tokens": 2235,
+    "output_tokens": 161,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

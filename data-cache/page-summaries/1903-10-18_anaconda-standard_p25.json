@@ -1,0 +1,36 @@
+{
+  "id": "1903-10-18_anaconda-standard_p25",
+  "input_hash": "sha256:8ffa014cfd2dd40e",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:16:47.924Z",
+  "summary": "A full advertising page from The Anaconda Standard, dominated by a large department-store spread for Lewis Dry Goods Co. announcing the opening week of their new and enlarged store on Butte's retail strip. The top two-thirds of the page is entirely consumed by Lewis store advertising — including display type for their new Cloak, Suit and Fur Section, Millinery Section, Waist Section, and Men's Section — with specific pricing, opening-day specials, and an invitation to attend accompanied by Prof. Bergstrom's orchestra. The bottom quarter of the page carries a dense Society column continued from a previous page, packed with brief social notes about Anaconda and Butte residents, parties, visitors, and personal movements, printed in small type across multiple narrow columns with no display advertising interrupting it.",
+  "headlines": [
+    "OPENING WEEK AT LEWIS' NEW AND ENLARGED STORE",
+    "THE NEW CLOAK, SUIT AND FUR SECTION!",
+    "NOTICE.",
+    "On Monday We Will Sell 75 High Class Tailor-Made Suits at EXACTLY HALF PRICE",
+    "Monday in the New Waist Section",
+    "OUR FIRST FALL OPENING IN THE New Millinery Section",
+    "Lewis' Men's Section",
+    "Society."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1903-10-18_anaconda-standard_ethel-prisk-surprise-party",
+      "prominence": "buried",
+      "column": "col 4",
+      "placement_note": "set in small type within the densely packed Society column at the page foot, indistinguishable from dozens of surrounding social briefs"
+    }
+  ],
+  "juxtapositions": [
+    "The elaborate Lewis store advertising celebrating Butte's newest retail opening — orchestra, half-price suits, fur sections — looms directly above a Society column full of Anaconda working-class social life: surprise parties, whist clubs, and personal visits, creating a sharp contrast between aspirational consumer culture and neighbourhood sociability.",
+    "The Ethel Prisk surprise party notice, naming some fifty attendees from Anaconda's Irish-American community, sits in the same column-foot as notes about visitors arriving from out of state and personal illness items, all sharing identical type size and weight with no visual hierarchy to distinguish them."
+  ],
+  "usage": {
+    "input_tokens": 1782,
+    "output_tokens": 511,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

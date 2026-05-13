@@ -1,0 +1,39 @@
+{
+  "id": "1889-03-20_butte-weekly-miner_p04",
+  "input_hash": "sha256:456a2e7824135407",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:14:31.500Z",
+  "summary": "An interior news page of the Semi-Weekly Miner (Butte, Montana) for March 20, 1889, running six to seven columns of dense editorial and news text with significant advertising on the right-hand margin and column. The page covers a wide range of subjects: editorial commentary on Wisconsin politics and the anti-slavery movement, speculation on the copper syndicate, coverage of St. Patrick's Day celebrations in Butte, personal mentions, and a lengthy report on the fraudulent use of alum in baking powder. The right-hand columns are heavily occupied by display advertising for patent medicines, mining equipment, and consumer goods, giving the page a mixed editorial-commercial character typical of Western frontier weeklies of the period.",
+  "headlines": [
+    "ST. PATRICK HONORED",
+    "THE COPPER TRUST",
+    "REPORTORIAL GLEANINGS",
+    "OBSERVANCE OF THE SAINT'S NATAL DAY IN BUTTE",
+    "SPECULATIONS ON THE SYNDICATED CONTINUANCE",
+    "GUARANTEES OF HONEST ADMINISTRATION",
+    "A PRETTY LARCENY CASE",
+    "BARBARITIES OF THE FINISHED SERFDOM",
+    "THE FRAUDULENT USE OF ALUM AND LIME",
+    "PERSONAL MENTION",
+    "SEMI-WEEKLY MINER"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1889-03-20_butte-weekly-miner_st-patrick-honored-aoh",
+      "prominence": "secondary",
+      "column": "col 5",
+      "placement_note": "top of column 5, beneath a column rule; given a multi-deck display headline but flanked left by the copper trust story and right by full-page advertising"
+    }
+  ],
+  "juxtapositions": [
+    "The St. Patrick's Day celebration coverage, with its account of Irish fraternal orders parading through Butte, sits immediately adjacent to a column of large display advertisements for Dr. Price's Cream Baking Powder and patent medicines, creating a jarring editorial-commercial border.",
+    "A lengthy editorial on the 'barbarities' of Wisconsin's treatment of working people and the legacy of anti-slavery sentiment occupies the leftmost columns, while the Irish AOH parade story one column over celebrates Irish-American community life in Butte — two faces of the immigrant experience on the same page."
+  ],
+  "usage": {
+    "input_tokens": 1862,
+    "output_tokens": 496,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

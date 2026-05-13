@@ -1,0 +1,38 @@
+{
+  "id": "1896-06-24_anaconda-standard_p05",
+  "input_hash": "sha256:181ac3d2922417e6",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:16:20.048Z",
+  "summary": "An interior page of The Anaconda Standard for 24 June 1896, dominated by the 'Butte Department' local column at left and a dense mix of regional news, political dispatches, and commercial advertising. The left half of the page is editorial — covering Fourth of July celebration planning, Ohio Democratic convention news, a St. Patrick's commencement notice, local personals and briefs — while the right half is largely display advertising for Butte and Anaconda retailers including O. K. Lewis, The Cash Clothing Company, Brownfield-Canty Carpet Co., and Carder Bros. The political coverage leans heavily on the approaching Democratic national convention and speculation over the silver question and candidate Hartman. A June Reduction Sale on carpets anchors the centre-right of the page with large display type.",
+  "headlines": [
+    "Butte Department",
+    "FOR FOURTH OF JULY",
+    "DIVIDING UP THE MONEY",
+    "OHIO DEMOCRACY",
+    "ST. PATRICK'S COMMENCEMENT",
+    "HARTMAN WILL COME",
+    "O. K. LEWIS",
+    "Not Many Days Left to Prepare for the Fourth of July",
+    "June Reduction Sale ALL CARPETS",
+    "You have heard about it"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1896-06-24_anaconda-standard_patrick-murphy-infant-daughter-dies",
+      "prominence": "buried",
+      "column": "col 1",
+      "placement_note": "a brief among many local personals and notices in the Butte Department column, mid-to-lower page"
+    }
+  ],
+  "juxtapositions": [
+    "The Murphy infant death notice appears amid a cluster of upbeat local social items — piano recitals, athletic feats, and celebration planning — in the Butte Department column, lending it no special visual weight or mourning border.",
+    "A brief noting the infant's burial at 2 o'clock runs within a few lines of notices about a Standard Publishing company catalogue and a forthcoming athletic performance by James R. Murphy, creating an incidental Murphy-name adjacency."
+  ],
+  "usage": {
+    "input_tokens": 1761,
+    "output_tokens": 451,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

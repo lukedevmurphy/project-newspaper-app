@@ -1,0 +1,37 @@
+{
+  "id": "1885-02-26_jamestown-weekly-alert_p04",
+  "input_hash": "sha256:da6ffc05f2e3878a",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:13:07.036Z",
+  "summary": "An interior page of the Jamestown Weekly Alert for late February 1885, dense with local and regional news set in six columns. The dominant matter is Dakota Territory civic life — city and county affairs, railway business, legal notices, and correspondence from settlers — alongside editorial comment on local politics and Dakota boosterism. A large advertisement for a sale ('1-4 OFF 1-4 / FOR MORE / THIS WEEK') occupies the upper right quadrant, and classified notices, land investment appeals, and legal proof-of-publication notices fill the right-hand columns. The editorial tone is boosterish and conversational, characteristic of a small-city paper promoting settlement and local enterprise.",
+  "headlines": [
+    "JAMESTOWN POPULATION 3,500",
+    "CITY AND COUNTY",
+    "THE WOMAN QUESTION",
+    "ELDRIDGE NEWS",
+    "IN TIME OF PEACE PREPARE FOR WAR!",
+    "FOR SALE",
+    "FOR NEXT SEASON'S RISE INVEST IN DAKOTA SOIL",
+    "NORTH DAKOTA BANK",
+    "NOTICE OF FINAL PROOF"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1885-02-26_jamestown-weekly-alert_helena-vigilantes-hung-murphy",
+      "prominence": "buried",
+      "column": "col 2",
+      "placement_note": "a single sentence tucked within the running 'City and County' local-briefs column, mid-column, easy to miss among longer items"
+    }
+  ],
+  "juxtapositions": [
+    "The one-sentence note about Murphy's body hanging 'elevated out of reach' under a Helena railroad bridge sits within the same local-briefs column as cheerful items about a home entertainment, a wedding, and a sick child — the violent frontier anecdote offered without pause between domestic notices.",
+    "A boosterish appeal to 'Invest in Dakota Soil' and a land-investment advertisement occupy the columns immediately to the right of the vigilante item, framing frontier violence alongside promotional optimism about settlement and property values."
+  ],
+  "usage": {
+    "input_tokens": 1725,
+    "output_tokens": 432,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

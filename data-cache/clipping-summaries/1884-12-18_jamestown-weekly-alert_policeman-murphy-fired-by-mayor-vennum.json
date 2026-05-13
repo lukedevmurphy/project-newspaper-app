@@ -1,0 +1,17 @@
+{
+  "id": "1884-12-18_jamestown-weekly-alert_policeman-murphy-fired-by-mayor-vennum",
+  "input_hash": "sha256:e94eb1a0ef3d1e80",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:41.883Z",
+  "summary": "Policeman Murphy was dismissed from the Jamestown police force on Thursday morning by Acting Mayor Vennum on charges of drunkenness and disorderly conduct, a decision that public sentiment reportedly endorsed.",
+  "key_quotes": [
+    "Public sentiment seems to fully justify the course of the executive"
+  ],
+  "usage": {
+    "input_tokens": 1933,
+    "output_tokens": 70,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

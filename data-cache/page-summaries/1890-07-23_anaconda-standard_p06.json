@@ -1,0 +1,39 @@
+{
+  "id": "1890-07-23_anaconda-standard_p06",
+  "input_hash": "sha256:a5b22900970632df",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:15:13.291Z",
+  "summary": "An interior page of The Anaconda Standard for 23 July 1890, densely typeset across six columns with a mix of local mining news, legal notices, financial tables, and large display advertising. The left portion of the page is editorial — mining and prospects reports, mining stock exchange prices, bonds and stocks tables, and the sump recovery story — while the right third is dominated by large display advertisements for Estes & Connell Mercantile Company's summer sale and the Tuttle Manufacturing and Supply Co. The editorial tone is matter-of-fact and commercial, treating a grim mine-shaft body recovery with the same column weight as ore-strike reports and stock quotations.",
+  "headlines": [
+    "MINES AND PROSPECTS",
+    "FOUND IN THE SUMP",
+    "The Bodies of Murphy and Kelleher Recovered at Last",
+    "MINING NOTES",
+    "MINING STOCK EXCHANGE",
+    "NEW YORK MARKET",
+    "BONDS AND STOCKS",
+    "JUDGE AND JURY",
+    "NEW CASES FILED",
+    "GREAT SALE",
+    "HURRY UP"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1890-07-23_anaconda-standard_murphy-and-kelleher-bodies-found",
+      "prominence": "lead",
+      "column": "col 3",
+      "placement_note": "top of column, banner headline spanning full column width, directly adjacent to Mining Stock Exchange table to its left"
+    }
+  ],
+  "juxtapositions": [
+    "The Murphy and Kelleher sump-recovery story — bodies identified only by clothing after eight months — sits immediately to the right of the Mining Stock Exchange price listings, placing a grim human toll of mine labour in direct visual proximity to commodity valuations of mining shares.",
+    "A large, festive Estes & Connell advertisement promoting a Saturday sale on children's clothing occupies the right-hand columns on the same page as the account of two miners' decomposed bodies being lifted from a shaft."
+  ],
+  "usage": {
+    "input_tokens": 1787,
+    "output_tokens": 420,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

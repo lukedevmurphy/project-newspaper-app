@@ -1,0 +1,15 @@
+{
+  "id": "1894-08-02_daily-inter-mountain_mayor-opposes-riot-bills",
+  "input_hash": "sha256:896cd7ae17c8ac9e",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:51.301Z",
+  "summary": "At a city council meeting the previous evening, the mayor takes the position that the city cannot be compelled to pay bills arising from the July riot, alongside routine business and a matter concerning telegraph poles. T. E. Butler is named in connection with the proceedings. [transcription partial — body text OCR-degraded, headlines only]",
+  "key_quotes": [],
+  "usage": {
+    "input_tokens": 2329,
+    "output_tokens": 86,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

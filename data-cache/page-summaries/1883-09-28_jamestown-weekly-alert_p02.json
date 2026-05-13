@@ -1,0 +1,33 @@
+{
+  "id": "1883-09-28_jamestown-weekly-alert_p02",
+  "input_hash": "sha256:7d58a602c48a6a84",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:12:39.476Z",
+  "summary": "An interior page of the Jamestown Weekly Alert for late September 1883, dense with multi-column editorial text and no display advertising. The page is divided across at least five columns and covers a wide range of subjects: a long leading editorial on North Dakota statehood and territorial politics, county commissioner proceedings, a 'Who Is He?' column on a local postmaster, a 'News by Telegraph' column of brief national and international dispatches, and a miscellany of local items including court dockets, road supervisor notices, and a billiards match brief. The editorial tone is engaged and opinionated, particularly on statehood and the conduct of public officials. Type is uniformly small with few visual breaks between items.",
+  "headlines": [
+    "THE WEEKLY ALERT",
+    "COUNTY COMMISSIONERS",
+    "Who Is He?",
+    "NEWS BY TELEGRAPH",
+    "An Exceptionally Fine Display",
+    "A Pittsburgh Murder"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1883-09-28_jamestown-weekly-alert_mullane-billiards-at-murphys-saloon",
+      "prominence": "buried",
+      "column": "col 3",
+      "placement_note": "set as a brief paragraph within the county commissioner or local items column, mid-to-lower page, surrounded by similar short notices"
+    }
+  ],
+  "juxtapositions": [
+    "The billiards match brief at Murphy's saloon sits within a densely packed column of local legal and civic notices — road supervisor appointments and commissioner proceedings — giving the leisure item an incongruous bureaucratic neighbourhood."
+  ],
+  "usage": {
+    "input_tokens": 1801,
+    "output_tokens": 334,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "1884-10-18_butte-weekly-miner_john-kelly-complimentary-benefit",
+  "input_hash": "sha256:5f4d6665437ffbe6",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:01:45.542Z",
+  "summary": "A group of more than 150 Butte citizens, including Con Murphy, Lee Mantle, Dr. J. P. Tiernan, and N. J. Bielenberg among others, formally petition Mr. John Kelly to give a benefit musical entertainment before he leaves the city, citing their admiration for his vocal and instrumental gifts. Kelly accepts, naming Saturday the 18th at Renshaw Opera House, where he will be assisted by Mrs. Kelly. A local notice adds that Mrs. Kelly is described as one of the most accomplished organists and pianists in the East, and the event is expected to draw a large audience.",
+  "key_quotes": [
+    "we are pleased to state that at the earnest solicitation of many of our citizens Mr. John Kelly has consented to give one of his rare musical entertainments",
+    "Mrs. Kelly who is one of the most accomplished organists and pianist in the East",
+    "those who are so fortunate as to be present will hear choice selections rendered as only true artists can render them"
+  ],
+  "usage": {
+    "input_tokens": 3146,
+    "output_tokens": 226,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

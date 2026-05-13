@@ -1,0 +1,18 @@
+{
+  "id": "1883-06-17_butte-miner_butte-inla-formed",
+  "input_hash": "sha256:14d81158126c3418",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:26.000Z",
+  "summary": "A large meeting of Irish citizens at Renshaw Opera House in Butte, on the night of 16 June 1883, organised a branch of the Irish National League of America and passed resolutions pledging support to Charles Stewart Parnell while emphatically repudiating Pope Leo XIII's intervention in Irish temporal affairs as sympathetic to England. James Mathews was elected president of the new branch, with James A. Murray, Patrick Coalan, and John Maguire among the trustees. Thirty members enrolled on the spot and $186 was subscribed to the Parnell testimonial fund.",
+  "key_quotes": [
+    "we emphatically repudiate his claim to exercise any authority over us as Irishmen while we vindicate the solemn and sacred duty we owe our mother country",
+    "we hereby pledge him our faith, support and sympathy, now and in the future, in all his efforts to alleviate the sufferings of Ireland and the Irish people"
+  ],
+  "usage": {
+    "input_tokens": 2673,
+    "output_tokens": 222,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

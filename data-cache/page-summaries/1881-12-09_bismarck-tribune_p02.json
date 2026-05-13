@@ -1,0 +1,49 @@
+{
+  "id": "1881-12-09_bismarck-tribune_p02",
+  "input_hash": "sha256:ee9fab5682b32451",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:11:02.721Z",
+  "summary": "An interior page of the Bismarck Tribune for 9 December 1881, dense with telegraphic wire dispatches under the standing head 'ADDITIONAL TELEGRAPH.' The page is almost entirely news copy, six columns, no display advertising, covering a wide range of national and international items: a mill fire in Minneapolis, a murder in Chicago, a congressional speaker contest in Washington, a religious murder in Springfield, Land League activity in Ireland, and German immigration commentary. Editorial tone is neutral and aggregative, typical of a late-nineteenth-century interior wire page. The column structure is uniform throughout, with items stacked as brief dispatches under thematic or geographic subheads.",
+  "headlines": [
+    "ADDITIONAL TELEGRAPH.",
+    "THE NEW SPEAKER",
+    "Secret Trials",
+    "Arrived Safely",
+    "Accidentally Killed.",
+    "Suicide.",
+    "Railroad Accident.",
+    "Outrageous.",
+    "Another Mill Explosion.",
+    "Keifer for Speaker.",
+    "A Big Blaze.",
+    "High Cards.",
+    "Skipped.",
+    "A Pittsburg Murder.",
+    "Probably Drunk.",
+    "An Editor Bunkoed.",
+    "Warning to Wives.",
+    "A Religious Murder.",
+    "Will It Never End?",
+    "Served Him Right.",
+    "Between the Times."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1881-12-09_bismarck-tribune_castletown-police-stop-reynolds",
+      "prominence": "buried",
+      "column": "col 1",
+      "placement_note": "a single-sentence brief under the 'Outrageous.' subhead, stacked among multiple short wire dispatches in the lower half of col 1"
+    }
+  ],
+  "juxtapositions": [
+    "The one-sentence 'Outrageous.' item on the Castletown police blocking the Ladies' Land League sits immediately between 'Railroad Accident.' and 'November's Coinage.' — sandwiched in a run of purely domestic American wire briefs, with no other Irish or Land League context on the page.",
+    "The 'THE NEW SPEAKER' column, the page's most prominent single feature, dominates the upper right, discussing Ohio Republican politics and the career of General Keifer — a striking contrast to the cluster of crime, fire, and eviction briefs filling the left-hand columns."
+  ],
+  "usage": {
+    "input_tokens": 1784,
+    "output_tokens": 499,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

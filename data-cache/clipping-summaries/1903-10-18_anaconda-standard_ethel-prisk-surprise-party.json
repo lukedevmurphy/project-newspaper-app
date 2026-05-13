@@ -1,0 +1,17 @@
+{
+  "id": "1903-10-18_anaconda-standard_ethel-prisk-surprise-party",
+  "input_hash": "sha256:6f6fd084d6bc598d",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:49:41.683Z",
+  "summary": "A surprise party was held for Miss Ethel Prisk at her home at 606 East Mercury Street, Anaconda, on Thursday evening, with games, music, dancing, and a midnight lunch. The large gathering included among the guests Marguerite Kelly, Jimmie Murphy, Tish Maloney, and some fifty others, with Mrs. Prisk and Mrs. Bray among the older attendees.",
+  "key_quotes": [
+    "a dainty lunch was served"
+  ],
+  "usage": {
+    "input_tokens": 2534,
+    "output_tokens": 114,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "1890-04-29_anaconda-standard_p05",
+  "input_hash": "sha256:bbbcd43617617401",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:15:00.382Z",
+  "summary": "An interior news page of The Anaconda Standard dated Tuesday, 29 April 1890, dense with local Butte and Montana news across six columns. The page carries a mix of accident reporting, court proceedings, real estate notices, and local briefs, alongside substantial advertising columns on the right-hand side for Maguires Opera House, Northern Pacific Railroad land sales, and various Butte merchants. Editorial tone is brisk and factual, with several prominent multi-deck headlines signalling serious incidents — a mine fatality, a murder trial, and a court estate ruling — surrounded by shorter items under section heads for police, real estate, and miscellaneous city news.",
+  "headlines": [
+    "KILLED IN THE SHAFT",
+    "ON TRIAL FOR HIS LIFE",
+    "JOHN A. DAVIS GETS IT",
+    "MAGUIRES OPERA HOUSE",
+    "IT WILL BE A BIG AFFAIR",
+    "MORE POLICE OFFICERS NEEDED",
+    "WHIPPED A BRUTE",
+    "THERE IS A HURRY",
+    "A GOOD PERFORMANCE",
+    "NORTHERN PACIFIC ADDITION To Butte."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1890-04-29_anaconda-standard_patrick-murphy-killed-in-shaft-fall",
+      "prominence": "lead",
+      "column": "col 1 (leftmost)",
+      "placement_note": "top of col 1, under its own bold multi-deck headline; the first major story the eye reaches on the page"
+    }
+  ],
+  "juxtapositions": [
+    "The account of Patrick Murphy's death in the mine shaft — leaving seven children, the eldest a boy of 10 working at the same mine — sits directly alongside a column advertising 170 lots sold in the Northern Pacific Addition to Butte, projecting boom-town prosperity a column away from a family's ruin.",
+    "The 'IT WILL BE A BIG AFFAIR' report on a large new foundry planned for Butte runs just below the Murphy mine-death story, setting industrial ambition immediately beneath an industrial fatality."
+  ],
+  "usage": {
+    "input_tokens": 1786,
+    "output_tokens": 446,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

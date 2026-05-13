@@ -1,0 +1,15 @@
+{
+  "id": "1896-06-24_anaconda-standard_patrick-murphy-infant-daughter-dies",
+  "input_hash": "sha256:d9c736dd4b3534fd",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:53.761Z",
+  "summary": "The three-month-old daughter of Mr. and Mrs. Patrick Murphy dies, with burial to take place that afternoon at 2 o'clock from the family residence at No. 313 South Washington Street.",
+  "key_quotes": [],
+  "usage": {
+    "input_tokens": 2135,
+    "output_tokens": 59,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

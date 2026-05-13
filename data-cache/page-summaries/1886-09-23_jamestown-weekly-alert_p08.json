@@ -1,0 +1,41 @@
+{
+  "id": "1886-09-23_jamestown-weekly-alert_p08",
+  "input_hash": "sha256:badfc87d0fd2ceaa",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:13:48.196Z",
+  "summary": "An interior page of the Jamestown Weekly Alert for September 1886, densely set in six columns across a broadsheet format. The page is an omnibus of local news, civic record, and commercial notices, mixing short City News briefs, county commissioner proceedings, a dissolution notice, Dakota Prize Winners results, a 'Some Quiet Surveying' item, and a substantial block of paid advertising on the right-hand side including the Louisiana State Lottery and Bonds for Sale notices. Editorial tone is matter-of-fact and community-oriented, with no dominant national story; the page reads as a typical interior catch-all for local items that did not make the front page.",
+  "headlines": [
+    "CITY NEWS.",
+    "FROM FRIDAYS DAILY.",
+    "FROM SATURDAYS DAILY.",
+    "FROM SUNDAYS DAILY.",
+    "FROM TUESDAYS DAILY.",
+    "County Commissioners.",
+    "Dakota Prize Winners.",
+    "Some Quiet Surveying.",
+    "Dissolution Notice.",
+    "BONDS FOR SALE.",
+    "Teachers' Examination.",
+    "Louisiana State Lottery Co.",
+    "At the Front."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1886-09-23_jamestown-weekly-alert_pat-murphy-wage-suit",
+      "prominence": "buried",
+      "column": "col 2",
+      "placement_note": "set as a brief within the 'From Tuesday's Daily' sub-section of City News, mid-column, between other short docket items"
+    }
+  ],
+  "juxtapositions": [
+    "The Pat Murphy wage-suit digest runs within the same City News column as a notice about the new artesian well machinery arriving in Jamestown, placing a wage dispute between an Irish laborer and a local businessman directly alongside a civic infrastructure story.",
+    "The Dissolution Notice for the firm of Kellogg & Tucker sits immediately below the 'At the Front' item about an Anaconda copper-smelting investment opportunity, pairing business failure with business promotion in the same column-foot."
+  ],
+  "usage": {
+    "input_tokens": 1789,
+    "output_tokens": 434,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

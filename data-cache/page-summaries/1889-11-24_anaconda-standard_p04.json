@@ -1,0 +1,38 @@
+{
+  "id": "1889-11-24_anaconda-standard_p04",
+  "input_hash": "sha256:a8aabfff2acda808",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:14:47.274Z",
+  "summary": "A front page of The Anaconda Standard for Sunday, 24 November 1889, dominated by breaking news of a fatal mine fire in Butte. The dominant story — a multi-deck headline account of the St. Lawrence mine fire and its deadly spread into the adjoining Anaconda mine — commands the top centre and left portions of the page. The remainder of the page mixes local briefs ('ABOUT THE CITY'), a travelers' guide and train schedule in the far left column, church notices, and fraternal society items in the lower columns. The right third of the page is taken up by a large display advertisement for D. J. Hennessy Mercantile Co. promoting a week-long sale on ladies' wraps, alongside smaller ads for I. M. Jacobs Northwestern Fur Store, Estes & Connell clothing, J. C. Keppler the watchmaker, and The Delmonico hotel.",
+  "headlines": [
+    "THE MINE ON FIRE",
+    "Flames Break Out in the 800-Foot Level of the St. Lawrence",
+    "FOUR MINERS MISSING",
+    "Brave Men Lose Their Lives While Trying to Rescue Their Comrades",
+    "SCENES AT THE ANACONDA",
+    "Smoke From the Fire in the St. Lawrence Finds Its Way Into the Adjoining Mine With Terrible Results — The Flames Under Control",
+    "ABOUT THE CITY",
+    "SPECIAL SALE OF LADIES' WRAPS!",
+    "The Fireman's Ball",
+    "The Next Levee"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1889-11-24_anaconda-standard_st-lawrence-mine-fire",
+      "prominence": "lead",
+      "column": "col 2",
+      "placement_note": "top of the page, spanning cols 2–4, with the largest headline display on the page; above the fold and immediately below the masthead"
+    }
+  ],
+  "juxtapositions": [
+    "The detailed, name-by-name account of miners dying of smoke suffocation in the St. Lawrence and Anaconda mines runs immediately adjacent, in the same upper portion of the page, to a column of routine 'ABOUT THE CITY' local briefs noting train movements and a teachers' institute meeting.",
+    "The harrowing rescue narrative, in which men are described staggering out overcome by smoke, sits one column away from the D. J. Hennessy Mercantile Co. advertisement cheerfully promising 'Prices on Wraps to be 20 per cent Lower than can be Found Elsewhere in the City' — the commercial life of Anaconda proceeding undisturbed alongside the disaster at Butte."
+  ],
+  "usage": {
+    "input_tokens": 1861,
+    "output_tokens": 582,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

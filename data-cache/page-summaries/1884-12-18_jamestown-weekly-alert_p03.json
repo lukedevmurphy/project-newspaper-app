@@ -1,0 +1,38 @@
+{
+  "id": "1884-12-18_jamestown-weekly-alert_p03",
+  "input_hash": "sha256:e4b8c9b7e11537f3",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:12:52.791Z",
+  "summary": "An interior page of the Jamestown Weekly Alert for mid-December 1884, densely packed with local news, personal items, society notices, county commissioner proceedings, legal notices of final proof, and a heavy load of display advertising running down the right-hand margin. The page is divided into roughly six columns, with the left columns given over to editorial and local news content under the 'City and County' section head, a 'Personal' column, and a 'The Other Side' column, while the right columns are dominated by large display ads for merchants, railways, banks, and land agents. Legal notices of final proof fill a middle band of the page. The editorial tone throughout the news columns is chatty and community-focused, characteristic of a small Dakota Territory weekly.",
+  "headlines": [
+    "SOCIETIES.",
+    "Safe Sale.",
+    "PERSONAL.",
+    "The Other Side.",
+    "CITY AND COUNTY",
+    "COUNTY COMMISSIONERS.",
+    "FILER SCRIPT",
+    "THE REASON WHY",
+    "NOTICE OF FINAL PROOF",
+    "Corrugation Notes."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1884-12-18_jamestown-weekly-alert_policeman-murphy-fired-by-mayor-vennum",
+      "prominence": "buried",
+      "column": "col 1",
+      "placement_note": "short brief mid-column within the 'City and County' section, surrounded by similarly brief local items"
+    }
+  ],
+  "juxtapositions": [
+    "The brief on Policeman Murphy's dismissal for drunkenness and disorderly conduct sits within the same 'City and County' column as an item about a fire alarm and another about a local public works failure, giving the column a tone of municipal dysfunction.",
+    "A large display advertisement for 'The Royal Route' railway to Chicago runs directly alongside the dense column of Final Proof legal notices, placing boosterish westward commerce cheek-by-jowl with homestead land claims."
+  ],
+  "usage": {
+    "input_tokens": 1736,
+    "output_tokens": 432,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

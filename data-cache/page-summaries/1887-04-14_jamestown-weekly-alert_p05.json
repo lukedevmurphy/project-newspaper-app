@@ -1,0 +1,43 @@
+{
+  "id": "1887-04-14_jamestown-weekly-alert_p05",
+  "input_hash": "sha256:024742de522d31ae",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:14:03.138Z",
+  "summary": "A busy interior page of the Jamestown Weekly Alert for April 1887, dominated by a large promotional banner headline for North Dakota land investment across the upper right quadrant, with the remainder of the page packed in dense multi-column type covering a miscellany of editorial columns, reprinted features, legal notices, and local advertising. The page carries columns drawn from outside publications alongside original editorial matter, and the lower right is given over to classified and legal notices including land proofs, timber culture filings, and circulating library notices. The overall tone is boosterish and commercial, consistent with Dakota Territory boomer-era journalism.",
+  "headlines": [
+    "THE BOOM APPROACHETH!!!",
+    "BRIGHAM'S GUIDE.",
+    "ENGLISH PENNY-A-LINERS.",
+    "STRIVING.",
+    "Short Furrows a Waste.",
+    "A Washington Ambition.",
+    "In the English Salt District.",
+    "Children Out at Night.",
+    "A New Use for Pilot.",
+    "Coppers on the Farm.",
+    "Pretty Walt Dean.",
+    "A Single Track Railroad.",
+    "Slang in the Restaurant.",
+    "JAMESTOWN Circulating Library and Free Reading Room",
+    "SUBSCRIBE FOR THE DAILY ALERT"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1887-04-14_jamestown-weekly-alert_slang-in-the-restaurant",
+      "prominence": "buried",
+      "column": "col 5",
+      "placement_note": "set as a short brief near the lower-middle of the page, among several other reprinted filler items under no major section head"
+    }
+  ],
+  "juxtapositions": [
+    "The 'Slang in the Restaurant' color piece from the St. Louis Globe-Democrat sits just columns away from the boisterous land-investment promotional copy of 'THE BOOM APPROACHETH!!!', placing casual urban amusement directly beside frontier boosterism aimed at settlers.",
+    "Legal notices for U.S. Land Office final proofs and timber culture filings occupy the same lower-right portion of the page as advertisements for the Jamestown Circulating Library and Free Reading Room, clustering the institutional fabric of a young Dakota town into a single corner."
+  ],
+  "usage": {
+    "input_tokens": 1805,
+    "output_tokens": 469,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

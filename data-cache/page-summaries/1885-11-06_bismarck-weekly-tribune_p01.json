@@ -1,0 +1,41 @@
+{
+  "id": "1885-11-06_bismarck-weekly-tribune_p01",
+  "input_hash": "sha256:82727e2dbaa42a0c",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:13:20.953Z",
+  "summary": "A front page of the Bismarck Weekly Tribune for Friday, November 6, 1885, Vol. 13, No. 22, priced at five cents. The page is dense with six columns of small-type news, dominated by election returns from Tuesday's polling across multiple states — Dakota, Virginia, Kansas, New York, Connecticut, Iowa, and others — alongside a substantial column of telegraphic wire briefs under the banner \"NEWS BY TELEGRAPH.\" A standing column of miscellaneous local and national notes runs in column one under \"NEWS NOTES AND COMMENTS,\" and a price-summary column anchors the far right. The editorial tone is brisk and factual, characteristic of a territorial weekly aggregating wire copy for a frontier readership.",
+  "headlines": [
+    "NEWS NOTES AND COMMENTS",
+    "\"FIRED OUT.\"",
+    "ELECTION AFTERMATH.",
+    "DAKOTA.",
+    "NEWS BY TELEGRAPH.",
+    "PRICE FIVE CENTS.",
+    "NEWS SUMMARY.",
+    "LATER",
+    "Snow in Ellendale—The Capital Location",
+    "The Chinese Driven Out.",
+    "The Chinese Exodus.",
+    "The Hennepin Canal Commission",
+    "Dakota Dots and Dashes—Boiler Explosion—A Deer Hunter's Dear Shot."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1885-11-06_bismarck-weekly-tribune_tacoma-chinese-exodus",
+      "prominence": "secondary",
+      "column": "col 5",
+      "placement_note": "under the 'NEWS BY TELEGRAPH' section head, mid-column, between Dakota political items and the Hennepin Canal brief"
+    }
+  ],
+  "juxtapositions": [
+    "The wire items reporting the violent expulsion of Chinese residents from Tacoma sit within the same 'NEWS BY TELEGRAPH' column as a brief on the Hennepin Canal commission and cheerful Dakota political returns, giving the expulsion no special visual weight or editorial framing.",
+    "The 'FIRED OUT.' headline at the top of column two — describing the Chinese being marched from Tacoma — runs directly beside the election-aftermath column, visually echoing the partisan 'firing out' of Democratic candidates across the region."
+  ],
+  "usage": {
+    "input_tokens": 2084,
+    "output_tokens": 474,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

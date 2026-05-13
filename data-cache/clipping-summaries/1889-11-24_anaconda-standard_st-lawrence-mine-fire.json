@@ -1,0 +1,19 @@
+{
+  "id": "1889-11-24_anaconda-standard_st-lawrence-mine-fire",
+  "input_hash": "sha256:6f66cc15e437c10a",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:47.720Z",
+  "summary": "A fire breaks out on the 800-foot level of the St. Lawrence mine in Butte on the morning of November 23, 1889, after being discovered on the 500-foot level around 4:30 a.m. by a miner named Bell Cuba. Smoke finds its way into the adjoining Anaconda mine, and four miners are reported missing; among the dead is Patrick Murphy, described as married with a wife and nine children and noted as the champion handcar-runner of Montana, who worked alongside his brother Daniel Murphy. The names of others involved in the rescue and disaster include Superintendent Carroll, John Lyons, Harry Page, Tim Kelleher, Jerry Sullivan, Mike Cody, Patrick Cody, James McCarthy, Harry Mannix, and James McCoy. [transcription partial — body of article OCR-degraded; family-relevant details concerning Patrick and Daniel Murphy require verification against fullpage.jpg before use]",
+  "key_quotes": [
+    "The ominous blowing of the whistle of the Anaconda mine at a little after 6 o'clock this morning alarmed the people of this city by announcing to them that some catastrophe must have happened",
+    "Of the four men in the mine, only Patrick Murphy is married. He has a wife and nine children",
+    "was considered the champion handcar-runner of Montana"
+  ],
+  "usage": {
+    "input_tokens": 2938,
+    "output_tokens": 303,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

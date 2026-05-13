@@ -1,0 +1,17 @@
+{
+  "id": "1889-03-20_butte-weekly-miner_st-patrick-honored-aoh",
+  "input_hash": "sha256:5bff05ae43e1aea2",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:42.270Z",
+  "summary": "Butte's St. Patrick's Day celebrations in 1889 include a procession of the Ancient Order of Hibernians, Funeral Guards, and Pinotti Miners watched by crowds, followed by a ball at Miners' Union Hall. The coverage opens with a St. Patrick's Day ode by Catherine Brennan, reprinted from the New York Sun. Patrick J. Murphy serves on the Reception Committee; D. J. Hennessy chairs the Committee of Arrangements and acts as Floor Director; Jas. Murphy appears on the Floor Committee. [transcription partial — parade route, mass account, and ball description OCR-degraded; full body text requires manual transcription against fullpage.jpg]",
+  "key_quotes": [
+    "The Ball at Miners' Union Hall a Wonderful and Social Success"
+  ],
+  "usage": {
+    "input_tokens": 2740,
+    "output_tokens": 183,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

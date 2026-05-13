@@ -1,0 +1,40 @@
+{
+  "id": "1900-03-22_butte-daily-post_p03",
+  "input_hash": "sha256:84c9a03032ff5e50",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:16:32.723Z",
+  "summary": "An interior news page of the Butte Daily Post for 22 March 1900, page three, dense with local and regional content across roughly six columns. The dominant story is the Butte city Democratic Convention, occupying the top-center of the page under a large display headline. Surrounding it are local briefs, court and legal notices, a market and grocery column, a plumbers' association story, a Democratic ward-delegate list, and a column on the Nipper receivership and Combination Mining shares. The editorial tone is straightforwardly reportorial, with no strong commentary beyond the convention story's political framing.",
+  "headlines": [
+    "DEMOCRATIC CONVENTION",
+    "THEY BROKE THE COMPACT",
+    "HARRIS IS TURNED DOWN",
+    "AN OLD TIMER ON THE STAND",
+    "LOCAL BRIEFS",
+    "COL. WALLACE'S FUNERAL",
+    "RESPECT MEMORY OF WILL DIXON",
+    "RESTRAINED FROM SELLING THE STOCK",
+    "CHARGED WITH ASSAULT",
+    "NIPPER RECEIVERSHIP",
+    "THE COPPER MINING SHARES",
+    "BRITISH WAR LOAN"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1900-03-22_butte-daily-post_democratic-convention-pj-murphy-ward1",
+      "prominence": "lead",
+      "column": "col 2",
+      "placement_note": "top of page, largest display headline on the page, spanning col 2 with bold section head; immediately right of the advertising column"
+    }
+  ],
+  "juxtapositions": [
+    "The Democratic Convention story's account of silver re-coinage resolutions sits directly adjacent to 'THEY BROKE THE COMPACT,' a story about the Plumbers' Association withdrawing funds from a Butte bank, both running across the top of the page as twin dominant stories.",
+    "The 'LOCAL BRIEFS' column, containing dentist notices and minor social items, runs immediately to the right of the detailed convention delegate roll-call, placing mundane city life alongside the session's factional drama."
+  ],
+  "usage": {
+    "input_tokens": 1836,
+    "output_tokens": 436,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

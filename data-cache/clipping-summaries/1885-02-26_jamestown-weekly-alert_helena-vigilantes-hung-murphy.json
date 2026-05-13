@@ -1,0 +1,18 @@
+{
+  "id": "1885-02-26_jamestown-weekly-alert_helena-vigilantes-hung-murphy",
+  "input_hash": "sha256:075d2554fc73e1f6",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:44.546Z",
+  "summary": "Bob Conchay reports that he attempted to take a button as a relic from a man named Murphy, who had been hanged by vigilantes from a railroad bridge near Helena, Montana, but the body was suspended too high to reach.",
+  "key_quotes": [
+    "he tried to get a button as a relic off of Murphy who was hung under a railroad bridge near Helena by vigilantes",
+    "he was elevated out of reach"
+  ],
+  "usage": {
+    "input_tokens": 1875,
+    "output_tokens": 101,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

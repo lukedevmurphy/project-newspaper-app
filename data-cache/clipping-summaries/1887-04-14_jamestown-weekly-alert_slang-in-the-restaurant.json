@@ -1,0 +1,19 @@
+{
+  "id": "1887-04-14_jamestown-weekly-alert_slang-in-the-restaurant",
+  "input_hash": "sha256:06f3c4700327a3ca",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:49:02.086Z",
+  "summary": "A waiter writing in the St. Louis Globe-Democrat catalogues the colourful slang used to call orders in a Kansas City restaurant, including 'Jesse James' for an oyster stew, 'slaughter in a pan' for a beefsteak, 'Murphy with his coat on' for unpeeled potatoes, and 'sunny side up' for two eggs fried on one side. The piece was reprinted in the Jamestown Weekly Alert in April 1887.",
+  "key_quotes": [
+    "potatoes unpeeled are 'Murphy with his coat on'",
+    "A beefsteak becomes 'slaughter in a pan'",
+    "plain, black coffee is 'coffee in the dark'"
+  ],
+  "usage": {
+    "input_tokens": 2028,
+    "output_tokens": 162,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

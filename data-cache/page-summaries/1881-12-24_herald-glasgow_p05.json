@@ -1,0 +1,40 @@
+{
+  "id": "1881-12-24_herald-glasgow_p05",
+  "input_hash": "sha256:f0d0acd7b872a06e",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:11:30.359Z",
+  "summary": "A busy interior news page of the Glasgow Herald for Christmas Eve 1881, set in six dense columns with no display advertising. The dominant matter is Irish political and agrarian news — Land League proceedings, arrests, parliamentary speeches, and district reports — alongside a column of General Foreign News covering Madrid and Constantinople, American commercial notes, and Scottish Pic-Nic quotations. Editorial tone is neutral-reportorial throughout, with matter-of-fact treatment of evictions, imprisonments, and League agitation. A weather report and forecast occupies a panel near the centre of the page.",
+  "headlines": [
+    "OUR LONDON CORRESPONDENCE",
+    "THE FOG AND LOSS OF LIFE",
+    "GENERAL FOREIGN NEWS",
+    "THE REVOLT IN MOROCCO",
+    "IRELAND",
+    "MURDEROUS OUTRAGE IN A WORKHOUSE",
+    "THE LAND LEAGUE AND THE PROPERTY DEFENCE ASSOCIATION",
+    "EMIGRATION OF A LIBERATED LAND LEAGUER",
+    "A LADY LEAGUER SENT TO PRISON",
+    "MR SHAW'S RETREAT FROM THE HOME RULE PARTY",
+    "AMERICAN COMMERCIAL NEWS",
+    "WEATHER REPORT AND FORECAST"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1881-12-24_herald-glasgow_lady-leaguer-sent-to-prison",
+      "prominence": "secondary",
+      "column": "col 4",
+      "placement_note": "mid-page under the IRELAND section head, between briefer agrarian items above and Land League property association matter below"
+    }
+  ],
+  "juxtapositions": [
+    "The 'A LADY LEAGUER SENT TO PRISON' item sits in the same Ireland column as 'EMIGRATION OF A LIBERATED LAND LEAGUER' immediately above it, placing imprisonment and emigration as consecutive outcomes of Land League involvement on the same day's page.",
+    "The Irish agrarian reports — evictions, arrests, and incitement charges — run directly adjacent to the American Commercial News column, where commodity prices and stock quotations proceed without comment on the political turmoil one column over."
+  ],
+  "usage": {
+    "input_tokens": 1765,
+    "output_tokens": 447,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

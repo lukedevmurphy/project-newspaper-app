@@ -1,0 +1,38 @@
+{
+  "id": "1894-08-02_daily-inter-mountain_p08",
+  "input_hash": "sha256:758b2635ff67a636",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:34:30.422Z",
+  "summary": "Page 8 of the Daily Inter Mountain (Butte, Montana), dated Thursday, August 2, 1894, is a densely packed interior page mixing local news, city council reporting, health statistics, racing results, and a heavy load of commercial advertising. The left two columns are dominated by local political and civic news, including the mayor's opposition to riot-bill payments and a city council report. The centre columns carry Butte's health report with July mortality statistics, a weather summary, a detailed account of running races at the Smelter grounds, a notice on army ballooning, and a Swedish community meeting notice. The right half of the page is almost entirely advertising — shoe retailers, druggists, coal merchants, flour brands, furniture, sign-painting, and clothing — with large display type competing for the eye. The editorial tone throughout the news columns is matter-of-fact and local in focus, with no sensational treatment even of the riot-bill controversy.",
+  "headlines": [
+    "THE MAYOR OPPOSES IT.",
+    "A GOOD DAY FOR FAVORITES.",
+    "BUTTE'S HEALTH REPORT.",
+    "Five Deaths From Gunshot Wounds Dur-ing July.",
+    "BUTTE WEATHER REPORT.",
+    "Studying Army Ballooning",
+    "Swedish Attention.",
+    "Replenish Your Ties",
+    "COMPILED ORDINANCES",
+    "DO YOUR FEET HURT?"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1894-08-02_daily-inter-mountain_mayor-opposes-riot-bills",
+      "prominence": "lead",
+      "column": "col 2",
+      "placement_note": "Top of col 2, directly under the page dateline banner; largest news headline on the page's left half"
+    }
+  ],
+  "juxtapositions": [
+    "The mayor's report on riot-bill payments and civic disorder sits immediately adjacent in col 1 to a Gans & Klein clothing advertisement urging readers to 'Replenish Your Ties' at 25c — the juxtaposition of civic unrest and retail gentility is striking.",
+    "The Butte Health Report noting five gunshot-wound deaths in July — explicitly tied to 'the unfortunate riot on the Fourth' — runs one column over from a large shoe advertisement asking 'DO YOUR FEET HURT?' with an illustration of a boot."
+  ],
+  "usage": {
+    "input_tokens": 1809,
+    "output_tokens": 522,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

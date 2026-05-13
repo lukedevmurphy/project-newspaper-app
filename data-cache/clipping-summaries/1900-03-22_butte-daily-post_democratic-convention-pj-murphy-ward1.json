@@ -1,0 +1,17 @@
+{
+  "id": "1900-03-22_butte-daily-post_democratic-convention-pj-murphy-ward1",
+  "input_hash": "sha256:7227bd76ed5fcda6",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:58.104Z",
+  "summary": "Butte's Democratic city convention opens at 12:30 at the Auditorium, with Jerry Clifford, chairman of the democratic city central committee, calling order alongside Secretary Naughton. Harris is defeated by McArthur for temporary chairman, and the Daly faction holds a working majority throughout. The platform, described as harmless, denounces the high tariff, praises silver re-coinage, and condemns the Republican gold-bug administration; Patrick J. Murphy appears among the Ward 1 delegates, though the full ward-by-ward delegate rolls remain OCR-degraded. [transcription partial — body and delegate lists not verified against fullpage.jpg]",
+  "key_quotes": [
+    "Jerry Clifford, chairman of the democratic city central committee, who occupied a chair on the Auditorium stage with Secretary Naughton, hammered on the table for order"
+  ],
+  "usage": {
+    "input_tokens": 2579,
+    "output_tokens": 203,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

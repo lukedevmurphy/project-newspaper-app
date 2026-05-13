@@ -1,0 +1,40 @@
+{
+  "id": "1883-06-17_butte-miner_p04",
+  "input_hash": "sha256:8c46b2ef063e7823",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:12:12.256Z",
+  "summary": "A Sunday edition front page of the Butte Daily Miner for June 17, 1883, carrying a dense mix of local Butte news, territorial Montana news, and national telegraphic items. Six columns of small-type editorial content fill the left two-thirds of the page, covering everything from a violent street robbery to a fair competition, a church shooting in Hailey Idaho, and Irish-American political organising. The right third of the page is dominated by a large vertical advertisement for Sands & Boyce dry goods and a substantial display ad for H. Jacobs & Co. clothing. The editorial tone throughout the news columns is lively and local, with several items reflecting the vigorous Irish-American community in Butte.",
+  "headlines": [
+    "The Butte Daily Miner.",
+    "Local News.",
+    "CAPTURED CROOKS.",
+    "Six-Shooter Jack 'Dine' in the Scots—Whereabouts of Harness Unknown.",
+    "THE PARNELL MEETING.",
+    "A Large and Enthusiastic Gathering of Patriotic Irish Citizens.",
+    "TERRITORIAL NEWS.",
+    "Culled From the Columns of Our Exchanges.",
+    "THE JULY RACES.",
+    "Some of the Flyers Which Will Compete for the Various Purses",
+    "The Pavilion.",
+    "The Parnell Fund."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1883-06-17_butte-miner_butte-inla-formed",
+      "prominence": "lead",
+      "column": "col 3",
+      "placement_note": "top of column under its own bold section head, above the fold, the most prominent item in the centre of the page"
+    }
+  ],
+  "juxtapositions": [
+    "The Parnell Meeting report—celebrating Irish nationalist organising in Butte—sits directly adjacent to the 'Captured Crooks' column recounting a violent street robbery and a shooting in Hailey, Idaho, creating a sharp contrast between civic ambition and frontier lawlessness on the same front page.",
+    "A notice soliciting donations to the Parnell Fund appears at the foot of the same column as the full account of the Irish National League meeting, reinforcing the fundraising purpose behind the evening's resolutions."
+  ],
+  "usage": {
+    "input_tokens": 1763,
+    "output_tokens": 498,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

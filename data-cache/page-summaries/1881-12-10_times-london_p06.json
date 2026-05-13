@@ -1,0 +1,37 @@
+{
+  "id": "1881-12-10_times-london_p06",
+  "input_hash": "sha256:cb60dd7ed6464460",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:11:16.011Z",
+  "summary": "An interior page of The Times for Saturday, 10 December 1881, dense with six columns of type and no display advertising. The dominant story — occupying the entire left third of the page — is a lengthy correspondent's dispatch on the burning of a theatre in Vienna, with multiple sub-headings and follow-up dispatches through the evening. The centre and right columns are given over to Irish affairs under a standing 'IRELAND' section head and then to a 'THE IRISH LAND COURT' column, with Cambridge examination results and a 'RAILWAY ACCIDENTS' column at the far right margin. The page is heavy with Land League proceedings, court reports, and parliamentary meeting notices from across Ireland, reflecting the intensity of the Land League crisis of late 1881.",
+  "headlines": [
+    "THE BURNING OF A THEATRE IN VIENNA",
+    "IRELAND",
+    "THE IRISH LAND COURT",
+    "CAMBRIDGE",
+    "RAILWAY ACCIDENTS",
+    "CASTLETOWN, BEREHAVEN, DEC. 9",
+    "CORK, DEC. 9",
+    "DUBLIN, DEC. 9",
+    "FATAL FIRE"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1881-12-10_times-london_reynolds-summons-castletown",
+      "prominence": "secondary",
+      "column": "col 3",
+      "placement_note": "mid-column under the IRELAND section head, one of several Irish provincial court reports running in sequence down the column"
+    }
+  ],
+  "juxtapositions": [
+    "The Castletown Berehaven report on Hannah Reynolds and Land League rent intimidation sits in the same column-run as Dublin reports on Land League meetings and Cork land court proceedings, embedding a West Cork petty sessions case within a page-wide tableau of the Land League crisis.",
+    "The Vienna theatre-fire disaster — with hundreds feared dead — fills the leftmost two columns in stark contrast to the Irish legal and agrarian notices occupying the centre, placing European catastrophe and Irish rural rent disputes side by side with equal typographic weight."
+  ],
+  "usage": {
+    "input_tokens": 1780,
+    "output_tokens": 437,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

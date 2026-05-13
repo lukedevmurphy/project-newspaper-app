@@ -1,0 +1,38 @@
+{
+  "id": "1882-01-13_evening-mail-stockton_p01",
+  "input_hash": "sha256:23696046bf9c892a",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:11:58.521Z",
+  "summary": "A front page of the Stockton Daily Evening Mail, dated Friday January 13, 1882, Vol. IV No. 132, mixing local news, Irish political correspondence, and a heavy load of display advertising. The left two columns carry editorial and local news content, including the Ireland's Heroine piece and several short local items under running heads. The remaining four-plus columns are dominated by large display advertisements for local Stockton merchants — auction sales, boot and shoe stores, hatters, jewelers, money brokers, patent medicines, and restaurants — giving the page a distinctly commercial character despite its front-page status. Editorial tone in the news columns is lively and populist, with some moralizing local color stories alongside the Irish-American interest piece.",
+  "headlines": [
+    "IRELAND'S HEROINE",
+    "PRETTY MISS REYNOLDS, THE LADY LAND LEAGUER",
+    "The Evening Mail",
+    "MISCELLANEOUS",
+    "HOTELS AND RESTAURANTS",
+    "THE LEADING Boot and Shoe Store",
+    "WOODS & GRANT, Fashionable Hatters",
+    "Great Auction Sale AT— The Lace House",
+    "MONEY TO LOAN At a Low Rate of Interest",
+    "BADGER BROS."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1882-01-13_evening-mail-stockton_irelands-heroine",
+      "prominence": "lead",
+      "column": "col 1 (leftmost)",
+      "placement_note": "top of col 1 immediately below the masthead and publication info, the first editorial item a reader encounters"
+    }
+  ],
+  "juxtapositions": [
+    "The 'IRELAND'S HEROINE' account of Miss Reynolds's Land League activism and imprisonment sits directly adjacent, in the same column, to short local Stockton items about drunken men and waterfront incidents, collapsing Irish political drama into the mundane California local-news column without editorial transition.",
+    "The impassioned nationalist narrative about tenant evictions and Ladies' Land League solidarity occupies the far-left editorial columns while the rest of the page is given over almost entirely to auction notices and merchant advertisements, visually framing Irish political suffering within a buoyant California commercial marketplace."
+  ],
+  "usage": {
+    "input_tokens": 1790,
+    "output_tokens": 477,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

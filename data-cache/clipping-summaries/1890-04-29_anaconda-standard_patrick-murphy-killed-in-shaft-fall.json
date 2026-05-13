@@ -1,0 +1,19 @@
+{
+  "id": "1890-04-29_anaconda-standard_patrick-murphy-killed-in-shaft-fall",
+  "input_hash": "sha256:b09b5acc9e19ec08",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:49:20.688Z",
+  "summary": "Patrick Murphy is killed at the Montana Consolidated mine in Butte on the afternoon of 28 April 1890, when a bundle of lagging poles being lowered in a cage works loose and jams the shaft, crushing the lower part of his abdomen. Four other men — William Gray, Peter Leyden, Charlie Colston, and John Combs — are injured to varying degrees. A coroner's inquest before jurors and Coroner Beals returns a verdict that the accident was wholly unavoidable and exonerates the company; Murphy, a widower, leaves seven children, the eldest a ten-year-old boy already employed as a tool carrier in the same mine.",
+  "key_quotes": [
+    "seven children, the oldest one about 10 years of age, were left orphans; their mother having died about a year ago",
+    "the lower part of his abdomen being crushed to a jelly",
+    "the oldest of whom, a boy 10 years old is employed as a tool carrier in the same mine in which his father was killed"
+  ],
+  "usage": {
+    "input_tokens": 3223,
+    "output_tokens": 239,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

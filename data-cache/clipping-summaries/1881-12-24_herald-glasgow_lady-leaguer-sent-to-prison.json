@@ -1,0 +1,19 @@
+{
+  "id": "1881-12-24_herald-glasgow_lady-leaguer-sent-to-prison",
+  "input_hash": "sha256:f39b05c970ecff0a",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:09.955Z",
+  "summary": "At Castletown Berehaven Petty Sessions on 23 December 1881, Miss Hannah M. Reynolds of the Dublin Ladies' Land League was summoned before Resident Magistrate E. B. Warburton for inciting Catherine Murphy, a tenant on the Earl of Bantry's estate, not to pay her rent, an offence alleged to have occurred during evictions on 18 December. Defended by Mr. Whyte, barrister of London, Reynolds was ordered to give bail for good behaviour for six months or face one month in County Cork Jail; she refused bail, declaring her intention to go to prison. A large crowd followed her from the court-house to her hotel, cheering for the Land League and Miss Parnell and groaning for \"Buckshot Forster,\" while the local band was warned off from playing in her honour under threat of two months' imprisonment.",
+  "key_quotes": [
+    "her imprisonment would make thousands join the League, and that the whole affair was trumped up to gratify the spleen of a petty magistrate and agent",
+    "imprisonment would do her no harm, and that better people were in jail than she",
+    "The local band intended to turn out to play in Miss Reynolds's honour, but the members were warned if they did so they would be imprisoned for two months"
+  ],
+  "usage": {
+    "input_tokens": 2999,
+    "output_tokens": 296,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "1881-12-24_leeds-mercury_p03",
+  "input_hash": "sha256:621bebe055896f23",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:11:44.150Z",
+  "summary": "An interior news page of The Leeds Mercury for 24 December 1881, densely typeset in six columns with no display advertising. The dominant subject matter is Irish political affairs under the Land League, with substantial space given to correspondence and court reporting from Ireland alongside English domestic news. The editorial tone is sober and reportorial, with extended letters, parliamentary correspondence, and petty-sessions reports sitting alongside election news, colliery accident notices, weather forecasts, and brief local items. The page carries a wide spread of Irish and Yorkshire content, reflecting the paper's dual regional and national outlook in the Land League crisis year.",
+  "headlines": [
+    "SPECIAL CORRESPONDENCE.",
+    "THE STATE OF IRELAND.",
+    "THE \"UNITED IRELAND.\"",
+    "THE LAND COMMISSION.",
+    "CHARGE AGAINST MISS REYNOLDS.",
+    "MR. SHAW, M.P., AND THE HOME RULE LEAGUE.",
+    "MR. GLADSTONE AND THE CORK CORPORATION.",
+    "THE DESECRATION OF TOMBS.",
+    "ELECTION NEWS.",
+    "PROPOSED ADVANCE OF YORKSHIRE COLLIERIES' WAGES.",
+    "FOUR PERSONS DROWNED AT LEEDS.",
+    "THE WEATHER."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1881-12-24_leeds-mercury_reynolds-castletown-court",
+      "prominence": "secondary",
+      "column": "col 4",
+      "placement_note": "mid-page, below the Land Commission item and alongside the Gladstone/Cork Corporation correspondence; one of several Irish court reports on the page"
+    }
+  ],
+  "juxtapositions": [
+    "The petty-sessions report on Miss Reynolds being charged for telling tenants not to pay rent sits directly adjacent to the Land Commission correspondence discussing landlord-tenant relations across Ireland, placing an individual act of resistance inside the wider policy debate.",
+    "A notice of four persons drowned at Leeds appears in the lower right of the page immediately beside the Christmas-week weather forecast table, juxtaposing local tragedy with seasonal routine."
+  ],
+  "usage": {
+    "input_tokens": 1785,
+    "output_tokens": 437,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

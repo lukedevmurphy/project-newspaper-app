@@ -1,0 +1,35 @@
+{
+  "id": "1883-08-31_jamestown-weekly-alert_p04",
+  "input_hash": "sha256:d8cc0f3f4052e642",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:12:27.392Z",
+  "summary": "A full front page of the Jamestown Weekly Alert, dated Friday August 31, 1883, densely set in seven columns of small type with no illustration. The page is dominated by local news and society items under a 'LOCAL AFFAIRS' section head that runs for the majority of the page, supplemented by a handful of brief telegraphic and regional exchange items. Editorial tone is lively and often humorous, with comic asides woven into otherwise routine municipal and agricultural reporting. Display advertising runs in the far right column and along the bottom right, including lottery and loan notices.",
+  "headlines": [
+    "THE JAMESTOWN ALERT.",
+    "LOCAL AFFAIRS",
+    "FROM WOMAN'S DAILY",
+    "FROM TUESDAY'S DAILY",
+    "FROM THURSDAY'S DAILY",
+    "TO THE PUBLIC!",
+    "SUMMONS."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1883-08-31_jamestown-weekly-alert_klaus-vennum-hunting-spiritwood",
+      "prominence": "buried",
+      "column": "col 3",
+      "placement_note": "a short comic brief set within the densely packed LOCAL AFFAIRS column, mid-page, surrounded by similarly brief local items"
+    }
+  ],
+  "juxtapositions": [
+    "The comic hunting-party item with its 'snake bite medicine' demijohn joke sits within a few column-inches of a sober notice about the James River Valley Railroad elevator company commencing erection of its building, placing frontier levity immediately beside boosterish commercial progress.",
+    "A large Louisiana State Lottery advertisement occupies the far right column, its bold display type and dollar figures contrasting sharply with the earnest agricultural and civic reporting filling the rest of the page."
+  ],
+  "usage": {
+    "input_tokens": 1753,
+    "output_tokens": 367,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

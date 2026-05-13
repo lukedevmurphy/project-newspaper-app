@@ -133,6 +133,21 @@ export interface PageRecord {
   peripheral_items: PeripheralItem[];
 }
 
+// ---- AI-generated clipping summaries -----------------------------------
+
+// Produced offline by scripts/generate-clipping-summaries.mjs and cached
+// per-source in data-cache/clipping-summaries/<id>.json. Distinct from
+// SourceBase.summary (which is the archivist's brief): this is a longer
+// prose narrative suitable for paraphrasing into the book.
+
+export interface AiClippingSummary {
+  id: string;
+  summary: string;
+  key_quotes: string[];
+  model: string;
+  generated_at: string;
+}
+
 // ---- Derived events ----------------------------------------------------
 
 // An "event" is the historical occurrence a source witnesses. v1 is

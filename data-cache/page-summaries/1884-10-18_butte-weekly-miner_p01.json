@@ -1,0 +1,42 @@
+{
+  "id": "1884-10-18_butte-weekly-miner_p01",
+  "input_hash": "sha256:8fff1bef0a73327c",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:07:30.335Z",
+  "summary": "A front page of the Butte Semi-Weekly Miner for Saturday, October 18, 1884, dominated by national political news from the presidential campaign season alongside a dense spread of local Butte material. Seven columns of tight type cover Governor Cleveland's reception tour, Republican and Democratic state election returns, Ohio and Vermont political dispatches, French Victory and Sino-French War telegrams, and Iowa and Washington labor news under 'NIGHT DISPATCHES.' The right-hand columns shift to local Butte affairs — a 'Local News' roundup, a 'Complimentary Benefit' letter, a 'Meeting of Colored Citizens' notice, and several advertisements including a large sensational advertorial from Sands & Boyce. The overall editorial tone is energetic and politically engaged, with national wire copy filling roughly two-thirds of the page and local news compressed into the final columns.",
+  "headlines": [
+    "NIGHT DISPATCHES.",
+    "Rousing Reception of Governor Cleveland.",
+    "Cleveland Addresses the Vast Multitude",
+    "A Letter From Samuel J. Tilden.",
+    "Latest Election Returns From Ohio.",
+    "The Republican Majority Coming Down.",
+    "Vermont Prohibitionists in Convention.",
+    "CROSBY'S CANDIDATE.",
+    "MISS LULU BURST.",
+    "Complimentary Benefit.",
+    "Local News.",
+    "Meeting of Colored Citizens.",
+    "An Old Dodge of Quack Doctors, Bunko Steerers and Mercantile Confidence Men.",
+    "OPENS HIS PACK"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1884-10-18_butte-weekly-miner_john-kelly-complimentary-benefit",
+      "prominence": "secondary",
+      "column": "col 5",
+      "placement_note": "mid-column under its own display head, between Miss Lulu Burst feature above and Meeting of Colored Citizens below"
+    }
+  ],
+  "juxtapositions": [
+    "The 'Complimentary Benefit' letter celebrating John Kelly's musical gifts and community standing sits directly below a gossipy 'Miss Lulu Burst' feature about a 'Georgia wonder' performing at the Opera House, creating a cluster of Butte entertainment news amid the surrounding national election dispatches.",
+    "The 'Meeting of Colored Citizens' notice organising Black voters for the election appears in the same column immediately below the Kelly testimonial, tucking civic political organisation into the entertainment-and-local-news corner of the page while Cleveland's national reception dominates the left."
+  ],
+  "usage": {
+    "input_tokens": 2003,
+    "output_tokens": 560,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

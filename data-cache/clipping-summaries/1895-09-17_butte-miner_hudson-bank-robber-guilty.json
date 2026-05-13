@@ -1,0 +1,17 @@
+{
+  "id": "1895-09-17_butte-miner_hudson-bank-robber-guilty",
+  "input_hash": "sha256:ee837041a8daa06c",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:49:33.175Z",
+  "summary": "A jury finds Thomas Hudson, also known as Doe and Murphy, guilty of attempting to hold up the Silver Bow National Bank; his insanity defence fails and sentencing is left to the court, with up to ten years in the penitentiary possible. Names recovered from the OCR-degraded body include juror John Chatham, defence counsel Mr. Cotter, witness Mr. Booth, Mike Whalen, Officer Allen, Cashier Cutter, and Judges Speer and Knowles. [transcription partial — body text OCR-degraded; manual transcription against fullpage.jpg required]",
+  "key_quotes": [
+    "The Man Who Tried to Hold Up the Silver Bow National Falls to Prove He Was Insane"
+  ],
+  "usage": {
+    "input_tokens": 2294,
+    "output_tokens": 175,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

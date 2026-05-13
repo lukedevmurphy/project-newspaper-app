@@ -1,0 +1,39 @@
+{
+  "id": "1895-09-17_butte-miner_p06",
+  "input_hash": "sha256:85a2151d2233256f",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:16:05.716Z",
+  "summary": "An interior page of The Butte Miner for Tuesday, September 17, 1895, mixing local court news, social notices, mining application notices, and advertising. The left two columns are dominated by the bank robbery trial coverage and a secondary court story about receivers and judgments. The centre columns carry social and fashion items — a millinery display notice and a piece on departing guests — alongside a column of Goodyear Welt shoe advertisements. The right half of the page is given over largely to dense columns of United States Land Office mining application notices from Helena, interspersed with smaller local advertisements. Large display ads for John Caplice Company shoes and P. J. Brophy & Co. hardware anchor the far right column.",
+  "headlines": [
+    "BANK ROBBER GUILTY",
+    "PUNISHMENT LEFT TO THE COURT",
+    "ROSES BY THE BUSHEL",
+    "BEAUTIFUL MILLINERY DISPLAY",
+    "LACK OF COURTESY",
+    "RECEIVERS MUST PAY",
+    "OTHERWISE BONDSMEN WOULD HAVE TO",
+    "CHARGED WITH MURDER",
+    "VIGOR OF MEN",
+    "School Shoes",
+    "It's Not the Easiest Thing"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1895-09-17_butte-miner_hudson-bank-robber-guilty",
+      "prominence": "lead",
+      "column": "col 1 (leftmost)",
+      "placement_note": "Top of the page, leftmost column, under the paper's masthead banner; largest headline on the news side of the page"
+    }
+  ],
+  "juxtapositions": [
+    "The bank robbery conviction story, detailing a violent attempted daylight robbery, sits directly adjacent to a col 2 society piece headlined ROSES BY THE BUSHEL about ladies receiving floral gifts at a millinery display.",
+    "Dense columns of dry United States mining application legal notices fill the right half of the page immediately beside a bold display advertisement urging readers that it is not the easiest thing to run a big grocery establishment, creating a stark contrast between bureaucratic and commercial voices."
+  ],
+  "usage": {
+    "input_tokens": 1823,
+    "output_tokens": 456,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

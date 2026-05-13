@@ -1,0 +1,18 @@
+{
+  "id": "1892-09-14_anaconda-standard_dennis-j-murphy-divorce",
+  "input_hash": "sha256:644583ce359920ae",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:49:26.196Z",
+  "summary": "In a divorce case heard in Anaconda, Dennis J. Murphy testifies that he married Ellen in Cork, Ireland on 1 March 1878, and that they have two sons, John and Michael, aged 12 and 9, both in his custody. Ellen left without cause or consent around 1 August 1889 and her whereabouts remain unknown. Murphy is granted a divorce.",
+  "key_quotes": [
+    "without cause or provocation and without consent the defendant deserted her husband and has since remained absent",
+    "Her present whereabouts is unknown"
+  ],
+  "usage": {
+    "input_tokens": 2010,
+    "output_tokens": 130,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

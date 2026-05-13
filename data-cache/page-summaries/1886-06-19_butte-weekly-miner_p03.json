@@ -1,0 +1,38 @@
+{
+  "id": "1886-06-19_butte-weekly-miner_p03",
+  "input_hash": "sha256:cd7e7898f45c9d6e",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:13:34.669Z",
+  "summary": "An interior page of the Butte Weekly Miner for 19 June 1886, densely set in seven columns of small type with no illustrations. The dominant subject matter is local and regional news, ranging from mining and labor matters in Butte and Anaconda to territorial politics, court proceedings, and correspondence from Montana resorts and mining districts. A large advertisement for Royal Baking Powder occupies the upper right corner, and a column of local notices and legal items anchors the lower right. The editorial tone is engaged and voluble, mixing boosterism with pointed political commentary and miscellaneous briefs.",
+  "headlines": [
+    "THE SEMI-WEEKLY MINER",
+    "THE GOLD BRICK CASE",
+    "GREGSON HOT SPRINGS",
+    "A Number of Witnesses Examined for the Prosecution of Page",
+    "An Interesting Letter from Butte's Health-Giving Resort",
+    "LOCAL NEWS NOTES",
+    "The Copper Market",
+    "The Police Court",
+    "Fortune Favors Fools",
+    "Order to Show Cause"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1886-06-19_butte-weekly-miner_gregson-hot-springs-new-management",
+      "prominence": "secondary",
+      "column": "col 7 (rightmost)",
+      "placement_note": "upper right of page, immediately below the Royal Baking Powder advertisement, with its own two-line display headline"
+    }
+  ],
+  "juxtapositions": [
+    "The Gregson Hot Springs resort letter, describing leisure bathing and new management, sits directly beneath a full-column Royal Baking Powder advertisement, placing a commercial leisure tone against prominent brand advertising in the same visual block.",
+    "The Gold Brick Case court report, detailing fraud and witness examination, runs in the same upper-middle section of the page as a brief headed 'Fortune Favors Fools,' creating an ironic editorial neighbourhood around themes of credulity and financial deception."
+  ],
+  "usage": {
+    "input_tokens": 1828,
+    "output_tokens": 424,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

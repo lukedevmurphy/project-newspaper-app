@@ -1,0 +1,19 @@
+{
+  "id": "1885-11-06_bismarck-weekly-tribune_tacoma-chinese-exodus",
+  "input_hash": "sha256:d392bb77fe72af2d",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:48.949Z",
+  "summary": "On November 4th, several hundred citizens of Tacoma, Washington Territory, marched through the city and forced approximately 197 Chinese residents to pack their belongings and relocate to Lakeview, a mile south of town, with the Chinese merchants given until morning to follow. The governor of Washington Territory reported the expulsion to Secretary Lamar and telegraphed local Tacoma authorities about maintaining order, receiving word that no one had been seriously injured. After the Chinese in the territory appealed to the governor for protection and a gubernatorial proclamation was issued, President Cleveland's administration approved the proclamation and directed the governor to use all means at his command to prevent further trouble.",
+  "key_quotes": [
+    "many hundred citizens congregated in the morning, marching in an orderly manner along the streets to the Chinese houses, ordering the occupants to pack their goods and leave",
+    "The Chinese in the territory have made an urgent appeal to the governor for protection",
+    "directing him to use all means at his command to prevent further trouble"
+  ],
+  "usage": {
+    "input_tokens": 2389,
+    "output_tokens": 226,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

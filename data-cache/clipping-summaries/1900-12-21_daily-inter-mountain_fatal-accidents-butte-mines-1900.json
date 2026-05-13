@@ -1,0 +1,19 @@
+{
+  "id": "1900-12-21_daily-inter-mountain_fatal-accidents-butte-mines-1900",
+  "input_hash": "sha256:9de61f00108ae2e3",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:26:55.761Z",
+  "summary": "Thirty men died in the Butte mines during 1900, their deaths recorded mine by mine and cause by cause: falls of ground and rock, blasts, shaft falls, gas, and men caught between cages and wallplates. Among those named are Jerry Murphy, killed March 24 at the Parrot by being caught between the cage and wallplate, and Patrick Murphy, killed August 24 at the Diamond mine by a blast; John Kelly lost his life September 14 at the Stewart mine in an explosion.",
+  "key_quotes": [
+    "There were 30 fatal accidents in the mines of Butte during the year",
+    "Jerry Murphy lost his life on March 24, at the Parrot, by being caught between the cage and wallplate",
+    "Charles Backle, William Whitmore and Robert Campbell were overcome by gas at the Smokehouse mine, October 30, and died from the effects"
+  ],
+  "usage": {
+    "input_tokens": 2908,
+    "output_tokens": 207,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

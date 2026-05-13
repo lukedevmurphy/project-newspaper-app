@@ -1,0 +1,39 @@
+{
+  "id": "1900-12-21_daily-inter-mountain_p21",
+  "input_hash": "sha256:ee7a76ff88bd6678",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:27:10.919Z",
+  "summary": "A full-page special feature in the Daily Inter Mountain of Butte, Montana, dated December 21, 1900, dedicated entirely to a year-end survey of Butte's copper mining industry. The page is dominated by large display typography under the banner 'THE UNDERGROUND WORLD OF BUTTE' and is organised into three broad columns, each carrying its own sub-banner headline. The editorial tone is celebratory and promotional, emphasising growth, productivity, dividends, and the scale of employment across named mines. Dense statistical tables, company-by-company production figures, and a roll of fatal accidents occupy the lower two-thirds of the page, giving the whole a comprehensive annual-report character.",
+  "headlines": [
+    "THE UNDERGROUND WORLD OF BUTTE",
+    "Progress and Development of the State's Great Industry",
+    "It's Great Copper Mines Are as Enduring as the Ages.",
+    "Millions Distributed In Dividends and Pay Rolls",
+    "Depth of Butte Mines, Shaft Development During 1900 and Number of Men Employed at Each Mine",
+    "WHAT OF THE FUTURE.",
+    "Total Number of Men Employed at Butte Mines During 1900",
+    "DIVIDENDS PAID BY BUTTE COPPER MINES.",
+    "BUTTE'S MINERAL PRODUCTION IN 1900",
+    "FATAL ACCIDENTS IN THE BUTTE MINES.",
+    "EXTENSION OF COPPER BELT."
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1900-12-21_daily-inter-mountain_fatal-accidents-butte-mines-1900",
+      "prominence": "secondary",
+      "column": "col 4 (right section, lower half)",
+      "placement_note": "Set in the rightmost column grouping, lower quarter of the page, beneath the dividends table; a self-contained ruled block amid statistical matter."
+    }
+  ],
+  "juxtapositions": [
+    "The roll of fatal accidents listing 30 named dead miners — including Jerry Murphy and Patrick Murphy — runs directly below the 'DIVIDENDS PAID BY BUTTE COPPER MINES' table, which reports millions paid out to company shareholders, placing worker death and investor profit in immediate visual proximity.",
+    "The celebratory sub-banner 'Millions Distributed In Dividends and Pay Rolls' spans the top of the same broad column that carries, at its foot, the fatal accidents list — the page's most sombre item beneath its most triumphalist headline."
+  ],
+  "usage": {
+    "input_tokens": 1796,
+    "output_tokens": 548,
+    "cache_creation_input_tokens": 2148,
+    "cache_read_input_tokens": 0
+  }
+}

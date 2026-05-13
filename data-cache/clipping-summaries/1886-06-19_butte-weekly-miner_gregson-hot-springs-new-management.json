@@ -1,0 +1,19 @@
+{
+  "id": "1886-06-19_butte-weekly-miner_gregson-hot-springs-new-management",
+  "input_hash": "sha256:e929c64fb6576e5c",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:33:34.662Z",
+  "summary": "Since May 30, 1886, Gregson Springs — previously managed by Eli Gregson and Patrick Murphy — has been leased to Isaac Stoner and Milo French of Butte City, who have undertaken extensive improvements including an electric lantern, a library, and new parlor furnishings. The correspondent sketches the full staff: Moses Chung Sung from the Palace Hotel in San Francisco oversees the kitchen, Miss May Wilson formerly of Denver's Windsor Hotel serves as waitress, Col. Frank Smith manages the bath rooms, and Mr. Adams tends bar. The waters themselves are praised as a cure for disease, the Springs presented — with some wit — as the long-sought fountain of youth.",
+  "key_quotes": [
+    "He does not meet you with a mace, shot-gun or revolver, as he did while Marshal of Butte, but with smiles and pleasant words",
+    "Persons not wishing to bathe would do well to come here and grow corpulent by indulging in the luxuries of the table",
+    "The general exclamation of all who bathe at Gregson's in expectancy of a cure for disease is \"Eureka!\""
+  ],
+  "usage": {
+    "input_tokens": 2899,
+    "output_tokens": 263,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

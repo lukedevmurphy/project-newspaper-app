@@ -1,0 +1,39 @@
+{
+  "id": "1895-09-17_anaconda-standard_p05",
+  "input_hash": "sha256:c344c9772c1c50b9",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:15:52.401Z",
+  "summary": "An interior page (p.5) of The Anaconda Standard for Tuesday, September 17, 1895, mixing local crime and accident reporting with commercial advertising. The page is dominated visually by a large D.J. Hennessy Mercantile Co. blanket-sale advertisement occupying the entire right third of the page. The left and centre columns carry three substantial news stories — a bank-robbery conviction, a fatal accident involving a child, and miscellaneous local items — alongside column advertisements for clothing, jewellery, wines, and dental and furniture businesses. The editorial tone is matter-of-fact and typical of a regional daily, with sensational headlines balanced by dense text columns.",
+  "headlines": [
+    "HUDSON WAS GUILTY",
+    "HIS NAME IS TIM MURPHY",
+    "HORRIBLE ACCIDENT",
+    "THE FRIGHTFUL DEATH OF A LITTLE TW AND A HALF-YEAR-OLD GIRL",
+    "HER FRAIL BODY CRUSHED",
+    "ARRIVAL",
+    "THE FIRST THINGS",
+    "CASCADE COUNTY FAIR",
+    "A LARGER ENROLLMENT",
+    "BACK TO THE CORN FIELDS",
+    "Blanket Sale Extraordinary"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1895-09-17_anaconda-standard_hudson-was-guilty",
+      "prominence": "secondary",
+      "column": "col 2",
+      "placement_note": "top of col 2, directly adjacent to the 'HORRIBLE ACCIDENT' lead story; shares upper page with it but yields visual priority to that larger headline"
+    }
+  ],
+  "juxtapositions": [
+    "The 'HUDSON WAS GUILTY' bank-robbery conviction story sits immediately beside the 'HORRIBLE ACCIDENT' child-death story at the top of the page, pairing urban crime with domestic tragedy in the same visual band.",
+    "The dense crime and accident reporting in the left and centre columns runs hard against a full-column Hennessy's blanket-sale advertisement on the right — the same Hennessy's store whose witness helped convict Hudson in the adjacent trial story."
+  ],
+  "usage": {
+    "input_tokens": 1847,
+    "output_tokens": 446,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2148
+  }
+}

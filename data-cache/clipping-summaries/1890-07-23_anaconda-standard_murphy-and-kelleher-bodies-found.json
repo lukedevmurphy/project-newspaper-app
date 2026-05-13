@@ -1,0 +1,19 @@
+{
+  "id": "1890-07-23_anaconda-standard_murphy-and-kelleher-bodies-found",
+  "input_hash": "sha256:f910d4146d5eeb28",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:43:36.415Z",
+  "summary": "The bodies of Patrick Murphy and Tim Kelleher, lost in the Anaconda mine fire of November 22, 1889, were recovered from the sump on the morning of July 22, 1890, buried under several feet of accumulated earth. A coroner's inquest, presided over by acting coroner George W. Newkirk, heard testimony from Matt Sullivan, Jacob Oliver, and Dr. J. A. Trembley, and returned a verdict that the two men died from falling off the cage after being overcome by gas, with no blame attached to the Anaconda company. Murphy's remains were taken to his widow's house in Dublin Gulch; the Miners' Union voted to attend Murphy's funeral in a body, while the Emmet Guards resolved to attend Kelleher's, with both funerals set for the following afternoon — eight months to the day from the accident.",
+  "key_quotes": [
+    "The bodies were a mere mass of battered flesh and bones, all in pieces and unrecognizable except by the clothing.",
+    "The cause of death was by falling from the cage, which, in time, was caused by suffocation on account of gases produced by a fire in the mine.",
+    "the funerals will be held at 9 o'clock to-morrow afternoon, exactly eight months from the time of their death"
+  ],
+  "usage": {
+    "input_tokens": 3243,
+    "output_tokens": 299,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

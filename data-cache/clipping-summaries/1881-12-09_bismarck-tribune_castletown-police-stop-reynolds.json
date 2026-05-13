@@ -1,0 +1,17 @@
+{
+  "id": "1881-12-09_bismarck-tribune_castletown-police-stop-reynolds",
+  "input_hash": "sha256:e4ee342510186818",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:47:59.412Z",
+  "summary": "The Castletown police prevent Miss Reynolds, of the Ladies Land League, from visiting tenants who are about to be evicted.",
+  "key_quotes": [
+    "The Castletown police yesterday prevented Miss Reynolds, of the Ladies Land League, from visiting tenants about to be evicted."
+  ],
+  "usage": {
+    "input_tokens": 1963,
+    "output_tokens": 71,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

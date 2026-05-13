@@ -1,0 +1,41 @@
+{
+  "id": "1889-03-18_daily-inter-mountain_p02",
+  "input_hash": "sha256:ae35c6adb30d6bee",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T03:34:15.090Z",
+  "summary": "A dense, multi-column interior page of the Daily Inter Mountain (Butte, Montana) for St. Patrick's Day weekend, 1889. The page mixes local editorial commentary, legal notices, classified advertising, entertainment listings, and a substantial volume of display advertising from Butte merchants. Editorial matter dominates the left-hand columns with pieces on the mine inspector bill, copper output, Irish affairs, and Montana's produce price house; the right-hand columns fill rapidly with commercial display ads for clothing, lime, dry goods, minstrel shows, grocery firms, jewelers, and patent medicines. The overall tone is boosterish and commercially active, reflecting a prosperous mining-town readership on the eve of St. Patrick's Day.",
+  "headlines": [
+    "DAILY INTER MOUNTAIN",
+    "WORK OF THE LEGISLATURE",
+    "ST. PATRICK'S DAY.",
+    "THE MINE INSPECTOR BILL.",
+    "STANFORD'S NIECE.",
+    "THE COPPER OUTPUT.",
+    "Montana's Popular Price House.",
+    "MONARCHS OF MINSTRELS!",
+    "Maguire's Opera House.",
+    "Goodyear, Cook & Dillens' REFINED MINSTRELS!",
+    "GRAND BALL",
+    "CLOTHING DEPARTMENT.",
+    "WALL PAPER"
+  ],
+  "clipping_placements": [
+    {
+      "clipping_id": "1889-03-18_daily-inter-mountain_aoh-grand-ball-ad",
+      "prominence": "secondary",
+      "column": "col 4",
+      "placement_note": "display ad occupying a mid-page block beneath the Maguire's Opera House minstrel notice, flanked left by editorial columns and right by merchant ads"
+    }
+  ],
+  "juxtapositions": [
+    "The AOH Grand Ball advertisement, with its Irish-Catholic committee of Harrington, Murphy, Driscoll, and Hennessy, sits directly below a prominent advertisement for 'Goodyer, Cook & Dillens' Refined Minstrels' at Maguire's Opera House, placing an Irish fraternal society's St. Patrick's Day celebration cheek-by-jowl with a commercial minstrel-show promotion.",
+    "The St. Patrick's Day editorial in col 1, which invokes the patriotism and suffering of old Ireland, runs on the same page as the copper-output column discussing the Anaconda syndicate's grip on Montana mining — quietly yoking Irish national sentiment to the industrial economy that employed Butte's largely Irish workforce."
+  ],
+  "usage": {
+    "input_tokens": 1832,
+    "output_tokens": 548,
+    "cache_creation_input_tokens": 2148,
+    "cache_read_input_tokens": 0
+  }
+}

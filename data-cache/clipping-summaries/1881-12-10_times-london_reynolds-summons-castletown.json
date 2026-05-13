@@ -1,0 +1,19 @@
+{
+  "id": "1881-12-10_times-london_reynolds-summons-castletown",
+  "input_hash": "sha256:d0e0e88573fc1edc",
+  "prompt_version": "2026-05-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-05-13T02:48:04.702Z",
+  "summary": "Miss Reynolds of the Dublin Ladies' Land League appeared at Petty Sessions in Castletown Berehaven before Mr. E. B. Warburton R.M., Mr. O. V. Handcock, and Dr. Armstrong, charged with aiding and abetting a conspiracy to intimidate Catherine Murphy of Aughabrack into withholding rent from the Earl of Bantry on 1 December. A second summons for unlawfully inciting Murphy to pay no rent was served on her the same morning by Head Constable Meek; both hearings were adjourned for a fortnight after Sub-Inspector Maxwell secured a warrant for the absent Cork bailiff Benjamin White. Miss Anna Parnell had travelled overnight from Dublin and was present in court; in the evening she and Miss Reynolds were cheered by crowds as they drove out of town.",
+  "key_quotes": [
+    "it was a shame to bring her there on such a charge",
+    "she supposed that the Bench had made up their minds on the case before this",
+    "Miss Parnell, Miss Reynolds, and Mr. White left town for Dublin, and the ladies were cheered as they drove off"
+  ],
+  "usage": {
+    "input_tokens": 2463,
+    "output_tokens": 262,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  }
+}

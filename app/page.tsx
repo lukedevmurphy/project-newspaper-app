@@ -175,8 +175,13 @@ export default function Home() {
             </Link>
           </li>
           <li>
+            <Link href="/timeline-explorer" className="font-medium hover:underline">
+              Timeline Explorer ✦
+            </Link>
+          </li>
+          <li>
             <Link href="/timeline" className="hover:underline">
-              Timeline
+              Timeline (list)
             </Link>
           </li>
         </ul>

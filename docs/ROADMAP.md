@@ -4,37 +4,22 @@ Things deliberately set aside while building the minimum viable
 archive UI. The goal of this document: when future-me wonders "why
 isn't there an X yet" — the answer is here, with reasoning.
 
-## Companion source types
+## Companion source types — LANDED 2026-06-12
 
-The `Source` type in `lib/data/types.ts` is a discriminated union. Today
-only `Clipping` is implemented. Subtypes to add as the user collects
-material:
+Implemented as ONE `DocumentSource` type (`type: 'document'`) rather
+than bespoke CensusRecord/CivilRecord/etc. interfaces: inspection of
+all 83 `archive/documents/*/metadata.yaml` files showed a single
+uniform schema, with the per-kind variation living in the `people[]`
+entries' `*_as_printed` fields. `document_type` acts as a
+renderer-level sub-discriminator (`documentGroup()`): census household
+table, directory entries, vital-record parties, generic. Bespoke types
+can still be split out later without touching the loader.
 
-- **CensusRecord** — federal / state / parish census enumerations. Adds
-  structured fields for household composition. Most likely to provide
-  the corroborating evidence that promotes a candidate Patrick Murphy
-  from `family_confidence: 50` to 95.
-- **GedcomImport** — records imported from a GEDCOM file (family tree).
-  Implies a `gedcomId` companion field on `Person` records to allow
-  cross-reference.
-- **PersonalNote** — a user-authored note that's *itself* a source (not
-  the same as the `notes.md` per-clipping working notes, which are
-  private to the data repo and never surface in the app).
-- **Photograph** — image with caption, date, place, people.
-- **CivilRecord** — birth / marriage / death certificates as their own
-  structured source type (could be a subtype of CensusRecord, or its
-  own; decide when the first one lands).
-- **FamilyTreeScreenshot** — image of a tree, useful interim until
-  GEDCOM ingestion is built.
-
-Adding any of these is **additive**: define the interface in
-`types.ts`, add to the `Source` union, add a renderer in
-`app/sources/[id]/page.tsx` that switches on `.type`. Existing pages
-don't change.
-
-See also: `project-newspaper-data/docs/companion-archive-plan.md` —
-the data-repo-side proposal for how non-newspaper sources live in
-`archive/documents/<type>/<id>/`.
+Still open from the original list:
+- **PersonalNote** — a user-authored note that's *itself* a source.
+- **Photograph as a Source** — photo crops are now first-class via
+  `archive/photos/photos.yaml` + the R2 bucket (see Image hosting
+  below), but they're a registry, not members of the Source union.
 
 ## GEDCOM ingestion
 
@@ -73,6 +58,15 @@ When this lands:
 Read: `project-newspaper-app/README.md` source-attribution section.
 The architecture is designed for this from day one.
 
+**Extension point now wired (2026-06-12):** the `/story/[personId]`
+storyboard renders per-chapter narratives from
+`data-cache/story-chapters/<personId>/<chapterId>.json` when present
+(`AiChapterNarrative` — sentences each carrying `source_ids[]`;
+loader in `lib/data/ai-summaries.ts`). The chapter IDs from
+`lib/story/chapters.ts` are deterministic and are the cache keys.
+What remains is only the generation script
+(`scripts/generate-chapter-narratives.mjs`).
+
 ## Maps and network graphs
 
 A map view (where in the world did the family arc happen?) and a
@@ -85,8 +79,11 @@ count, click for place detail.
 Network: D3 force layout. Nodes for people, places. Edges for
 relationships + co-occurrence in sources. Sized by source count.
 
-Both deferred — the linear search UI is more useful per hour of
-build time at the current corpus size (~30 sources).
+Map still deferred. Network: a server-rendered SVG **ego network**
+landed on person detail pages (2026-06-12,
+`components/ego-network.tsx`) — relationship edges + co-appearance
+edges for one person at a time, no client JS. The global D3
+force-graph remains deferred until post-GEDCOM scale demands it.
 
 ## Edit-from-UI
 
@@ -138,32 +135,47 @@ overhead of standing up Postgres, designing the schema migration,
 and operating two stores (YAML + DB) isn't worth it before scale
 demands it.
 
-## Image / PDF hosting
+## Image / PDF hosting — PARTIALLY LANDED 2026-06-12
 
-The deployed app currently links out to Newspapers.com for every
-clipping image. That works as long as the user has a Newspapers.com
-subscription (clippings hosted there are public to subscribers).
+The deployed app still links out to Newspapers.com for every clipping
+image. What landed: **curated photo crops** (registered in the data
+repo's `archive/photos/photos.yaml`) are hosted in a Cloudflare R2
+bucket and rendered via `next/image` (`scripts/upload-photos.mjs`,
+env `R2_*` + `NEXT_PUBLIC_IMAGE_BASE_URL`). R2 chosen over B2 for
+unconditional zero egress (matters for next/image origin fetches);
+free tier covers lifetime scale.
 
-Future option: bulk-upload PDFs and full-page JPGs to an S3-style
-bucket (e.g. Backblaze B2, Cloudflare R2) and serve from there. Cost
-at archive scale (~150 clippings × ~2MB each = 300MB) is trivial
-under a dollar a month at any tier. Defer until / unless the user
-loses Newspapers.com access or wants to share with non-subscribers.
+Remaining (still deferred): bulk-hosting full-page JPGs / PDFs.
+Revisit if Newspapers.com access lapses or non-subscriber sharing is
+wanted.
 
 ## Other not-yet items
 
 - **Source-type vocab page.** A view per source-type (court_report,
   obituary, wire_item) showing all clippings of that type. Cheap to
   add when wanted.
-- **Page detail pages.** `app/pages/[id]/page.tsx` to show a
-  newspaper page's clippings + peripheral items together. Some link
-  hooks already point here.
-- **Bidirectional relationship walking.** If `person A → mother_of →
-  person B`, the app should show `person B → child_of → person A`
-  too. Currently we only show what's explicitly declared. Symmetry
-  is computable in the indexer; add when relationships start
-  appearing in numbers (post-GEDCOM ingestion).
+- ~~**Page detail pages.**~~ Landed (`app/pages/[id]/page.tsx`), now
+  including the full-page transcription and registered photographs.
+- ~~**Bidirectional relationship walking.**~~ Landed 2026-06-12
+  (`lib/data/relations.ts` — inferred inverse edges with an
+  "inferred" badge; relations with no safe inverse render as
+  listings, never as asserted facts).
 - **Confidence-rule violation linter.** A check that fails the build
   if a clipping has `confidence_is_my_family ≥ 10` for a
   surname-plus-region-only match. Codifies the rule from CLAUDE.md.
   Defer until we see a violation in the wild.
+- **Merge the two Patrick records.** `person_patrick_murphy_my_ancestor`
+  (line-level placeholder, holds the Irish-period documents) and
+  `person_patrick_j_murphy_bartender_1908` (the documented Butte
+  bartender, fc=10 pending Hyp A/B) split his sources across two
+  records — the /story storyboard for the bartender shows the Ireland
+  chapter on residence citations alone. When the parentage question
+  resolves, merging (or cross-linking) them reunites the arc.
+- **Backfill James's `residences:`** in people.yaml — his fully-
+  sourced residence sequence exists only as prose in `disambiguation`.
+  The /story chapter algorithm self-upgrades from decade buckets to
+  the residence spine the moment the YAML lands.
+- **Run the offline AI scripts over the backlog**: clipping summaries
+  for the ~75 subject-linked clippings without caches;
+  `extract-name-candidates.mjs` and `generate-page-photo-regions.mjs`
+  over all 152 transcribed pages (~$10 + ~$2 respectively).

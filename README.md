@@ -15,7 +15,11 @@ static / lightly server-rendered pages.
 - Next.js (App Router) + TypeScript
 - Tailwind CSS (v4)
 - No database (YAML at build time → in-memory index)
-- No auth, no component library, no LLM synthesis at this stage
+- No auth, no component library
+- AI is offline-only: scripts in `scripts/` generate clipping/page
+  summaries (cached JSON, committed), full-page transcriptions
+  (canonical `.md` in the data repo), name-candidate reports, and
+  photo-region surveys. No LLM calls at build or runtime.
 - Designed for ~100 sources comfortably; up to a few thousand
   acceptable
 
@@ -54,9 +58,14 @@ The `prebuild` script clones the data repo into `data/` before
 - Production deploys: Vercel, auto-deploy from `main`.
 - The Vercel GitHub App must have access to both repos
   (`project-newspaper-app` and `project-newspaper-data`).
-- PDFs and JPEGs are never bundled into the deployed app — clipping
-  detail pages link out to the Newspapers.com source URL stored in
-  the YAML metadata.
+- Newspaper PDFs and full-page JPEGs are never bundled into the
+  deployed app — clipping detail pages link out to the
+  Newspapers.com source URL stored in the YAML metadata.
+- The one image exception: curated photo crops registered in the data
+  repo's `archive/photos/photos.yaml` are hosted in a Cloudflare R2
+  bucket (`node scripts/upload-photos.mjs`; env `R2_*` +
+  `NEXT_PUBLIC_IMAGE_BASE_URL`). With the env var unset, no images
+  render anywhere.
 
 ## Backup strategy
 
@@ -79,11 +88,13 @@ and demonstrated in
 In TypeScript, the archive's records are a **discriminated union**
 on the `type` field:
 
-- `Source` — a document of any kind. Currently only `Clipping`
-  (newspaper article). Future subtypes: `CensusRecord`,
-  `GedcomImport`, `PersonalNote`, `Photograph`. Adding a new source
-  type is additive: define the type, add it to the union, add a
-  renderer. Never requires rewriting existing pages.
+- `Source` — a document of any kind: `Clipping` (newspaper article)
+  or `DocumentSource` (census enumerations, city directories, civil
+  records, naturalization papers, passenger lists, and the rest of
+  `archive/documents/` — one type, with `document_type` as a
+  renderer-level sub-discriminator). Adding a further source type is
+  additive: define the type, add it to the union, add a renderer.
+  Never requires rewriting existing pages.
 - `Person` — a real human with stable ID, aliases, relationships,
   family-status confidence. Persons do not contain sources; sources
   reference persons.
@@ -93,8 +104,9 @@ on the `type` field:
 The `notes.md` files in the data repo are **the user's private
 interpretive notes** and are structurally excluded from the
 data-loading layer. The loader reads `metadata.yaml`,
-`transcription.md`, `page_metadata.yaml`, `people.yaml`, and
-`vocab/*.yaml` — never `notes.md`.
+`transcription.md`, `transcription_claude.md` (documents),
+`page_metadata.yaml`, `fullpage_transcription.md`, `people.yaml`,
+`photos.yaml`, and `vocab/*.yaml` — never `notes.md`.
 
 ## Source attribution
 

@@ -222,6 +222,24 @@ export interface AiPageSummary {
   generated_at: string;
 }
 
+// ---- AI-generated story-chapter narratives -------------------------------
+
+// Extension point for the deferred LLM narrative synthesis (ROADMAP).
+// Will be produced offline by a future scripts/generate-chapter-
+// narratives.mjs and cached in data-cache/story-chapters/<personId>/
+// <chapterId>.json. Each sentence carries its own source IDs so an
+// untraceable claim is structurally impossible. The chapterId comes
+// from lib/story/chapters.ts and is deterministic from the data.
+
+export interface AiChapterNarrative {
+  person_id: string;
+  chapter_id: string;
+  narrative: string;
+  sentences: Array<{ text: string; source_ids: string[] }>;
+  model: string;
+  generated_at: string;
+}
+
 // ---- Derived events ----------------------------------------------------
 
 // An "event" is the historical occurrence a source witnesses. v1 is

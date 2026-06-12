@@ -15,7 +15,7 @@ import {
 import { buildIndex } from './indexer';
 import type { Archive, Source } from './types';
 
-export { loadAiClippingSummary, loadAiPageSummary } from './ai-summaries';
+export { loadAiChapterNarrative, loadAiClippingSummary, loadAiPageSummary } from './ai-summaries';
 
 let cached: Archive | null = null;
 
@@ -54,6 +54,7 @@ export { documentGroup } from './types';
 export { humanizeDocumentType, sourceListing } from './citation';
 export type { ResolvedRelationship } from './relations';
 export type {
+  AiChapterNarrative,
   AiClippingSummary,
   AiPageSummary,
   Archive,

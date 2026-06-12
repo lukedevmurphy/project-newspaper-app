@@ -12,9 +12,12 @@ export function decimalYear(dateStr: string | null | undefined): number | null {
   const parts = dateStr.split('-').map(p => parseInt(p, 10));
   if (Number.isNaN(parts[0])) return null;
   const year = parts[0];
-  const month = !Number.isNaN(parts[1]) ? parts[1] : 1;
-  const day = !Number.isNaN(parts[2]) ? parts[2] : 1;
-  return year + (month - 1) / 12 + (day - 1) / 365;
+  // NB: missing parts are undefined, and Number.isNaN(undefined) is
+  // false — check length too, or bare years ("1885") return NaN.
+  const month = parts.length > 1 && !Number.isNaN(parts[1]) ? parts[1] : 1;
+  const day = parts.length > 2 && !Number.isNaN(parts[2]) ? parts[2] : 1;
+  const value = year + (month - 1) / 12 + (day - 1) / 365;
+  return Number.isNaN(value) ? null : value;
 }
 
 /** Bounds for the timeline visualization. */

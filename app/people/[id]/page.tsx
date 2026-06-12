@@ -8,6 +8,7 @@ import { notFound } from 'next/navigation';
 import { loadArchive, sourceListing } from '@/lib/data';
 import type { Archive, Clipping, PersonLink, PersonRecord, Source } from '@/lib/data';
 import { EgoNetwork } from '@/components/ego-network';
+import { isStorySubject } from '@/lib/story/subjects';
 
 type Params = { id: string };
 
@@ -55,6 +56,13 @@ export default async function PersonPage({
         <p className="mt-3">
           <PersonFamilyBadge value={person.family_confidence} />
         </p>
+        {isStorySubject(person.id) && (
+          <p className="mt-3 text-sm">
+            <Link href={`/story/${person.id}`} className="font-medium hover:underline">
+              Read this person&apos;s storyboard →
+            </Link>
+          </p>
+        )}
         {person.disambiguation && (
           <p className="mt-4 whitespace-pre-line text-sm text-zinc-700">
             {person.disambiguation}

@@ -180,6 +180,13 @@ export interface PageRecord {
   original_filename_jpg?: string;
   clippings: string[];
   peripheral_items: PeripheralItem[];
+  // Canonical full-page transcription (fullpage_transcription.md in the
+  // data repo — front-matter stripped). Generated offline by
+  // scripts/generate-page-transcriptions.mjs; human-correctable at the
+  // source (flip transcription_status to human_corrected).
+  full_transcription?: string;
+  full_transcription_status?: 'ai_generated' | 'ai_truncated' | 'human_corrected';
+  full_transcription_model?: string;
 }
 
 // ---- AI-generated clipping summaries -----------------------------------

@@ -121,6 +121,30 @@ export default async function PageDetail({
         </Section>
       )}
 
+      {page.full_transcription && (
+        <Section title="Full page transcription">
+          <details className="rounded border border-zinc-200 bg-zinc-50 p-4 text-sm">
+            <summary className="cursor-pointer text-zinc-700 hover:text-zinc-900">
+              {page.full_transcription_status === 'human_corrected'
+                ? 'Read the full transcription (human-corrected)'
+                : 'Read the full transcription'}
+              {page.full_transcription_status === 'ai_truncated' && (
+                <span className="ml-2 text-xs text-amber-700">incomplete — truncated</span>
+              )}
+            </summary>
+            {page.full_transcription_status !== 'human_corrected' && (
+              <p className="mt-3 text-xs text-zinc-400">
+                AI-generated{page.full_transcription_model ? ` (${page.full_transcription_model})` : ''}.
+                Verify against the page image before quoting.
+              </p>
+            )}
+            <div className="mt-3 whitespace-pre-line font-serif leading-7 text-zinc-800">
+              {page.full_transcription}
+            </div>
+          </details>
+        </Section>
+      )}
+
       {page.peripheral_items.length > 0 && (
         <Section title="Peripheral items I've noted">
           <ul className="space-y-3 text-sm">

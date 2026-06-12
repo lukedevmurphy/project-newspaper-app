@@ -1,0 +1,943 @@
+{
+  "id": "1865-03-22_belfast-news-letter_p04",
+  "input_hash": "sha256:7738f7bb3a9a0d56",
+  "prompt_version": "2026-06-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-06-12T20:38:20.841Z",
+  "names": [
+    {
+      "name_as_printed": "Adam Grierson",
+      "context_quote": "the trial of Francis Bradley, for the murder of Adam Grierson, was resumed",
+      "role_hint": "murder victim",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Francis Bradley",
+      "context_quote": "the trial of Francis Bradley, for the murder of Adam Grierson",
+      "role_hint": "accused murderer on trial",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Henry Doherty",
+      "context_quote": "Henry Doherty deposed that he was a servant at Grierson's house",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Devlin",
+      "context_quote": "Mr. Devlin observed that she did not then try to run",
+      "role_hint": "defence counsel",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Christopher Gallagher",
+      "context_quote": "Christopher Gallagher examined.—The prisoner could not explain",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Thomas Flanagan",
+      "context_quote": "Thomas Flanagan deposed that, on the day of the murder",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John McCormick",
+      "context_quote": "John McCormick, examined by Mr. Harmon, said he arrived with wife",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Harmon",
+      "context_quote": "John McCormick, examined by Mr. Harmon",
+      "role_hint": "examining counsel",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Harry Cranning",
+      "context_quote": "Harry Cranning deposed that, on the evening of the night of the murder",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Stewart",
+      "context_quote": "saw a man getting over a stile after Mr. Stewart's bar map",
+      "role_hint": "person referenced in testimony",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Sarah Cranahan",
+      "context_quote": "Sarah Cranahan deposed that the prisoner arrived at her house",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. MacCuill",
+      "context_quote": "Witness was with Mr. MacCuill, and with Mr. Gilminton",
+      "role_hint": "person referenced in testimony",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Gilminton",
+      "context_quote": "with Mr. MacCuill, and with Mr. Gilminton, at the latter's",
+      "role_hint": "person referenced in testimony",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mary McCurtail",
+      "context_quote": "Mary McCurtail, to whom James the last witness referred as her companion",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Daniel McLaughlin",
+      "context_quote": "Daniel McLaughlin—He was fined a farmer, who knew Bradley for seventeen years",
+      "role_hint": "defence witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Hamilton",
+      "context_quote": "Mr. Hamilton, in Mr. Hamilton, desired to know what it was the prisoner had to say",
+      "role_hint": "counsel in trial",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Sheriff, Purdon",
+      "context_quote": "Mr. Sheriff, Purdon, took his seat on the Bench at ten o'clock",
+      "role_hint": "presiding sheriff",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John O'Brien",
+      "context_quote": "John O'Brien commenced added till Friday morning",
+      "role_hint": "witness or juror in Londonderry case",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": [
+        "1911-08-28_butte-daily-post_gaelic-leaguers-merry-picnic"
+      ]
+    },
+    {
+      "name_as_printed": "Mr. Clarke",
+      "context_quote": "Mr. Clarke said that the plaintiff would go on with all the evidence",
+      "role_hint": "counsel for plaintiff",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "J. B. Clarke, Esq.",
+      "context_quote": "J. B. Clarke, Esq., appeared for the Solicitor-General in the prosecution",
+      "role_hint": "counsel for prosecution",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "George Harman",
+      "context_quote": "The following jurors were drawn: George Harman, John O'Brien",
+      "role_hint": "juror",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Patrick H. Wilson",
+      "context_quote": "John O'Brien and Patrick H. Wilson, examined as witnesses",
+      "role_hint": "witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Constable M'Nary",
+      "context_quote": "Constable M'Nary, the constable that took the letter",
+      "role_hint": "constable witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Henry M'Anerny",
+      "context_quote": "reading a note; Henry M'Anerny, Oliver M'Cormick, the postman",
+      "role_hint": "witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Oliver M'Cormick",
+      "context_quote": "Henry M'Anerny, Oliver M'Cormick, the postman",
+      "role_hint": "postman witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Jane M'Anerny",
+      "context_quote": "Oliver M'Cormick, the postman, Jane M'Anerny, who knew the prisoner",
+      "role_hint": "witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Brian Daly",
+      "context_quote": "Brian Daly and Elizabeth Patterson, constables and in the case",
+      "role_hint": "constable witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Elizabeth Patterson",
+      "context_quote": "Brian Daly and Elizabeth Patterson, constables and in the case",
+      "role_hint": "constable witness",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Justice O'Brien",
+      "context_quote": "Before Mr. Justice O'Brien",
+      "role_hint": "presiding judge",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Harrington",
+      "context_quote": "SANDES v. HARRINGTON. The plaintiff in this action is a dressmaker",
+      "role_hint": "defendant in trespass case",
+      "column": "Column 1",
+      "watchlist_surname": "harrington",
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Harvey",
+      "context_quote": "Mr. Harvey next called, and was examined",
+      "role_hint": "witness in Cork case",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Henry Harding",
+      "context_quote": "one of whose Mr. Henry Harding of Pre. Ford, expressed that the plaintiff",
+      "role_hint": "witness in Cork case",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Chief Justice Erle",
+      "context_quote": "tried before Chief Justice Erle and a Special Jury",
+      "role_hint": "presiding judge Macclesfield assizes",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "James Levi",
+      "context_quote": "James Levi &, Esq., in behalf of Mr. Harvey's counsel",
+      "role_hint": "counsel",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Lord Carrington",
+      "context_quote": "On the motion of Lord Carrington, the Affirmation clauses of the Bill",
+      "role_hint": "House of Lords member",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Marquis of DOWNSHIRE",
+      "context_quote": "The Marquis of DOWNSHIRE asked if the Government intended to introduce a Bill",
+      "role_hint": "House of Lords member",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Earl GRANVILLE",
+      "context_quote": "Earl GRANVILLE said there was a dispute with the Treasury",
+      "role_hint": "government spokesman Lords",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Marquis of TOWNSH-END",
+      "context_quote": "The Marquis of TOWNSH-END asked whether the Government had in any way",
+      "role_hint": "House of Commons member",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Lord C. Danville",
+      "context_quote": "Lord C. Danville said he rose to said he read for the new charter",
+      "role_hint": "House of Commons member",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. T. C. RAMIED",
+      "context_quote": "Mr. T. C. RAMIED asked that on an early day the Secretary of State",
+      "role_hint": "MP asking question",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. LAYARD",
+      "context_quote": "Mr. LAYARD said that arrangements had been made that the subjects",
+      "role_hint": "MP making statements",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. R. LAYARD",
+      "context_quote": "Mr. R. LAYARD told Mr. Rollinson, the declaration was",
+      "role_hint": "MP in Commons debate",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "LORD MACDONALD",
+      "context_quote": "LORD MACDONALD said, at the time of his return to inquire into the office",
+      "role_hint": "Lords/Commons member",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. NAATZ",
+      "context_quote": "Mr. NAATZ amended the motion",
+      "role_hint": "MP amending motion",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. HARTY",
+      "context_quote": "Mr. HARTY, in conclusion, deposed that he was himself a general promoter",
+      "role_hint": "MP speaking in debate",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Simrol",
+      "context_quote": "after a few words from Mr. Simrol in reply",
+      "role_hint": "MP speaking in debate",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. PRINGLE",
+      "context_quote": "Mr. PRINGLE (for deputation) seconded the resolution",
+      "role_hint": "deputation member society meeting",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Sir J. NAPIER",
+      "context_quote": "Sir J. NAPIER, the Chairman, moved a resolution to the effect",
+      "role_hint": "chairman of society meeting",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Sir W. Hearn",
+      "context_quote": "Sir W. Hearn moved the resolution expressed for the society",
+      "role_hint": "society meeting member",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Archdeacon HARVEY",
+      "context_quote": "Archdeacon HARVEY remarked he had been coming over some who were here",
+      "role_hint": "archdeacon addressing meeting",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Archdeacon CARNY",
+      "context_quote": "Archdeacon CARNY addressed the meeting on the Society",
+      "role_hint": "archdeacon addressing meeting",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. G. Langtry",
+      "context_quote": "usual fortnightly meeting of this body was held—Mr. G. Langtry in the chair",
+      "role_hint": "chairman harbour commissioners",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "James Coffin",
+      "context_quote": "Messrs. J. & T.—J. W. J.—James Coffin, James Redding, Edwd. Joney",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "James Redding",
+      "context_quote": "James Coffin, James Redding, Edwd. Joney, John Gardinier",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Edwd. Joney",
+      "context_quote": "James Redding, Edwd. Joney, John Gardinier, R. Evelyn",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John Gardinier",
+      "context_quote": "Edwd. Joney, John Gardinier, R. Evelyn, Alexander Hamilton",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "R. Evelyn",
+      "context_quote": "John Gardinier, R. Evelyn, Alexander Hamilton, Roger Gray",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Alexander Hamilton",
+      "context_quote": "R. Evelyn, Alexander Hamilton, Roger Gray, Thomas Batt",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Roger Gray",
+      "context_quote": "Alexander Hamilton, Roger Gray, Thomas Batt, and others",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Thomas Batt",
+      "context_quote": "Roger Gray, Thomas Batt, and others",
+      "role_hint": "harbour commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. S. Quinn",
+      "context_quote": "A letter was read from Mr. S. Quinn, who holds the post of the fire department",
+      "role_hint": "fire department officer",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Hearn",
+      "context_quote": "Mr. Hearn had stated that his claim, following the Board",
+      "role_hint": "harbour board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Alderman Greer",
+      "context_quote": "Belfast Union Workhouse—Alderman Greer in the chair",
+      "role_hint": "chairman board of guardians",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mrs. James Carrington",
+      "context_quote": "The vice-chairman, Mrs. James Carrington, and also present",
+      "role_hint": "vice-chairman board of guardians",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "J. P. Henry",
+      "context_quote": "Messrs. J. P. Henry, George Brown, John Simmons, and J. Harper",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "George Brown",
+      "context_quote": "J. P. Henry, George Brown, John Simmons, and J. Harper",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John Simmons",
+      "context_quote": "George Brown, John Simmons, and J. Harper",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "J. Harper",
+      "context_quote": "John Simmons, and J. Harper",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Dr. Frederick Mulholland",
+      "context_quote": "Dr. Frederick Mulholland, J.P.—Deputy-chairman",
+      "role_hint": "deputy chairman board of guardians",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. HUNLORE",
+      "context_quote": "Mr. HUNLORE seconded the motion",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Hart",
+      "context_quote": "Mr. Hart—The only objection to that it will take a great deal",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Pettit",
+      "context_quote": "Mr. Pettit—There is no need of thinking to abandon",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Smith",
+      "context_quote": "Mr. Smith brought before his committee on the street",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Dr. Francis",
+      "context_quote": "Dr. Francis—Or the contract has already been entered into",
+      "role_hint": "guardian board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Thomas Collins",
+      "context_quote": "Two young men, named Thomas Collins and James Brown, were charged with larceny",
+      "role_hint": "accused larceny defendant",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": [
+        "1904-05-14_butte-daily-post_dem-county-convention-james-chatham-and-jjm-precinct-5",
+        "1911-06-13_butte-daily-post_irish-american-ball-columbia-gardens"
+      ]
+    },
+    {
+      "name_as_printed": "James Brown",
+      "context_quote": "Thomas Collins and James Brown, were charged with larceny from an empty house",
+      "role_hint": "accused larceny defendant",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. G. Donnelly",
+      "context_quote": "Mr. G. Donnelly—What did he mean the Street was not in line",
+      "role_hint": "court or board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Conelly",
+      "context_quote": "Mr. Conelly—There are 11 in the Board",
+      "role_hint": "board member speaking",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. G. O'Donnell",
+      "context_quote": "Mr. G. O'Donnell.—Was that the police make the sentence",
+      "role_hint": "board or court member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "James Carter",
+      "context_quote": "James Carter, a well-known young man, was charged with having a constable",
+      "role_hint": "accused assault defendant",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Henry Doris",
+      "context_quote": "Henry Doris, aged 17, was brought up at the court",
+      "role_hint": "juvenile defendant",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Herald",
+      "context_quote": "Mr. Herald—[The Solicitor's, a case, instructed by Mr. M'Lean",
+      "role_hint": "solicitor in police court",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. M'Lean",
+      "context_quote": "instructed by Mr. M'Lean, as stated at Board of Guardians",
+      "role_hint": "instructing solicitor",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Morrison",
+      "context_quote": "Letters were addressed to Mr. Morrison, suggesting the medical officers",
+      "role_hint": "person receiving letters",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Conolly",
+      "context_quote": "Mr. Conolly then addressed all Board on the conduct of the court",
+      "role_hint": "board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Dr. Chambers",
+      "context_quote": "Dr. Chambers complained to the Board of a girl",
+      "role_hint": "medical officer",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. M'Gaig",
+      "context_quote": "Mr. M'Gaig, if we, was sent out",
+      "role_hint": "board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Alonzo",
+      "context_quote": "Mr. Alonzo—I don't think there would be any question in the matter",
+      "role_hint": "board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Dr. Thomas",
+      "context_quote": "Dr. Thomas—I hope they will read you well",
+      "role_hint": "medical officer board member",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Justice Christian",
+      "context_quote": "His Lordship Mr. Justice Christian held the Crown Court",
+      "role_hint": "presiding judge Tralee assizes",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John Connelly",
+      "context_quote": "John Connelly, J.P., member of the party",
+      "role_hint": "JP named in court item",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": [
+        "1915-03-16_butte-miner_irish-volunteers-civilian-attire-jjm-letter"
+      ]
+    },
+    {
+      "name_as_printed": "George William Carne",
+      "context_quote": "George William Carne, J.P. The following",
+      "role_hint": "JP named in court item",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Marquis of Townshend",
+      "context_quote": "The Marquis of Townshend said in the room on Sunday",
+      "role_hint": "person at county court meeting",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Harding",
+      "context_quote": "Mr. Harding was present. The examination was concluded",
+      "role_hint": "person at county court meeting",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. H. Harding",
+      "context_quote": "Mr. H. Harding was requested to be following in the following",
+      "role_hint": "person at county court",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John Cassidy",
+      "context_quote": "John Cassidy, a well-known young man, was charged with trespass",
+      "role_hint": "accused trespass defendant",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Ranald",
+      "context_quote": "Mr. Ranald, Barrister at Law, instructed by Mr. M'Lean",
+      "role_hint": "barrister",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Robert Symons, Esq.",
+      "context_quote": "Robert Symons, Esq., was asked to reply, for the matter from the Board",
+      "role_hint": "board of guardians election candidate",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Marchioness of Salisbury",
+      "context_quote": "The Marquis and Marchioness of Salisbury, on Tuesday evening, gave a reception",
+      "role_hint": "society hostess reception",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Marquis of Salisbury",
+      "context_quote": "The Marquis and Marchioness of Salisbury, on Tuesday evening, gave a reception",
+      "role_hint": "society host reception",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Lord Kingsall",
+      "context_quote": "The Justices, Lord Kingsall and others, were present at the Welsh regiment",
+      "role_hint": "attendee at reception",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Bishop of Salisbury",
+      "context_quote": "Lord Kingsall and others, were present at the Welsh regiment, and the Bishop of Salisbury",
+      "role_hint": "attendee at reception",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Colonel Kassel",
+      "context_quote": "Colonel Kassel, turned with his battalion as Colonel",
+      "role_hint": "military officer",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    }
+  ]
+}

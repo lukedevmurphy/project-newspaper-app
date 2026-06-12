@@ -1,0 +1,27 @@
+{
+  "id": "1873-07-01_archaeologia-cambrensis_p285",
+  "input_hash": "sha256:48ca242c611e4377",
+  "prompt_version": "2026-06-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-06-12T20:38:23.903Z",
+  "names": [
+    {
+      "name_as_printed": "J. Rhys",
+      "context_quote": "Mr. J. Rhys may assure himself that the names on the Bridell Stone",
+      "role_hint": "scholar being addressed",
+      "column": "unknown",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "O'Reilly",
+      "context_quote": "a shaved person devoted to some religious order'. (O'Reilly's Ir. Dict.)",
+      "role_hint": "dictionary author cited",
+      "column": "unknown",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    }
+  ]
+}

@@ -46,7 +46,8 @@ export default async function SearchPage({
     results.places.length +
     results.themes.length +
     results.mentioned.length +
-    results.sources.length;
+    results.sources.length +
+    results.pages.length;
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
@@ -179,6 +180,25 @@ export default async function SearchPage({
         </SearchSection>
       )}
 
+      {results.pages.length > 0 && (
+        <SearchSection
+          title={`Found on pages (${results.pages.length})`}
+          subtitle="Matches in full-page transcriptions — text on the page beyond what's been clipped."
+        >
+          {results.pages.slice(0, 20).map(({ page, text }) => (
+            <li key={page.id} className="border-l-2 border-zinc-200 pl-3">
+              <Link href={`/pages/${page.id}`} className="font-medium hover:underline">
+                {page.date ?? 'undated'} — {page.newspaper}, p.{page.page}
+              </Link>
+              <p className="mt-1 text-sm text-zinc-700">{snippet(text, query)}</p>
+            </li>
+          ))}
+          {results.pages.length > 20 && (
+            <li className="text-xs text-zinc-500">…and {results.pages.length - 20} more pages.</li>
+          )}
+        </SearchSection>
+      )}
+
       {totalResults === 0 && (
         <p className="text-sm text-zinc-500">
           No results. Try a shorter substring or a different name.
@@ -280,12 +300,23 @@ function runSearch(archive: Archive, query: string) {
     return ad.localeCompare(bd);
   });
 
+  // Full-page transcriptions — kept as a separate section so page-level
+  // noise (ads, unrelated items) never drowns the clipping results.
+  const pages: Array<{ page: Archive['pages'][number]; text: string }> = [];
+  for (const page of archive.pages) {
+    if (page.full_transcription?.toLowerCase().includes(q)) {
+      pages.push({ page, text: page.full_transcription });
+    }
+  }
+  pages.sort((a, b) => (a.page.date ?? '').localeCompare(b.page.date ?? ''));
+
   return {
     people,
     places,
     themes,
     mentioned: [...mentionedByMatch.values()],
     sources,
+    pages,
   };
 }
 

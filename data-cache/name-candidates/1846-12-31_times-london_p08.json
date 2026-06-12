@@ -1,0 +1,405 @@
+{
+  "id": "1846-12-31_times-london_p08",
+  "input_hash": "sha256:dc6dd7d00a72879f",
+  "prompt_version": "2026-06-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-06-12T20:37:01.376Z",
+  "names": [
+    {
+      "name_as_printed": "Mr. Barry",
+      "context_quote": "Mr. Barry, in particular, has attracted a previous sympathy",
+      "role_hint": "local relief figure mentioned",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. George Brown",
+      "context_quote": "found in the body by Mr. George Brown, a coroner",
+      "role_hint": "coroner",
+      "column": "Column 1",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Bandfield",
+      "context_quote": "Mr. Bandfield's position in the Foreign-office afforded him many opportunities",
+      "role_hint": "Foreign Office official, author",
+      "column": "Column 2",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Sir John Dodson",
+      "context_quote": "Sir John Dodson presided.",
+      "role_hint": "Admiralty Court judge",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Swabey",
+      "context_quote": "Mr. Swabey appeared for the Plaintiff",
+      "role_hint": "plaintiff's counsel",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Forsyth",
+      "context_quote": "Mr. Forsyth for the Defendant",
+      "role_hint": "defendant's counsel",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Commissioner Fane[?]",
+      "context_quote": "Before Mr. Commissioner Fane[?]",
+      "role_hint": "bankruptcy court commissioner",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Cockle",
+      "context_quote": "The examination of Mr. Cockle, who is a clerk of the insolvent",
+      "role_hint": "clerk of insolvent bankrupt",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Barry",
+      "context_quote": "In Case, Mr. Barry, upon various grounds.",
+      "role_hint": "bankrupt defendant",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Green",
+      "context_quote": "Mr. Green for Mr. Barry; Mr. Barry, the bankrupt",
+      "role_hint": "counsel for bankrupt",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Watson",
+      "context_quote": "Watson and Francis Robinson were concerned both in the matter",
+      "role_hint": "party in bankruptcy case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Francis Robinson",
+      "context_quote": "Watson and Francis Robinson were concerned both in the matter",
+      "role_hint": "party in bankruptcy case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Boddington",
+      "context_quote": "Boddington and Archie Havins were made out on the bar",
+      "role_hint": "defendant in police case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Archie Havins",
+      "context_quote": "Boddington and Archie Havins were made out on the bar",
+      "role_hint": "defendant in police case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Inspector Frazier",
+      "context_quote": "taken up, by Inspector Frazier, having been described as the parties",
+      "role_hint": "arresting police inspector",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Alderman Johnson",
+      "context_quote": "Alderman Johnson inquired if the policeman had described",
+      "role_hint": "magistrate presiding",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mrs. M. Green",
+      "context_quote": "the house of her brother and Mrs. M. Green, the brother and Mrs. M. Green",
+      "role_hint": "victim of theft",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Leake",
+      "context_quote": "the sister-in-law of Mr. Leake, one of the Common Plunderers",
+      "role_hint": "connected party in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Frederick Coleman",
+      "context_quote": "Frederick and Deborah Coleman, Frederick Hill, were the victims",
+      "role_hint": "victim of theft",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Deborah Coleman",
+      "context_quote": "Frederick and Deborah Coleman, Frederick Hill, were the victims",
+      "role_hint": "victim of theft",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Frederick Hill",
+      "context_quote": "Frederick and Deborah Coleman, Frederick Hill, were the victims",
+      "role_hint": "victim of theft",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mrs. Fernin Hill",
+      "context_quote": "Mr. Green said Mrs. Fernin Hill, was four and twenty times",
+      "role_hint": "person mentioned in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Clarkson",
+      "context_quote": "Mr. Clarkson had produced the proceeds of his estate",
+      "role_hint": "party in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Terry",
+      "context_quote": "he was introduced to Mr. Terry in advice with various charges",
+      "role_hint": "person mentioned in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Henry Coleman",
+      "context_quote": "gave the money to Provvy in direction of Henry Coleman's",
+      "role_hint": "party in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Moore Coleman",
+      "context_quote": "Mr. Coleman requested that the affair had been put to Mr. Moore Coleman",
+      "role_hint": "party in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Nelson",
+      "context_quote": "Mr. Nelson, who attended as counsel of the prisoner",
+      "role_hint": "prisoner's counsel",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "William Malony",
+      "context_quote": "a man named William Malony was charged before Mr. Hardwick with vagrancy",
+      "role_hint": "defendant charged with vagrancy",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Hardwick",
+      "context_quote": "was charged before Mr. Hardwick with vagrancy and felony",
+      "role_hint": "magistrate presiding",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Bishop",
+      "context_quote": "The charge was preferred by Mr. Bishop",
+      "role_hint": "complainant in case",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Wilson",
+      "context_quote": "Mr. Bishop, and Mr. Wilson, a resident of the parish",
+      "role_hint": "parish resident witness",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Alderman Jackson",
+      "context_quote": "held to the bench of this court, by Mr. Alderman Jackson",
+      "role_hint": "magistrate mentioned",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Coles",
+      "context_quote": "Mr. Alderman Jackson, and Mr. Coles for the party",
+      "role_hint": "counsel for party",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Thomas Talford Changbill",
+      "context_quote": "Mr. Thomas Talford Changbill was brought up on a charge of assaulting his wife",
+      "role_hint": "defendant charged with assault",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Charles Hardwick",
+      "context_quote": "assaulting his wife before Mr. Charles Hardwick",
+      "role_hint": "magistrate presiding",
+      "column": "Column 3",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mrs. Changbill",
+      "context_quote": "had also, at the instigation of his assailant, threatened he would take away the life of her",
+      "role_hint": "assault victim, defendant's wife",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mrs. Campbell",
+      "context_quote": "The complaint was directed to the magistrate by Mrs. Campbell",
+      "role_hint": "complainant in assault case",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Campbell",
+      "context_quote": "Mr. Campbell told his wife the deposition was put",
+      "role_hint": "defendant in assault case",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mrs. McCool",
+      "context_quote": "The landlady, Mrs. McCool, said the defendant was a neighbour of hers",
+      "role_hint": "landlady witness",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "John Robert Lee Middleton",
+      "context_quote": "John Robert Lee Middleton, a plumber, who had been charged with feloniously stealing",
+      "role_hint": "defendant plumber charged with theft",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Ellicott",
+      "context_quote": "was placed at the bar before Mr. Ellicott",
+      "role_hint": "magistrate presiding",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Inman",
+      "context_quote": "Mr. Inman, who attended on behalf of the prisoner",
+      "role_hint": "prisoner's counsel",
+      "column": "Column 4",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Eastlake",
+      "context_quote": "a recent letter of Mr. Eastlake to have reflected",
+      "role_hint": "National Gallery purchaser, critic",
+      "column": "Column 6",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    },
+    {
+      "name_as_printed": "Mr. Parton",
+      "context_quote": "At the sale of Mr. Parton's collection in 1844",
+      "role_hint": "art collection owner",
+      "column": "Column 6",
+      "watchlist_surname": null,
+      "known_person_id": null,
+      "already_mentioned_in": []
+    }
+  ]
+}

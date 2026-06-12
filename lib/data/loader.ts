@@ -28,7 +28,7 @@ import type {
 // ---- Allowlists (defence in depth) -------------------------------------
 
 const CLIPPING_FILES_ALLOWED = new Set(['metadata.yaml', 'transcription.md']);
-const PAGE_FILES_ALLOWED = new Set(['page_metadata.yaml']);
+const PAGE_FILES_ALLOWED = new Set(['page_metadata.yaml', 'fullpage_transcription.md']);
 // transcription.md is the curated verbatim text; transcription_claude.md is
 // the raw vision output. notes.md and source.{png,jpg,pdf} are NEVER read.
 const DOCUMENT_FILES_ALLOWED = new Set(['metadata.yaml', 'transcription.md', 'transcription_claude.md']);
@@ -366,7 +366,32 @@ export function loadPages(dataRoot: string): PageRecord[] {
     const raw = readYaml<Record<string, unknown>>(metaPath);
     if (!raw) continue;
 
+    let fullTranscription: PageRecord['full_transcription'];
+    let transcriptionStatus: PageRecord['full_transcription_status'];
+    let transcriptionModel: PageRecord['full_transcription_model'];
+    const ftPath = join(pagesDir, dirName, 'fullpage_transcription.md');
+    if (PAGE_FILES_ALLOWED.has('fullpage_transcription.md') && existsSync(ftPath)) {
+      const text = readFileSync(ftPath, 'utf-8');
+      const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+      if (m) {
+        try {
+          const fm = yaml.load(m[1]) as Record<string, unknown> | null;
+          const status = fm?.transcription_status;
+          if (status === 'ai_generated' || status === 'ai_truncated' || status === 'human_corrected') {
+            transcriptionStatus = status;
+          }
+          transcriptionModel = typeof fm?.model === 'string' ? fm.model : undefined;
+        } catch { /* malformed front-matter — keep the body anyway */ }
+        fullTranscription = text.slice(m[0].length).trim();
+      } else {
+        fullTranscription = text.trim();
+      }
+    }
+
     pages.push({
+      full_transcription: fullTranscription,
+      full_transcription_status: transcriptionStatus,
+      full_transcription_model: transcriptionModel,
       id: (raw.id as string) ?? dirName,
       newspaper: (raw.newspaper as string) ?? '?',
       city: raw.city as string | undefined,

@@ -27,7 +27,7 @@ export default async function ThemePage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -38,10 +38,10 @@ export default async function ThemePage({
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">
-          Theme: <code className="rounded bg-zinc-100 px-2 py-0.5 text-xl">{id}</code>
+        <h1 className="text-2xl font-semibold text-stone-900">
+          Theme: <code className="rounded bg-stone-100 px-2 py-0.5 text-xl">{id}</code>
         </h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <p className="mt-2 text-sm text-stone-600">
           {sources.length} source{sources.length === 1 ? '' : 's'}.
         </p>
       </header>

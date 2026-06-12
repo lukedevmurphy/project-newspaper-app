@@ -54,7 +54,7 @@ export default async function PlacePage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -65,9 +65,9 @@ export default async function PlacePage({
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">{place.display}</h1>
+        <h1 className="text-2xl font-semibold text-stone-900">{place.display}</h1>
         {ancestors.length > 0 && (
-          <p className="mt-2 text-sm text-zinc-600">
+          <p className="mt-2 text-sm text-stone-600">
             Part of:{' '}
             {ancestors.map((a, i) => (
               <span key={a.id}>
@@ -80,12 +80,12 @@ export default async function PlacePage({
           </p>
         )}
         {place.variants.length > 0 && (
-          <p className="mt-2 text-xs text-zinc-500">
+          <p className="mt-2 text-xs text-stone-500">
             Also: {place.variants.join(', ')}
           </p>
         )}
         {place.notes && (
-          <p className="mt-3 whitespace-pre-line text-sm text-zinc-700">
+          <p className="mt-3 whitespace-pre-line text-sm text-stone-700">
             {place.notes}
           </p>
         )}
@@ -93,7 +93,7 @@ export default async function PlacePage({
 
       {children.length > 0 && (
         <section className="mb-8">
-          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
             Child places
           </h2>
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
@@ -109,7 +109,7 @@ export default async function PlacePage({
       )}
 
       <section className="mb-8">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
           Sources at this place ({directSources.length})
         </h2>
         <SourceList sources={directSources} />
@@ -117,7 +117,7 @@ export default async function PlacePage({
 
       {rollupSources.length > 0 && (
         <section className="mb-8">
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
             Sources at child places ({rollupSources.length})
           </h2>
           <SourceList sources={rollupSources} />

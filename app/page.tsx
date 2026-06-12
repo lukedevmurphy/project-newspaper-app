@@ -45,10 +45,10 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-12">
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold text-zinc-900">
+        <h1 className="text-3xl font-semibold text-stone-900">
           Family newspaper archive
         </h1>
-        <p className="mt-2 text-zinc-600">
+        <p className="mt-2 text-stone-600">
           {s.totalSources} clippings, {s.totalPeople} people, {s.totalPlaces} places.{' '}
           {s.dateRange.earliest} to {s.dateRange.latest}.
         </p>
@@ -59,14 +59,14 @@ export default function Home() {
           type="search"
           name="q"
           placeholder="Search names, places, themes, summaries..."
-          className="w-full rounded-md border border-zinc-300 px-4 py-3 text-base focus:border-zinc-500 focus:outline-none"
+          className="w-full rounded-md border border-stone-300 px-4 py-3 text-base focus:border-stone-500 focus:outline-none"
           autoFocus
         />
       </form>
 
       <div className="grid gap-10 md:grid-cols-2">
         <section>
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
             Top people by source count
           </h2>
           <ul className="space-y-1.5 text-sm">
@@ -79,7 +79,7 @@ export default function Home() {
                 >
                   {p.name}
                 </Link>
-                <span className="text-xs text-zinc-500">
+                <span className="text-xs text-stone-500">
                   {p.count} source{p.count === 1 ? '' : 's'}
                   {p.family_confidence >= 75 && (
                     <span className="ml-1 text-emerald-700">★</span>
@@ -94,7 +94,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
             Top places by source count
           </h2>
           <ul className="space-y-1.5 text-sm">
@@ -103,7 +103,7 @@ export default function Home() {
                 <Link href={`/places/${p.id}`} className="hover:underline">
                   {p.display}
                 </Link>
-                <span className="text-xs text-zinc-500">
+                <span className="text-xs text-stone-500">
                   {p.count} source{p.count === 1 ? '' : 's'}
                 </span>
               </li>
@@ -113,7 +113,7 @@ export default function Home() {
       </div>
 
       <section className="mt-10">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
           Top themes
         </h2>
         <ul className="flex flex-wrap gap-2 text-sm">
@@ -121,10 +121,10 @@ export default function Home() {
             <li key={t.t}>
               <Link
                 href={`/themes/${t.t}`}
-                className="rounded bg-zinc-100 px-2 py-1 hover:bg-zinc-200"
+                className="rounded bg-stone-100 px-2 py-1 hover:bg-stone-200"
               >
                 {t.t}{' '}
-                <span className="text-xs text-zinc-500">({t.count})</span>
+                <span className="text-xs text-stone-500">({t.count})</span>
               </Link>
             </li>
           ))}
@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       <section className="mt-10">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
           Story threads
         </h2>
         <ul className="space-y-1.5 text-sm">
@@ -141,7 +141,7 @@ export default function Home() {
               <Link href={`/threads/${t.id}`} className="hover:underline">
                 {t.display}
               </Link>
-              <span className="ml-2 text-xs text-zinc-500">
+              <span className="ml-2 text-xs text-stone-500">
                 {t.count} source{t.count === 1 ? '' : 's'}
               </span>
             </li>
@@ -149,8 +149,8 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="mt-12 border-t border-zinc-200 pt-6">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <section className="mt-12 border-t border-stone-200 pt-6">
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
           Browse all
         </h2>
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">

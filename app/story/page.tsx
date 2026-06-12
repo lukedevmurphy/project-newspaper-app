@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { loadArchive } from '@/lib/data';
 import { deriveChapters } from '@/lib/story/chapters';
 import { getStorySubjects } from '@/lib/story/subjects';
+import { PersonAvatar } from '@/components/avatar';
 
 export default function StoryIndexPage() {
   const archive = loadArchive();
@@ -13,15 +14,15 @@ export default function StoryIndexPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">Story</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">Story</h1>
+        <p className="mt-2 text-sm text-stone-600">
           Life storyboards for the book&apos;s subjects — chapters derived from
           citation-backed residences and dated sources, with the era&apos;s
           history interleaved.
@@ -45,15 +46,18 @@ export default function StoryIndexPage() {
             <li key={person.id}>
               <Link
                 href={`/story/${person.id}`}
-                className="block rounded-lg border border-zinc-200 bg-white p-4 hover:border-zinc-400"
+                className="flex items-center gap-4 rounded-lg border border-stone-200 bg-paper p-4 hover:border-amber-400"
               >
-                <h2 className="text-base font-medium text-zinc-900">
-                  {person.display_name.split('(')[0].trim()}
-                </h2>
-                {lifespan && <p className="mt-0.5 text-sm text-zinc-600">{lifespan}</p>}
-                <p className="mt-1 text-xs text-zinc-500">
-                  {chapters.length} chapters · {sourceCount} sources
-                </p>
+                <PersonAvatar person={person} archive={archive} size={56} />
+                <span>
+                  <h2 className="text-base font-medium text-stone-900">
+                    {person.display_name.split('(')[0].trim()}
+                  </h2>
+                  {lifespan && <p className="mt-0.5 text-sm text-stone-600">{lifespan}</p>}
+                  <p className="mt-1 text-xs text-stone-500">
+                    {chapters.length} chapters · {sourceCount} sources
+                  </p>
+                </span>
               </Link>
             </li>
           );

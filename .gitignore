@@ -42,3 +42,6 @@ next-env.d.ts
 
 # data repo clone (created by scripts/clone-data.mjs at build time)
 /data
+
+# local verification screenshots
+screenshots/

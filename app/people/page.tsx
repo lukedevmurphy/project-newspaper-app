@@ -27,25 +27,25 @@ export default function AllPeoplePage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">All people</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">All people</h1>
+        <p className="mt-2 text-sm text-stone-600">
           {archive.people.length} people, grouped by family_confidence band.
         </p>
       </header>
 
       {bands.map(band => (
         <section key={band.label} className="mb-10">
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
             {band.label} ({band.rows.length})
           </h2>
           {band.rows.length === 0 ? (
-            <p className="text-sm text-zinc-500">(none)</p>
+            <p className="text-sm text-stone-500">(none)</p>
           ) : (
             <ul className="space-y-1.5 text-sm">
               {band.rows.map(p => (
@@ -57,11 +57,11 @@ export default function AllPeoplePage() {
                     >
                       {p.display_name}
                     </Link>
-                    <span className="ml-2 text-xs text-zinc-500">
+                    <span className="ml-2 text-xs text-stone-500">
                       conf {p.family_confidence}
                     </span>
                   </div>
-                  <span className="text-xs text-zinc-500">
+                  <span className="text-xs text-stone-500">
                     {p.count} source{p.count === 1 ? '' : 's'}
                   </span>
                 </li>

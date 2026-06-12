@@ -38,7 +38,7 @@ export default async function PageDetail({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -48,8 +48,8 @@ export default async function PageDetail({
 
       {aiSummary && (
         <Section title="Page overview">
-          <p className="text-zinc-700 leading-relaxed">{aiSummary.summary}</p>
-          <p className="mt-3 text-xs text-zinc-400">
+          <p className="text-stone-700 leading-relaxed">{aiSummary.summary}</p>
+          <p className="mt-3 text-xs text-stone-400">
             AI-generated ({aiSummary.model}). Verify against the page image before quoting.
           </p>
         </Section>
@@ -57,11 +57,11 @@ export default async function PageDetail({
 
       {aiSummary && aiSummary.headlines.length > 0 && (
         <Section title="Headlines on this page">
-          <ul className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm text-zinc-700">
+          <ul className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm text-stone-700">
             {aiSummary.headlines.map((h, i) => (
               <li
                 key={i}
-                className="rounded border border-zinc-200 bg-zinc-50 px-2 py-0.5"
+                className="rounded border border-stone-200 bg-stone-50 px-2 py-0.5"
               >
                 {h}
               </li>
@@ -77,7 +77,7 @@ export default async function PageDetail({
               const clipping = archive.sourcesById.get(cid);
               const placement = aiSummary?.clipping_placements.find(p => p.clipping_id === cid);
               return (
-                <li key={cid} className="border-l-2 border-zinc-200 pl-3">
+                <li key={cid} className="border-l-2 border-stone-200 pl-3">
                   <Link
                     href={`/sources/${cid}`}
                     className="font-medium hover:underline"
@@ -87,16 +87,16 @@ export default async function PageDetail({
                       : cid}
                   </Link>
                   {clipping && clipping.type === 'clipping' && (
-                    <p className="mt-0.5 text-xs text-zinc-500">
+                    <p className="mt-0.5 text-xs text-stone-500">
                       {clipping.date}{clipping.dateline ? ` · ${clipping.dateline}` : ''}
                     </p>
                   )}
                   {placement && (
-                    <p className="mt-1 text-sm text-zinc-600">
+                    <p className="mt-1 text-sm text-stone-600">
                       <ProminenceBadge value={placement.prominence} />
                       <span className="ml-2">{placement.column}</span>
                       {placement.placement_note && (
-                        <span className="text-zinc-500"> · {placement.placement_note}</span>
+                        <span className="text-stone-500"> · {placement.placement_note}</span>
                       )}
                     </p>
                   )}
@@ -113,7 +113,7 @@ export default async function PageDetail({
             {aiSummary.juxtapositions.map((j, i) => (
               <li
                 key={i}
-                className="border-l-2 border-zinc-300 pl-3 font-serif italic leading-7 text-zinc-700"
+                className="border-l-2 border-stone-300 pl-3 font-serif italic leading-7 text-stone-700"
               >
                 {j}
               </li>
@@ -126,8 +126,8 @@ export default async function PageDetail({
 
       {page.full_transcription && (
         <Section title="Full page transcription">
-          <details className="rounded border border-zinc-200 bg-zinc-50 p-4 text-sm">
-            <summary className="cursor-pointer text-zinc-700 hover:text-zinc-900">
+          <details className="rounded border border-stone-200 bg-stone-50 p-4 text-sm">
+            <summary className="cursor-pointer text-stone-700 hover:text-stone-900">
               {page.full_transcription_status === 'human_corrected'
                 ? 'Read the full transcription (human-corrected)'
                 : 'Read the full transcription'}
@@ -136,12 +136,12 @@ export default async function PageDetail({
               )}
             </summary>
             {page.full_transcription_status !== 'human_corrected' && (
-              <p className="mt-3 text-xs text-zinc-400">
+              <p className="mt-3 text-xs text-stone-400">
                 AI-generated{page.full_transcription_model ? ` (${page.full_transcription_model})` : ''}.
                 Verify against the page image before quoting.
               </p>
             )}
-            <div className="mt-3 whitespace-pre-line font-serif leading-7 text-zinc-800">
+            <div className="mt-3 whitespace-pre-line font-serif leading-7 text-stone-800">
               {page.full_transcription}
             </div>
           </details>
@@ -152,15 +152,15 @@ export default async function PageDetail({
         <Section title="Peripheral items I've noted">
           <ul className="space-y-3 text-sm">
             {page.peripheral_items.map((item, i) => (
-              <li key={i} className="border-l-2 border-zinc-200 pl-3">
-                <p className="font-medium text-zinc-800">{item.title}</p>
+              <li key={i} className="border-l-2 border-stone-200 pl-3">
+                <p className="font-medium text-stone-800">{item.title}</p>
                 {item.summary && (
-                  <p className="mt-1 whitespace-pre-line text-zinc-600">{item.summary}</p>
+                  <p className="mt-1 whitespace-pre-line text-stone-600">{item.summary}</p>
                 )}
                 {item.tags && item.tags.length > 0 && (
                   <ul className="mt-1 flex flex-wrap gap-1.5 text-xs">
                     {item.tags.map(t => (
-                      <li key={t} className="rounded border border-zinc-200 px-1.5 py-0.5 text-zinc-500">
+                      <li key={t} className="rounded border border-stone-200 px-1.5 py-0.5 text-stone-500">
                         {t}
                       </li>
                     ))}
@@ -172,9 +172,9 @@ export default async function PageDetail({
         </Section>
       )}
 
-      <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-500">
+      <footer className="mt-12 border-t border-stone-200 pt-6 text-xs text-stone-500">
         <p>
-          Page ID: <code className="rounded bg-zinc-100 px-1 py-0.5">{page.id}</code>
+          Page ID: <code className="rounded bg-stone-100 px-1 py-0.5">{page.id}</code>
         </p>
       </footer>
     </main>
@@ -187,17 +187,17 @@ function Header({ page }: { page: PageRecord }) {
     .join(', ');
   return (
     <header className="mb-8">
-      <h1 className="text-2xl font-semibold text-zinc-900">
+      <h1 className="text-2xl font-semibold text-stone-900">
         {page.newspaper}, {page.date}, p.{page.page}
       </h1>
-      <p className="mt-2 text-sm text-zinc-600">{citation}</p>
+      <p className="mt-2 text-sm text-stone-600">{citation}</p>
       {page.url && (
         <p className="mt-3 text-sm">
           <a
             href={page.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-700 underline hover:text-zinc-900"
+            className="text-stone-700 underline hover:text-stone-900"
           >
             View on Newspapers.com ↗
           </a>
@@ -210,7 +210,7 @@ function Header({ page }: { page: PageRecord }) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         {title}
       </h2>
       {children}
@@ -237,14 +237,14 @@ function PagePhotos({ page, archive }: { page: PageRecord; archive: Archive }) {
                   alt={photo.caption_as_printed ?? photo.id}
                   width={352}
                   height={440}
-                  className="rounded border border-zinc-200"
+                  className="rounded border border-stone-200"
                 />
               ) : (
-                <div className="rounded border border-dashed border-zinc-300 p-3 text-xs text-zinc-500">
+                <div className="rounded border border-dashed border-stone-300 p-3 text-xs text-stone-500">
                   registered crop (image bucket not configured)
                 </div>
               )}
-              <p className="mt-1 text-xs text-zinc-600">
+              <p className="mt-1 text-xs text-stone-600">
                 {photo.caption_as_printed && (
                   <span className="italic">&ldquo;{photo.caption_as_printed.slice(0, 120)}{photo.caption_as_printed.length > 120 ? '…' : ''}&rdquo;</span>
                 )}
@@ -262,8 +262,8 @@ function PagePhotos({ page, archive }: { page: PageRecord; archive: Archive }) {
                           c.status === 'confirmed'
                             ? 'rounded bg-amber-100 px-1 py-0.5 text-amber-900'
                             : c.status === 'rejected'
-                            ? 'rounded bg-zinc-100 px-1 py-0.5 text-zinc-400 line-through'
-                            : 'rounded bg-zinc-100 px-1 py-0.5 text-zinc-600'
+                            ? 'rounded bg-stone-100 px-1 py-0.5 text-stone-400 line-through'
+                            : 'rounded bg-stone-100 px-1 py-0.5 text-stone-600'
                         }
                       >
                         {c.status} {c.confidence}
@@ -283,8 +283,8 @@ function PagePhotos({ page, archive }: { page: PageRecord; archive: Archive }) {
 function ProminenceBadge({ value }: { value: ClippingProminence }) {
   const styles: Record<ClippingProminence, string> = {
     lead: 'bg-amber-100 text-amber-900',
-    secondary: 'bg-zinc-100 text-zinc-700',
-    buried: 'bg-zinc-50 text-zinc-500',
+    secondary: 'bg-stone-100 text-stone-700',
+    buried: 'bg-stone-50 text-stone-500',
   };
   return (
     <span className={`rounded px-1.5 py-0.5 text-xs ${styles[value]}`}>{value}</span>

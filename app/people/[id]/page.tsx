@@ -10,6 +10,7 @@ import type { Archive, Clipping, PersonLink, PersonRecord, Source } from '@/lib/
 import Image from 'next/image';
 import { photoUrl } from '@/lib/data';
 import { EgoNetwork } from '@/components/ego-network';
+import { PersonSilhouette } from '@/components/avatar';
 import { isStorySubject } from '@/lib/story/subjects';
 
 type Params = { id: string };
@@ -38,7 +39,7 @@ export default async function PersonPage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -50,9 +51,9 @@ export default async function PersonPage({
 
       <header className="mb-8">
         <PersonPortrait person={person} archive={archive} />
-        <h1 className="text-2xl font-semibold text-zinc-900">{person.display_name}</h1>
+        <h1 className="text-2xl font-semibold text-stone-900">{person.display_name}</h1>
         {person.also_known_as.length > 0 && (
-          <p className="mt-2 text-sm text-zinc-500">
+          <p className="mt-2 text-sm text-stone-500">
             Also known as: {person.also_known_as.join(', ')}
           </p>
         )}
@@ -67,7 +68,7 @@ export default async function PersonPage({
           </p>
         )}
         {person.disambiguation && (
-          <p className="mt-4 whitespace-pre-line text-sm text-zinc-700">
+          <p className="mt-4 whitespace-pre-line text-sm text-stone-700">
             {person.disambiguation}
           </p>
         )}
@@ -82,11 +83,11 @@ export default async function PersonPage({
       <PersonCoAppearances person={person} archive={archive} />
 
       <section className="mb-8">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-stone-500">
           Sources linking to this person
         </h2>
         {linkedSources.length === 0 ? (
-          <p className="text-sm text-zinc-500">No sources yet link to this person.</p>
+          <p className="text-sm text-stone-500">No sources yet link to this person.</p>
         ) : (
           <>
             <ConfidenceBand
@@ -107,18 +108,18 @@ export default async function PersonPage({
 
       {person.family_notes && (
         <section className="mb-8">
-          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
             Family notes (private; from people.yaml)
           </h2>
-          <p className="whitespace-pre-line text-sm text-zinc-700">
+          <p className="whitespace-pre-line text-sm text-stone-700">
             {person.family_notes}
           </p>
         </section>
       )}
 
-      <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-500">
+      <footer className="mt-12 border-t border-stone-200 pt-6 text-xs text-stone-500">
         <p>
-          Person ID: <code className="rounded bg-zinc-100 px-1 py-0.5">{person.id}</code>
+          Person ID: <code className="rounded bg-stone-100 px-1 py-0.5">{person.id}</code>
         </p>
       </footer>
     </main>
@@ -166,14 +167,14 @@ function ConfidenceBand({
   if (entries.length === 0) return null;
   return (
     <div className="mb-5">
-      <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-700">
+      <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-stone-700">
         {title} — {entries.length}
       </h3>
       <ul className="space-y-2">
         {entries.map(({ source, link }, i) => (
           <li
             key={`${source.id}-${i}`}
-            className="border-l-2 border-zinc-200 pl-3"
+            className="border-l-2 border-stone-200 pl-3"
           >
             <SourceRowLink source={source} link={link} />
           </li>
@@ -191,9 +192,9 @@ function SourceRowLink({ source, link }: { source: Source; link: PersonLink }) {
         {citation}
       </Link>
       {title && (
-        <span className="ml-2 text-zinc-700">{title}</span>
+        <span className="ml-2 text-stone-700">{title}</span>
       )}
-      <div className="text-xs text-zinc-500">
+      <div className="text-xs text-stone-500">
         {link.role_in_story && <span>role: {link.role_in_story} · </span>}
         confidence on this source: {link.confidence_is_my_family}
         {link.name_as_printed && (
@@ -221,10 +222,10 @@ function PersonFacts({
   }
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         Facts
       </h2>
-      <dl className="space-y-1 text-sm text-zinc-700">
+      <dl className="space-y-1 text-sm text-stone-700">
         {hasBirth && (
           <div>
             <dt className="inline font-medium">Birth: </dt>
@@ -232,7 +233,7 @@ function PersonFacts({
               {person.birth.date ?? 'unknown date'}
               {person.birth.place && `, ${person.birth.place}`}
               {person.birth.confidence < 95 && person.birth.confidence > 0 && (
-                <span className="text-zinc-500">
+                <span className="text-stone-500">
                   {' '}
                   (date confidence: {person.birth.confidence})
                 </span>
@@ -247,7 +248,7 @@ function PersonFacts({
               {person.death.date ?? 'unknown date'}
               {person.death.place && `, ${archive.placesById.get(person.death.place)?.display ?? person.death.place}`}
               {person.death.confidence < 95 && person.death.confidence > 0 && (
-                <span className="text-zinc-500">
+                <span className="text-stone-500">
                   {' '}
                   (date confidence: {person.death.confidence})
                 </span>
@@ -280,15 +281,23 @@ function PersonFacts({
 }
 
 // Header portrait — the first confirmed photo for this person, served
-// from the external image bucket. Renders nothing when no confirmed
-// photo exists or NEXT_PUBLIC_IMAGE_BASE_URL is unset.
+// from the external image bucket; a blank-person silhouette when no
+// photo exists yet (e.g. Patrick) or the bucket isn't configured.
 function PersonPortrait({ person, archive }: { person: PersonRecord; archive: Archive }) {
   const photo = (archive.photosByPersonId.get(person.id) ?? [])
     .find(p => p.kind === 'face_crop' || p.kind === 'portrait')
     ?? archive.photosByPersonId.get(person.id)?.[0];
-  if (!photo) return null;
-  const url = photoUrl(photo);
-  if (!url) return null;
+  const url = photo ? photoUrl(photo) : null;
+  if (!photo || !url) {
+    return (
+      <figure className="float-right ml-6 mb-4">
+        <PersonSilhouette size={96} title={person.display_name} />
+        <figcaption className="mt-1 w-24 text-center text-xs text-stone-400">
+          no photo yet
+        </figcaption>
+      </figure>
+    );
+  }
   const candidate = photo.person_candidates.find(c => c.person_id === person.id);
   return (
     <figure className="float-right ml-6 mb-4 w-36">
@@ -297,9 +306,9 @@ function PersonPortrait({ person, archive }: { person: PersonRecord; archive: Ar
         alt={photo.caption_as_printed ?? person.display_name}
         width={288}
         height={360}
-        className="rounded border border-zinc-200"
+        className="rounded border border-stone-200"
       />
-      <figcaption className="mt-1 text-xs text-zinc-500">
+      <figcaption className="mt-1 text-xs text-stone-500">
         {photo.caption_as_printed && <span className="italic">&ldquo;{photo.caption_as_printed}&rdquo; </span>}
         {photo.page_id && (
           <Link href={`/pages/${photo.page_id}`} className="hover:underline">
@@ -334,10 +343,10 @@ function PersonRelationships({
   if (resolved.length === 0) return null;
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         Relationships
       </h2>
-      <ul className="space-y-1 text-sm text-zinc-700">
+      <ul className="space-y-1 text-sm text-stone-700">
         {resolved.map((rel, i) => {
           const target = archive.peopleById.get(rel.person);
           const name = target ? (
@@ -348,7 +357,7 @@ function PersonRelationships({
               {target.display_name}
             </Link>
           ) : (
-            <span className="text-zinc-500">{rel.person} (unresolved)</span>
+            <span className="text-stone-500">{rel.person} (unresolved)</span>
           );
           return (
             <li key={`${rel.relation}-${rel.person}-${i}`}>
@@ -365,7 +374,7 @@ function PersonRelationships({
               )}
               {rel.inferred && (
                 <span
-                  className="ml-2 rounded bg-zinc-100 px-1.5 py-0.5 text-xs text-zinc-500"
+                  className="ml-2 rounded bg-stone-100 px-1.5 py-0.5 text-xs text-stone-500"
                   title={`Inferred from ${rel.declaredBy}'s entry`}
                 >
                   inferred
@@ -395,21 +404,21 @@ function PersonCoAppearances({
   const shown = rows.slice(0, 15);
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         Appears with
       </h2>
       <ul className="space-y-2 text-sm">
         {shown.map(([otherId, sourceIds]) => {
           const other = archive.peopleById.get(otherId);
           return (
-            <li key={otherId} className="border-l-2 border-zinc-200 pl-3">
+            <li key={otherId} className="border-l-2 border-stone-200 pl-3">
               <Link href={`/people/${otherId}`} className="font-medium hover:underline">
                 {other?.display_name ?? otherId}
               </Link>
-              <span className="ml-2 text-zinc-500">
+              <span className="ml-2 text-stone-500">
                 {sourceIds.length} shared source{sourceIds.length === 1 ? '' : 's'}
               </span>
-              <ul className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-zinc-600">
+              <ul className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-stone-600">
                 {sourceIds.map(sid => {
                   const src = archive.sourcesById.get(sid);
                   return (
@@ -425,7 +434,7 @@ function PersonCoAppearances({
           );
         })}
         {rows.length > shown.length && (
-          <li className="text-xs text-zinc-500">
+          <li className="text-xs text-stone-500">
             …and {rows.length - shown.length} more people with shared sources.
           </li>
         )}
@@ -448,10 +457,10 @@ function PersonFamilyBadge({ value }: { value: number }) {
     color = 'bg-amber-100 text-amber-900';
   } else if (value >= 10) {
     label = `${value} — flag`;
-    color = 'bg-zinc-100 text-zinc-700';
+    color = 'bg-stone-100 text-stone-700';
   } else {
     label = '0 — not family / context';
-    color = 'bg-zinc-100 text-zinc-500';
+    color = 'bg-stone-100 text-stone-500';
   }
   return (
     <span className={`rounded px-2 py-0.5 text-xs ${color}`}>

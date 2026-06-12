@@ -15,14 +15,14 @@ export default function AllPlacesPage() {
   // the hierarchy is rendered on the individual place pages.
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">All places</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">All places</h1>
+        <p className="mt-2 text-sm text-stone-600">
           {archive.places.length} places.
         </p>
       </header>
@@ -31,16 +31,16 @@ export default function AllPlacesPage() {
           <li key={p.id} className="flex items-baseline justify-between gap-3">
             <Link
               href={`/places/${p.id}`}
-              className={p.count > 0 ? 'hover:underline' : 'text-zinc-400 hover:underline'}
+              className={p.count > 0 ? 'hover:underline' : 'text-stone-400 hover:underline'}
             >
               {p.display}
               {p.parent && (
-                <span className="ml-2 text-xs text-zinc-500">
+                <span className="ml-2 text-xs text-stone-500">
                   in {archive.placesById.get(p.parent)?.display ?? p.parent}
                 </span>
               )}
             </Link>
-            <span className="text-xs text-zinc-500">
+            <span className="text-xs text-stone-500">
               {p.count} source{p.count === 1 ? '' : 's'}
             </span>
           </li>

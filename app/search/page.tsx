@@ -21,7 +21,7 @@ export default async function SearchPage({
   if (!query) {
     return (
       <main className="mx-auto max-w-3xl px-6 py-10">
-        <nav className="mb-6 text-sm text-zinc-500">
+        <nav className="mb-6 text-sm text-stone-500">
           <Link href="/" className="hover:underline">
             ← Archive
           </Link>
@@ -32,7 +32,7 @@ export default async function SearchPage({
             type="search"
             name="q"
             placeholder="Search..."
-            className="w-full rounded-md border border-zinc-300 px-4 py-3 text-base"
+            className="w-full rounded-md border border-stone-300 px-4 py-3 text-base"
             autoFocus
           />
         </form>
@@ -51,7 +51,7 @@ export default async function SearchPage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -63,11 +63,11 @@ export default async function SearchPage({
             type="search"
             name="q"
             defaultValue={query}
-            className="w-full rounded-md border border-zinc-300 px-4 py-3 text-base"
+            className="w-full rounded-md border border-stone-300 px-4 py-3 text-base"
             autoFocus
           />
         </form>
-        <p className="mt-3 text-sm text-zinc-600">
+        <p className="mt-3 text-sm text-stone-600">
           {totalResults} result{totalResults === 1 ? '' : 's'} for{' '}
           <strong>&ldquo;{query}&rdquo;</strong>
         </p>
@@ -76,7 +76,7 @@ export default async function SearchPage({
       {results.people.length > 0 && (
         <SearchSection title={`People (${results.people.length})`}>
           {results.people.map(({ id, person, matchedAlias }) => (
-            <li key={id} className="border-l-2 border-zinc-200 pl-3">
+            <li key={id} className="border-l-2 border-stone-200 pl-3">
               <Link
                 href={`/people/${id}`}
                 className="font-medium hover:underline"
@@ -84,15 +84,15 @@ export default async function SearchPage({
                 {person.display_name}
               </Link>
               {matchedAlias && matchedAlias !== person.display_name && (
-                <span className="ml-2 text-sm text-zinc-500">
+                <span className="ml-2 text-sm text-stone-500">
                   (matched: {matchedAlias})
                 </span>
               )}
-              <span className="ml-2 text-xs text-zinc-500">
+              <span className="ml-2 text-xs text-stone-500">
                 family confidence: {person.family_confidence}
               </span>
               {person.disambiguation && (
-                <p className="mt-0.5 text-sm text-zinc-600">
+                <p className="mt-0.5 text-sm text-stone-600">
                   {firstLine(person.disambiguation)}
                 </p>
               )}
@@ -107,9 +107,9 @@ export default async function SearchPage({
           subtitle="Names that appear in sources but are not in the person registry."
         >
           {results.mentioned.map(({ name, hits }) => (
-            <li key={name} className="border-l-2 border-zinc-200 pl-3">
+            <li key={name} className="border-l-2 border-stone-200 pl-3">
               <div className="font-medium">{name}</div>
-              <ul className="mt-1 space-y-0.5 text-xs text-zinc-600">
+              <ul className="mt-1 space-y-0.5 text-xs text-stone-600">
                 {hits.slice(0, 5).map((hit, i) => {
                   const src = archive.sourcesById.get(hit.sourceId);
                   if (!src) return null;
@@ -128,7 +128,7 @@ export default async function SearchPage({
                   );
                 })}
                 {hits.length > 5 && (
-                  <li className="text-zinc-500">
+                  <li className="text-stone-500">
                     …and {hits.length - 5} more
                   </li>
                 )}
@@ -141,7 +141,7 @@ export default async function SearchPage({
       {results.places.length > 0 && (
         <SearchSection title={`Places (${results.places.length})`}>
           {results.places.map(({ id, place, matchedVariant }) => (
-            <li key={id} className="border-l-2 border-zinc-200 pl-3">
+            <li key={id} className="border-l-2 border-stone-200 pl-3">
               <Link
                 href={`/places/${id}`}
                 className="font-medium hover:underline"
@@ -149,7 +149,7 @@ export default async function SearchPage({
                 {place.display}
               </Link>
               {matchedVariant && matchedVariant !== place.display && (
-                <span className="ml-2 text-sm text-zinc-500">
+                <span className="ml-2 text-sm text-stone-500">
                   (matched: {matchedVariant})
                 </span>
               )}
@@ -161,7 +161,7 @@ export default async function SearchPage({
       {results.themes.length > 0 && (
         <SearchSection title={`Themes (${results.themes.length})`}>
           {results.themes.map(t => (
-            <li key={t} className="border-l-2 border-zinc-200 pl-3">
+            <li key={t} className="border-l-2 border-stone-200 pl-3">
               <Link href={`/themes/${t}`} className="font-medium hover:underline">
                 {t}
               </Link>
@@ -173,7 +173,7 @@ export default async function SearchPage({
       {results.sources.length > 0 && (
         <SearchSection title={`Sources (${results.sources.length})`}>
           {results.sources.map(({ source, where }) => (
-            <li key={source.id} className="border-l-2 border-zinc-200 pl-3">
+            <li key={source.id} className="border-l-2 border-stone-200 pl-3">
               <SourceSearchRow source={source} matchedIn={where} query={query} />
             </li>
           ))}
@@ -186,21 +186,21 @@ export default async function SearchPage({
           subtitle="Matches in full-page transcriptions — text on the page beyond what's been clipped."
         >
           {results.pages.slice(0, 20).map(({ page, text }) => (
-            <li key={page.id} className="border-l-2 border-zinc-200 pl-3">
+            <li key={page.id} className="border-l-2 border-stone-200 pl-3">
               <Link href={`/pages/${page.id}`} className="font-medium hover:underline">
                 {page.date ?? 'undated'} — {page.newspaper}, p.{page.page}
               </Link>
-              <p className="mt-1 text-sm text-zinc-700">{snippet(text, query)}</p>
+              <p className="mt-1 text-sm text-stone-700">{snippet(text, query)}</p>
             </li>
           ))}
           {results.pages.length > 20 && (
-            <li className="text-xs text-zinc-500">…and {results.pages.length - 20} more pages.</li>
+            <li className="text-xs text-stone-500">…and {results.pages.length - 20} more pages.</li>
           )}
         </SearchSection>
       )}
 
       {totalResults === 0 && (
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-stone-500">
           No results. Try a shorter substring or a different name.
         </p>
       )}
@@ -331,10 +331,10 @@ function SearchSection({
 }) {
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         {title}
       </h2>
-      {subtitle && <p className="mb-2 text-xs text-zinc-500">{subtitle}</p>}
+      {subtitle && <p className="mb-2 text-xs text-stone-500">{subtitle}</p>}
       <ul className="space-y-2">{children}</ul>
     </section>
   );
@@ -356,12 +356,12 @@ function SourceSearchRow({
         {citation}
       </Link>
       {title && (
-        <span className="ml-2 text-zinc-700">{title}</span>
+        <span className="ml-2 text-stone-700">{title}</span>
       )}
-      <p className="mt-0.5 text-xs text-zinc-500">
+      <p className="mt-0.5 text-xs text-stone-500">
         matched in: {matchedIn.join(', ')}
       </p>
-      <p className="mt-1 text-sm text-zinc-700">
+      <p className="mt-1 text-sm text-stone-700">
         {snippet(source.summary || source.transcription, query)}
       </p>
     </div>

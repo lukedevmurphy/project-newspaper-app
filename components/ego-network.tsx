@@ -59,10 +59,10 @@ export function EgoNetwork({ person, archive }: { person: PersonRecord; archive:
 
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         Nexus
       </h2>
-      <p className="mb-2 text-xs text-zinc-500">
+      <p className="mb-2 text-xs text-stone-500">
         Solid edges: declared/inferred relationships. Dashed edges: appear together in sources
         (thicker = more shared sources). Click a name to open that person.
       </p>
@@ -83,7 +83,7 @@ export function EgoNetwork({ person, archive }: { person: PersonRecord; archive:
                 x={(CX + n.x) / 2}
                 y={(CY + n.y) / 2 - 4}
                 textAnchor="middle"
-                className="fill-zinc-500"
+                className="fill-stone-500"
                 fontSize="9"
               >
                 {n.relation}
@@ -94,7 +94,7 @@ export function EgoNetwork({ person, archive }: { person: PersonRecord; archive:
                 x={(CX + n.x) / 2}
                 y={(CY + n.y) / 2 - 4}
                 textAnchor="middle"
-                className="fill-zinc-400"
+                className="fill-stone-400"
                 fontSize="9"
               >
                 ×{n.sharedCount}
@@ -105,13 +105,13 @@ export function EgoNetwork({ person, archive }: { person: PersonRecord; archive:
 
         {positioned.map(n => (
           <a key={`node-${n.id}`} href={`/people/${n.id}`}>
-            <circle cx={n.x} cy={n.y} r={5} className="fill-zinc-400 hover:fill-zinc-700" />
+            <circle cx={n.x} cy={n.y} r={5} className="fill-stone-400 hover:fill-stone-700" />
             <text
               x={n.x}
               y={n.y + (n.y >= CY ? 18 : -10)}
               textAnchor="middle"
               fontSize="11"
-              className="fill-zinc-700 hover:underline"
+              className="fill-stone-700 hover:underline"
             >
               {n.name}
             </text>
@@ -119,7 +119,7 @@ export function EgoNetwork({ person, archive }: { person: PersonRecord; archive:
         ))}
 
         <circle cx={CX} cy={CY} r={7} className="fill-emerald-700" />
-        <text x={CX} y={CY + 22} textAnchor="middle" fontSize="12" fontWeight="600" className="fill-zinc-900">
+        <text x={CX} y={CY + 22} textAnchor="middle" fontSize="12" fontWeight="600" className="fill-stone-900">
           {shortName(person.display_name)}
         </text>
       </svg>

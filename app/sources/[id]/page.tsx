@@ -58,7 +58,7 @@ function ClippingDetail({
 }) {
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -70,20 +70,20 @@ function ClippingDetail({
 
       {aiSummary && (
         <Section title="Narrative">
-          <p className="text-zinc-700 leading-relaxed">{aiSummary.summary}</p>
+          <p className="text-stone-700 leading-relaxed">{aiSummary.summary}</p>
           {aiSummary.key_quotes.length > 0 && (
             <ul className="mt-4 space-y-2">
               {aiSummary.key_quotes.map((q, i) => (
                 <li
                   key={i}
-                  className="border-l-2 border-zinc-300 pl-3 font-serif italic leading-7 text-zinc-700"
+                  className="border-l-2 border-stone-300 pl-3 font-serif italic leading-7 text-stone-700"
                 >
                   &ldquo;{q}&rdquo;
                 </li>
               ))}
             </ul>
           )}
-          <p className="mt-3 text-xs text-zinc-400">
+          <p className="mt-3 text-xs text-stone-400">
             AI-generated ({aiSummary.model}). Verify against the transcription before quoting.
           </p>
         </Section>
@@ -98,7 +98,7 @@ function ClippingDetail({
 
       {source.source_type.length > 0 && (
         <Section title="Source type">
-          <p className="text-sm text-zinc-600">{source.source_type.join(', ')}</p>
+          <p className="text-sm text-stone-600">{source.source_type.join(', ')}</p>
         </Section>
       )}
 
@@ -106,9 +106,9 @@ function ClippingDetail({
       <TranscriptionSection source={source} />
       <OpenQuestionsSection source={source} />
 
-      <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-500">
+      <footer className="mt-12 border-t border-stone-200 pt-6 text-xs text-stone-500">
         <p>
-          Source ID: <code className="rounded bg-zinc-100 px-1 py-0.5">{source.id}</code>
+          Source ID: <code className="rounded bg-stone-100 px-1 py-0.5">{source.id}</code>
         </p>
         {source.page_id && (
           <p className="mt-1">
@@ -141,15 +141,15 @@ function ClippingHeader({ source }: { source: Clipping }) {
   return (
     <header className="mb-8">
       {source.headline ? (
-        <h1 className="text-2xl font-semibold text-zinc-900">{source.headline}</h1>
+        <h1 className="text-2xl font-semibold text-stone-900">{source.headline}</h1>
       ) : (
-        <h1 className="text-2xl font-semibold text-zinc-900">
+        <h1 className="text-2xl font-semibold text-stone-900">
           {source.newspaper}, {source.date}, p.{source.page}
         </h1>
       )}
-      <p className="mt-2 text-sm text-zinc-600">{citation}</p>
+      <p className="mt-2 text-sm text-stone-600">{citation}</p>
       {source.dateline && (
-        <p className="mt-1 text-sm italic text-zinc-500">Dateline: {source.dateline}</p>
+        <p className="mt-1 text-sm italic text-stone-500">Dateline: {source.dateline}</p>
       )}
       {source.image_url && (
         <p className="mt-3 text-sm">
@@ -157,7 +157,7 @@ function ClippingHeader({ source }: { source: Clipping }) {
             href={source.image_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-700 underline hover:text-zinc-900"
+            className="text-stone-700 underline hover:text-stone-900"
           >
             View on Newspapers.com ↗
           </a>
@@ -179,7 +179,7 @@ function DocumentDetail({
   const group = documentGroup(source.document_type);
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -203,9 +203,9 @@ function DocumentDetail({
       <TranscriptionSection source={source} />
       <OpenQuestionsSection source={source} />
 
-      <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-500">
+      <footer className="mt-12 border-t border-stone-200 pt-6 text-xs text-stone-500">
         <p>
-          Source ID: <code className="rounded bg-zinc-100 px-1 py-0.5">{source.id}</code>
+          Source ID: <code className="rounded bg-stone-100 px-1 py-0.5">{source.id}</code>
         </p>
         {source.reference && <p className="mt-1">Reference: {source.reference}</p>}
         {source.accessed_by && source.accessed_date && (
@@ -229,22 +229,22 @@ function DocumentHeader({ source }: { source: DocumentSource }) {
 
   return (
     <header className="mb-8">
-      <h1 className="text-2xl font-semibold text-zinc-900">
+      <h1 className="text-2xl font-semibold text-stone-900">
         {source.headline || `${humanizeDocumentType(source.document_type)}, ${source.date_raw ?? source.date ?? 'undated'}`}
       </h1>
-      <p className="mt-2 text-sm text-zinc-600">{citation}</p>
+      <p className="mt-2 text-sm text-stone-600">{citation}</p>
       {source.date_confidence !== 'certain' && (
         <p className="mt-1 text-xs text-amber-700">date confidence: {source.date_confidence}</p>
       )}
       <div className="mt-2 flex flex-wrap gap-2 text-xs">
-        <span className="rounded bg-zinc-100 px-2 py-0.5 text-zinc-700">
+        <span className="rounded bg-stone-100 px-2 py-0.5 text-stone-700">
           {humanizeDocumentType(source.document_type)}
         </span>
         <span
           className={
             source.focus === 'primary'
               ? 'rounded bg-emerald-50 px-2 py-0.5 text-emerald-800'
-              : 'rounded bg-zinc-100 px-2 py-0.5 text-zinc-500'
+              : 'rounded bg-stone-100 px-2 py-0.5 text-stone-500'
           }
         >
           {source.focus} focus
@@ -256,7 +256,7 @@ function DocumentHeader({ source }: { source: DocumentSource }) {
             href={source.accessed_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-700 underline hover:text-zinc-900"
+            className="text-stone-700 underline hover:text-stone-900"
           >
             View original record ↗
           </a>
@@ -288,7 +288,7 @@ function CensusHouseholdTable({ source, archive }: { source: DocumentSource; arc
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-zinc-300 text-left text-xs uppercase tracking-wide text-zinc-500">
+            <tr className="border-b border-stone-300 text-left text-xs uppercase tracking-wide text-stone-500">
               <th className="py-1.5 pr-3 font-semibold">Name as printed</th>
               {active.map(c => (
                 <th key={c.key} className="py-1.5 pr-3 font-semibold">{c.label}</th>
@@ -300,14 +300,14 @@ function CensusHouseholdTable({ source, archive }: { source: DocumentSource; arc
             {source.people.map((p, i) => {
               const person = archive.peopleById.get(p.id);
               return (
-                <tr key={`${p.id}-${i}`} className="border-b border-zinc-100 align-top">
+                <tr key={`${p.id}-${i}`} className="border-b border-stone-100 align-top">
                   <td className="py-1.5 pr-3">
                     <Link href={`/people/${p.id}`} className="font-medium hover:underline">
                       {p.name_as_printed ?? person?.display_name ?? p.id}
                     </Link>
                   </td>
                   {active.map(c => (
-                    <td key={c.key} className="py-1.5 pr-3 text-zinc-700">
+                    <td key={c.key} className="py-1.5 pr-3 text-stone-700">
                       {c.key === 'role_in_source'
                         ? (p.role_in_source ?? '').replace(/_/g, ' ')
                         : p[c.key] ?? ''}
@@ -335,15 +335,15 @@ function DirectoryEntries({ source, archive }: { source: DocumentSource; archive
         {source.people.map((p, i) => {
           const person = archive.peopleById.get(p.id);
           return (
-            <li key={`${p.id}-${i}`} className="border-l-2 border-zinc-200 pl-3">
-              <div className="font-serif text-zinc-800">
+            <li key={`${p.id}-${i}`} className="border-l-2 border-stone-200 pl-3">
+              <div className="font-serif text-stone-800">
                 <Link href={`/people/${p.id}`} className="font-semibold hover:underline">
                   {p.name_as_printed ?? person?.display_name ?? p.id}
                 </Link>
                 {p.occupation_as_printed && <span> — {p.occupation_as_printed}</span>}
                 {p.residence_as_printed && <span>, r {p.residence_as_printed}</span>}
               </div>
-              <div className="mt-0.5 text-xs text-zinc-500">
+              <div className="mt-0.5 text-xs text-stone-500">
                 {person && person.display_name !== p.name_as_printed && (
                   <span>= {person.display_name} · </span>
                 )}
@@ -378,8 +378,8 @@ function VitalRecordParties({ source, archive }: { source: DocumentSource; archi
             .map(f => `${f.label}: ${p[f.key]}`)
             .join(' · ');
           return (
-            <li key={`${p.id}-${i}`} className="border-l-2 border-zinc-200 pl-3">
-              <div className="text-xs uppercase tracking-wide text-zinc-500">
+            <li key={`${p.id}-${i}`} className="border-l-2 border-stone-200 pl-3">
+              <div className="text-xs uppercase tracking-wide text-stone-500">
                 {(p.role_in_source ?? 'named').replace(/_/g, ' ')}
               </div>
               <div>
@@ -387,13 +387,13 @@ function VitalRecordParties({ source, archive }: { source: DocumentSource; archi
                   {p.name_as_printed ?? person?.display_name ?? p.id}
                 </Link>
                 {person && person.display_name !== p.name_as_printed && (
-                  <span className="ml-1 text-sm text-zinc-500">(= {person.display_name})</span>
+                  <span className="ml-1 text-sm text-stone-500">(= {person.display_name})</span>
                 )}
                 <span className="ml-2">
                   <ConfidenceDot value={p.confidence_is_my_family} />
                 </span>
               </div>
-              {details && <p className="text-sm text-zinc-600">{details}</p>}
+              {details && <p className="text-sm text-stone-600">{details}</p>}
             </li>
           );
         })}
@@ -408,7 +408,7 @@ function SummarySection({ source }: { source: Source }) {
   if (!source.summary) return null;
   return (
     <Section title="Summary">
-      <p className="whitespace-pre-line text-zinc-700">{source.summary}</p>
+      <p className="whitespace-pre-line text-stone-700">{source.summary}</p>
     </Section>
   );
 }
@@ -429,18 +429,18 @@ function PeopleSection({
         {source.people.map((link, i) => {
           const person = archive.peopleById.get(link.id);
           return (
-            <li key={`${link.id}-${i}`} className="border-l-2 border-zinc-200 pl-3">
+            <li key={`${link.id}-${i}`} className="border-l-2 border-stone-200 pl-3">
               <div>
                 <Link href={`/people/${link.id}`} className="font-medium hover:underline">
                   {person?.display_name ?? link.id}
                 </Link>
                 {link.name_as_printed && person?.display_name !== link.name_as_printed && (
-                  <span className="ml-1 text-sm text-zinc-500">
+                  <span className="ml-1 text-sm text-stone-500">
                     (as printed: {link.name_as_printed})
                   </span>
                 )}
               </div>
-              <div className="text-sm text-zinc-600">
+              <div className="text-sm text-stone-600">
                 {link.role_in_story && (
                   <span>role: {link.role_in_story.replace(/_/g, ' ')} · </span>
                 )}
@@ -448,7 +448,7 @@ function PeopleSection({
               </div>
               <AsPrintedDetails link={link} />
               {link.confidence_notes && (
-                <p className="mt-1 text-sm text-zinc-500 whitespace-pre-line">
+                <p className="mt-1 text-sm text-stone-500 whitespace-pre-line">
                   {link.confidence_notes}
                 </p>
               )}
@@ -481,7 +481,7 @@ function AsPrintedDetails({ link }: { link: PersonLink | DocumentPersonLink }) {
   const present = fields.filter(f => doc[f.key]);
   if (present.length === 0) return null;
   return (
-    <p className="mt-0.5 text-xs text-zinc-500">
+    <p className="mt-0.5 text-xs text-stone-500">
       {present.map(f => `${f.label}: ${doc[f.key]}`).join(' · ')}
     </p>
   );
@@ -493,13 +493,13 @@ function MentionedSection({ source }: { source: Source }) {
     <Section title="Also mentioned">
       <ul className="space-y-2 text-sm">
         {source.mentioned.map((m, i) => (
-          <li key={`${m.name_as_printed}-${i}`} className="text-zinc-700">
+          <li key={`${m.name_as_printed}-${i}`} className="text-stone-700">
             <span className="font-medium">{m.name_as_printed}</span>
             {m.role_in_story && (
-              <span className="text-zinc-500"> · {m.role_in_story}</span>
+              <span className="text-stone-500"> · {m.role_in_story}</span>
             )}
             {m.note && (
-              <p className="mt-0.5 text-zinc-500 whitespace-pre-line">{m.note}</p>
+              <p className="mt-0.5 text-stone-500 whitespace-pre-line">{m.note}</p>
             )}
           </li>
         ))}
@@ -520,7 +520,7 @@ function PlacesSection({ source, archive }: { source: Source; archive: Archive }
               <Link href={`/places/${link.id}`} className="hover:underline">
                 {place?.display ?? link.id}
               </Link>
-              {link.role && <span className="text-zinc-500"> ({link.role})</span>}
+              {link.role && <span className="text-stone-500"> ({link.role})</span>}
             </li>
           );
         })}
@@ -538,7 +538,7 @@ function ThemesSection({ source }: { source: Source }) {
           <li key={theme}>
             <Link
               href={`/themes/${theme}`}
-              className="rounded bg-zinc-100 px-2 py-0.5 hover:bg-zinc-200"
+              className="rounded bg-stone-100 px-2 py-0.5 hover:bg-stone-200"
             >
               {theme}
             </Link>
@@ -575,7 +575,7 @@ function TagsSection({ source }: { source: Source }) {
     <Section title="Tags">
       <ul className="flex flex-wrap gap-2 text-sm">
         {source.tags.map(tag => (
-          <li key={tag} className="rounded border border-zinc-200 px-2 py-0.5 text-zinc-600">
+          <li key={tag} className="rounded border border-stone-200 px-2 py-0.5 text-stone-600">
             {tag}
           </li>
         ))}
@@ -594,7 +594,7 @@ function CrossrefsSection({ source, archive }: { source: Source; archive: Archiv
           if (!other) {
             return (
               <li key={refId}>
-                <code className="rounded bg-zinc-100 px-1 py-0.5 text-xs">{refId}</code>
+                <code className="rounded bg-stone-100 px-1 py-0.5 text-xs">{refId}</code>
                 <span className="ml-1 text-xs text-amber-700">(unresolved)</span>
               </li>
             );
@@ -618,12 +618,12 @@ function TranscriptionSection({ source }: { source: Source }) {
   if (!source.transcription) return null;
   return (
     <Section title="Transcription">
-      <div className="rounded border border-zinc-200 bg-zinc-50 p-4 text-sm">
+      <div className="rounded border border-stone-200 bg-stone-50 p-4 text-sm">
         <TranscriptionStatusBadge
           status={source.transcription_status}
           confidence={source.transcription_confidence}
         />
-        <div className="mt-3 whitespace-pre-line font-serif leading-7 text-zinc-800">
+        <div className="mt-3 whitespace-pre-line font-serif leading-7 text-stone-800">
           {source.transcription}
         </div>
       </div>
@@ -635,7 +635,7 @@ function OpenQuestionsSection({ source }: { source: Source }) {
   if (source.open_questions.length === 0) return null;
   return (
     <Section title="Open questions">
-      <ul className="list-disc space-y-1 pl-5 text-sm text-zinc-700">
+      <ul className="list-disc space-y-1 pl-5 text-sm text-stone-700">
         {source.open_questions.map((q, i) => (
           <li key={i} className="whitespace-pre-line">{q}</li>
         ))}
@@ -647,7 +647,7 @@ function OpenQuestionsSection({ source }: { source: Source }) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-8">
-      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-500">
         {title}
       </h2>
       {children}
@@ -660,8 +660,8 @@ function confidenceBand(value: number): { label: string; color: string } {
   if (value >= 95) return { label: `${value} certain`, color: 'bg-emerald-100 text-emerald-900' };
   if (value >= 75) return { label: `${value} strong`, color: 'bg-emerald-50 text-emerald-800' };
   if (value >= 25) return { label: `${value} candidate`, color: 'bg-amber-100 text-amber-900' };
-  if (value >= 10) return { label: `${value} flag`, color: 'bg-zinc-100 text-zinc-700' };
-  return { label: '0 not family', color: 'bg-zinc-100 text-zinc-500' };
+  if (value >= 10) return { label: `${value} flag`, color: 'bg-stone-100 text-stone-700' };
+  return { label: '0 not family', color: 'bg-stone-100 text-stone-500' };
 }
 
 function ConfidenceBadge({ value }: { value: number }) {
@@ -691,14 +691,14 @@ function TranscriptionStatusBadge({
   confidence: Source['transcription_confidence'];
 }) {
   if (status === 'none') {
-    return <span className="text-xs text-zinc-500">No transcription.</span>;
+    return <span className="text-xs text-stone-500">No transcription.</span>;
   }
   const color =
     status === 'complete' && confidence === 'high'
       ? 'text-emerald-700'
       : status === 'partial' || confidence === 'medium'
       ? 'text-amber-700'
-      : 'text-zinc-600';
+      : 'text-stone-600';
   return (
     <span className={`text-xs uppercase tracking-wide ${color}`}>
       transcription: {status}

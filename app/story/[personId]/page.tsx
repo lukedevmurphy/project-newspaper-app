@@ -12,6 +12,7 @@ import { loadAiChapterNarrative, loadAiClippingSummary, loadArchive, sourceListi
 import type { Archive, PersonRecord, Source } from '@/lib/data';
 import { deriveChapters, type StoryChapter } from '@/lib/story/chapters';
 import { STORY_SUBJECT_IDS, isStorySubject } from '@/lib/story/subjects';
+import { PersonAvatar } from '@/components/avatar';
 
 type Params = { personId: string };
 
@@ -42,7 +43,7 @@ export default async function StoryPage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
@@ -53,13 +54,16 @@ export default async function StoryPage({
       </nav>
 
       <header className="mb-10">
-        <h1 className="text-2xl font-semibold text-zinc-900">
-          {person.display_name.split('(')[0].trim()}
-        </h1>
-        <p className="mt-2 text-sm text-zinc-600">
-          <LifespanLine person={person} />
+        <div className="flex items-center gap-4">
+          <PersonAvatar person={person} archive={archive} size={72} />
+          <h1 className="text-2xl font-semibold text-stone-900">
+            {person.display_name.split('(')[0].trim()}
+          </h1>
+        </div>
+        <p className="mt-2 text-sm text-stone-600">
+          <LifespanLine person={person} archive={archive} />
         </p>
-        <p className="mt-2 text-sm text-zinc-600">
+        <p className="mt-2 text-sm text-stone-600">
           {totalSources} sources across {chapters.length} chapters ·{' '}
           <Link href={`/people/${person.id}`} className="hover:underline">
             person record
@@ -69,10 +73,10 @@ export default async function StoryPage({
           <SubjectConfidenceNote person={person} />
         </p>
         {/* Chapter TOC — server-rendered anchor jump nav */}
-        <p className="mt-4 text-sm text-zinc-600">
+        <p className="mt-4 text-sm text-stone-600">
           {chapters.map((ch, i) => (
             <span key={ch.id}>
-              {i > 0 && <span className="mx-1.5 text-zinc-300">·</span>}
+              {i > 0 && <span className="mx-1.5 text-stone-300">·</span>}
               <a href={`#chapter-${ch.id}`} className="hover:underline">
                 {ch.title}
               </a>
@@ -87,7 +91,7 @@ export default async function StoryPage({
         ))}
       </div>
 
-      <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-500">
+      <footer className="mt-12 border-t border-stone-200 pt-6 text-xs text-stone-500">
         <p>
           Chapters are derived from citation-backed residences and source dates — nothing here
           is asserted without a source link. Historical context strips (&ldquo;Meanwhile&rdquo;)
@@ -98,12 +102,14 @@ export default async function StoryPage({
   );
 }
 
-function LifespanLine({ person }: { person: PersonRecord }) {
+function LifespanLine({ person, archive }: { person: PersonRecord; archive: Archive }) {
+  const placeName = (id: string | null) =>
+    id ? archive.placesById.get(id)?.display ?? id.replace(/^place_/, '').replace(/_/g, ' ') : null;
   const birth = person.birth.date
-    ? `b. ${person.birth.date}${person.birth.place ? `, ${person.birth.place.replace(/^place_/, '').replace(/_/g, ' ')}` : ''}`
+    ? `b. ${person.birth.date}${person.birth.place ? `, ${placeName(person.birth.place)}` : ''}`
     : null;
   const death = person.death.date
-    ? `d. ${person.death.date}${person.death.place ? `, ${person.death.place.replace(/^place_/, '').replace(/_/g, ' ')}` : ''}`
+    ? `d. ${person.death.date}${person.death.place ? `, ${placeName(person.death.place)}` : ''}`
     : null;
   if (!birth && !death) return <>Lifespan undocumented.</>;
   return <>{[birth, death].filter(Boolean).join(' — ')}</>;
@@ -143,16 +149,16 @@ function Chapter({
   const foldedCount = folded.reduce((s, g) => s + g.sourceIds.length, 0);
 
   return (
-    <section id={`chapter-${chapter.id}`} className="relative border-l-2 border-zinc-300 pl-6">
-      <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-zinc-400" aria-hidden />
+    <section id={`chapter-${chapter.id}`} className="relative border-l-2 border-stone-300 pl-6">
+      <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-stone-400" aria-hidden />
 
       <header className="mb-4">
-        <h2 className="text-lg font-semibold text-zinc-900">{chapter.title}</h2>
-        <p className="mt-1 text-sm text-zinc-600">
+        <h2 className="text-lg font-semibold text-stone-900">{chapter.title}</h2>
+        <p className="mt-1 text-sm text-stone-600">
           <WindowLine chapter={chapter} />
         </p>
         {chapter.residenceSourceIds.length > 0 && (
-          <p className="mt-1 text-xs text-zinc-500">
+          <p className="mt-1 text-xs text-stone-500">
             residence established by:{' '}
             {chapter.residenceSourceIds.map((sid, i) => (
               <span key={sid}>
@@ -165,11 +171,11 @@ function Chapter({
       </header>
 
       {chapter.addressStanzas.length > 0 && (
-        <dl className="mb-4 space-y-1 text-sm text-zinc-700">
+        <dl className="mb-4 space-y-1 text-sm text-stone-700">
           {chapter.addressStanzas.filter(s => s.address).map((s, i) => (
             <div key={i} className="flex gap-2">
               <dt className="font-medium">{s.address}</dt>
-              <dd className="text-zinc-500">
+              <dd className="text-stone-500">
                 {stanzaRange(s.from, s.to)} · confidence {s.confidence}
               </dd>
             </div>
@@ -178,21 +184,21 @@ function Chapter({
       )}
 
       {chapter.context.length > 0 && (
-        <div className="mb-4 border-l-2 border-dashed border-zinc-300 pl-3 text-sm italic text-zinc-500">
+        <div className="mb-4 border-l-2 border-dashed border-stone-300 pl-3 text-sm italic text-stone-500">
           Meanwhile — {chapter.context.map(c => c.label).join(' · ')}
         </div>
       )}
 
       {narrative && (
         <div className="mb-4">
-          <p className="leading-relaxed text-zinc-700">
+          <p className="leading-relaxed text-stone-700">
             {narrative.sentences.length > 0
               ? narrative.sentences.map((s, i) => (
                   <span key={i}>
                     {s.text}{' '}
                     {s.source_ids.map(sid => (
                       <sup key={sid}>
-                        <Link href={`/sources/${sid}`} className="text-zinc-400 hover:underline">
+                        <Link href={`/sources/${sid}`} className="text-stone-400 hover:underline">
                           †
                         </Link>
                       </sup>
@@ -201,7 +207,7 @@ function Chapter({
                 ))
               : narrative.narrative}
           </p>
-          <p className="mt-1 text-xs text-zinc-400">
+          <p className="mt-1 text-xs text-stone-400">
             AI-generated ({narrative.model}). Every sentence cites its sources.
           </p>
         </div>
@@ -213,7 +219,7 @@ function Chapter({
         ))}
         {folded.length > 0 && (
           <details>
-            <summary className="cursor-pointer text-sm text-zinc-500 hover:text-zinc-800">
+            <summary className="cursor-pointer text-sm text-stone-500 hover:text-stone-800">
               Show all {foldedCount} remaining sources from this period
             </summary>
             <div className="mt-4 space-y-4">
@@ -224,7 +230,7 @@ function Chapter({
           </details>
         )}
         {chapter.sourceGroups.length === 0 && (
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-stone-500">
             No sources dated to this period yet
             {chapter.residenceSourceIds.length > 0 &&
               ' — the residence itself is documented (citations above)'}
@@ -234,8 +240,8 @@ function Chapter({
       </div>
 
       {chapter.coOccurrences.length > 0 && (
-        <div className="mt-4 text-sm text-zinc-700">
-          <h3 className="mb-1 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+        <div className="mt-4 text-sm text-stone-700">
+          <h3 className="mb-1 text-xs font-semibold uppercase tracking-wide text-stone-500">
             During this period, appears alongside
           </h3>
           <ul className="space-y-1">
@@ -247,13 +253,13 @@ function Chapter({
                     {(other?.display_name ?? co.personId).split('(')[0].trim()}
                   </Link>
                   {co.relation && (
-                    <span className="text-zinc-500"> ({co.relation.replace(/_/g, ' ')})</span>
+                    <span className="text-stone-500"> ({co.relation.replace(/_/g, ' ')})</span>
                   )}{' '}
                   in {co.sourceIds.length} source{co.sourceIds.length === 1 ? '' : 's'}:{' '}
                   {co.sourceIds.map((sid, i) => (
                     <span key={sid} className="text-xs">
                       {i > 0 && ', '}
-                      <Link href={`/sources/${sid}`} className="text-zinc-500 hover:underline">
+                      <Link href={`/sources/${sid}`} className="text-stone-500 hover:underline">
                         [{i + 1}]
                       </Link>
                     </span>
@@ -286,29 +292,29 @@ function SourceGroupCard({
   const { title, citation } = sourceListing(primary);
 
   return (
-    <article className="rounded-lg border border-zinc-200 bg-white p-4 hover:border-zinc-300">
+    <article className="rounded-lg border border-stone-200 bg-white p-4 hover:border-stone-300">
       <header className="mb-1">
         <Link href={`/sources/${primary.id}`} className="text-sm hover:underline">
           <span className="font-medium">{citation}</span>
         </Link>
       </header>
-      {title && <h3 className="mb-1 text-base font-medium text-zinc-900">{title}</h3>}
-      {prose && <p className="text-sm leading-6 text-zinc-700">{prose}</p>}
+      {title && <h3 className="mb-1 text-base font-medium text-stone-900">{title}</h3>}
+      {prose && <p className="text-sm leading-6 text-stone-700">{prose}</p>}
       {quotes.map((q, i) => (
         <blockquote
           key={i}
-          className="mt-2 border-l-2 border-zinc-300 pl-3 font-serif text-sm italic leading-6 text-zinc-700"
+          className="mt-2 border-l-2 border-stone-300 pl-3 font-serif text-sm italic leading-6 text-stone-700"
         >
           &ldquo;{q}&rdquo;
         </blockquote>
       ))}
       {ai && (
-        <p className="mt-1 text-xs text-zinc-400">
+        <p className="mt-1 text-xs text-stone-400">
           Summary AI-generated ({ai.model}); verify against the transcription.
         </p>
       )}
       {siblings.length > 0 && (
-        <p className="mt-2 text-xs text-zinc-500">
+        <p className="mt-2 text-xs text-stone-500">
           Same moment, also reported in:{' '}
           {siblings.map((sid, i) => (
             <span key={sid}>
@@ -330,7 +336,7 @@ function CitationChip({ sourceId, archive }: { sourceId: string; archive: Archiv
   if (!src) {
     return (
       <code
-        className="rounded bg-zinc-100 px-1 py-0.5 text-[11px] text-zinc-500"
+        className="rounded bg-stone-100 px-1 py-0.5 text-[11px] text-stone-500"
         title="document record pending"
       >
         {sourceId}

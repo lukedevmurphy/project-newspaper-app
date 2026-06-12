@@ -7,7 +7,7 @@ import type { Source } from '@/lib/data';
 
 export function SourceList({ sources }: { sources: Source[] }) {
   if (sources.length === 0) {
-    return <p className="text-sm text-zinc-500">No sources.</p>;
+    return <p className="text-sm text-stone-500">No sources.</p>;
   }
   const sorted = [...sources].sort((a, b) => {
     const ad = a.date ?? '';
@@ -17,7 +17,7 @@ export function SourceList({ sources }: { sources: Source[] }) {
   return (
     <ul className="space-y-3">
       {sorted.map(source => (
-        <li key={source.id} className="border-l-2 border-zinc-200 pl-3">
+        <li key={source.id} className="border-l-2 border-stone-200 pl-3">
           <SourceRow source={source} />
         </li>
       ))}
@@ -33,10 +33,10 @@ function SourceRow({ source }: { source: Source }) {
         {citation}
       </Link>
       {title && (
-        <span className="ml-2 text-zinc-700">{title}</span>
+        <span className="ml-2 text-stone-700">{title}</span>
       )}
       {source.summary && (
-        <p className="mt-0.5 text-xs text-zinc-600">
+        <p className="mt-0.5 text-xs text-stone-600">
           {source.summary.slice(0, 160)}
           {source.summary.length > 160 && '…'}
         </p>

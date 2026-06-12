@@ -49,29 +49,29 @@ export default function CurioPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">Curio cabinet</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">Curio cabinet</h1>
+        <p className="mt-2 text-sm text-stone-600">
           {curioSources.length} clipping
           {curioSources.length === 1 ? '' : 's'} tagged for period
           texture, atmosphere, or oddity. The kind of thing the book
           reaches for when it wants to set a scene, not when it&apos;s
           building an argument.
         </p>
-        <p className="mt-2 text-xs text-zinc-500">
+        <p className="mt-2 text-xs text-stone-500">
           Color: {moodCounts.color} · Funny: {moodCounts.funny} ·
           Poignant: {moodCounts.poignant} · Ironic: {moodCounts.ironic}
         </p>
       </header>
 
       {curioSources.length === 0 ? (
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-stone-500">
           No curio-tagged clippings yet. Tag a clipping with{' '}
           <code>color</code>, <code>funny</code>, <code>poignant</code>,
           or <code>ironic</code> in its metadata.yaml to surface it here.
@@ -101,11 +101,11 @@ function CurioCard({ source }: { source: Source }) {
   const teaser = teaserFrom(source.summary);
 
   return (
-    <article className="rounded-lg border border-zinc-200 bg-white p-4 hover:border-zinc-300">
+    <article className="rounded-lg border border-stone-200 bg-white p-4 hover:border-stone-300">
       <header className="mb-2 flex items-baseline justify-between gap-3">
         <Link href={`/sources/${source.id}`} className="text-sm hover:underline">
           <span className="font-medium">{source.date ?? 'undated'}</span>
-          <span className="ml-1 text-zinc-600">
+          <span className="ml-1 text-stone-600">
             — {source.newspaper}, p.{source.page}
           </span>
         </Link>
@@ -122,16 +122,16 @@ function CurioCard({ source }: { source: Source }) {
       </header>
 
       {source.headline && (
-        <h2 className="mb-1 text-base font-medium text-zinc-900">
+        <h2 className="mb-1 text-base font-medium text-stone-900">
           {source.headline}
         </h2>
       )}
 
-      <p className="text-sm leading-6 text-zinc-700">{teaser}</p>
+      <p className="text-sm leading-6 text-stone-700">{teaser}</p>
 
       <Link
         href={`/sources/${source.id}`}
-        className="mt-2 inline-block text-xs text-zinc-500 hover:text-zinc-900 hover:underline"
+        className="mt-2 inline-block text-xs text-stone-500 hover:text-stone-900 hover:underline"
       >
         Show the original →
       </Link>

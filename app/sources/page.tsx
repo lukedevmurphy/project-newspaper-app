@@ -15,14 +15,14 @@ export default function AllSourcesPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">All sources</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">All sources</h1>
+        <p className="mt-2 text-sm text-stone-600">
           {sources.length} sources ({countLine}), oldest first.
         </p>
       </header>
@@ -30,12 +30,12 @@ export default function AllSourcesPage() {
         {sources.map(src => {
           const { title, citation } = sourceListing(src);
           return (
-            <li key={src.id} className="border-l-2 border-zinc-200 pl-3 text-sm">
+            <li key={src.id} className="border-l-2 border-stone-200 pl-3 text-sm">
               <Link href={`/sources/${src.id}`} className="font-medium hover:underline">
                 {citation}
               </Link>
               {title && (
-                <span className="ml-2 text-zinc-700">{title}</span>
+                <span className="ml-2 text-stone-700">{title}</span>
               )}
             </li>
           );

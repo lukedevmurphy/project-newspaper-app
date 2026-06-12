@@ -39,15 +39,15 @@ export default async function TimelinePage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">Timeline</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">Timeline</h1>
+        <p className="mt-2 text-sm text-stone-600">
           All {sources.length} sources in chronological order.
         </p>
         <div className="mt-3 flex gap-2 text-sm">
@@ -57,8 +57,8 @@ export default async function TimelinePage({
               href={f.key === 'all' ? '/timeline' : `/timeline?type=${f.key}`}
               className={
                 f.key === activeType
-                  ? 'rounded-full bg-zinc-800 px-3 py-0.5 text-white'
-                  : 'rounded-full bg-zinc-100 px-3 py-0.5 text-zinc-600 hover:bg-zinc-200'
+                  ? 'rounded-full bg-stone-800 px-3 py-0.5 text-white'
+                  : 'rounded-full bg-stone-100 px-3 py-0.5 text-stone-600 hover:bg-stone-200'
               }
             >
               {f.label}
@@ -69,15 +69,15 @@ export default async function TimelinePage({
 
       {[...byDecade.entries()].map(([decade, items]) => (
         <section key={decade} className="mb-10">
-          <h2 className="mb-3 text-lg font-semibold text-zinc-800">
+          <h2 className="mb-3 text-lg font-semibold text-stone-800">
             {decade}{' '}
-            <span className="text-sm font-normal text-zinc-500">
+            <span className="text-sm font-normal text-stone-500">
               ({items.length})
             </span>
           </h2>
           <ul className="space-y-2">
             {items.map(src => (
-              <li key={src.id} className="border-l-2 border-zinc-200 pl-3 text-sm">
+              <li key={src.id} className="border-l-2 border-stone-200 pl-3 text-sm">
                 <TimelineRow source={src} />
               </li>
             ))}
@@ -95,9 +95,9 @@ function TimelineRow({ source }: { source: Source }) {
       <Link href={`/sources/${source.id}`} className="font-medium hover:underline">
         {citation}
       </Link>
-      {title && <span className="ml-2 text-zinc-700">{title}</span>}
+      {title && <span className="ml-2 text-stone-700">{title}</span>}
       {source.summary && (
-        <p className="mt-0.5 text-xs text-zinc-600">
+        <p className="mt-0.5 text-xs text-stone-600">
           {source.summary.slice(0, 140)}
           {source.summary.length > 140 && '…'}
         </p>

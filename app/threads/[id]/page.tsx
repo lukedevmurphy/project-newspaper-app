@@ -27,19 +27,19 @@ export default async function ThreadPage({
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">{thread.display}</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">{thread.display}</h1>
+        <p className="mt-2 text-sm text-stone-600">
           {sources.length} source{sources.length === 1 ? '' : 's'}.
         </p>
         {thread.description && (
-          <p className="mt-3 whitespace-pre-line text-sm text-zinc-700">
+          <p className="mt-3 whitespace-pre-line text-sm text-stone-700">
             {thread.description}
           </p>
         )}

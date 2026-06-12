@@ -49,15 +49,15 @@ export default function TimelineExplorerPage() {
 
   return (
     <main className="mx-auto max-w-[90rem] px-6 py-10">
-      <nav className="mb-6 text-sm text-zinc-500">
+      <nav className="mb-6 text-sm text-stone-500">
         <Link href="/" className="hover:underline">
           ← Archive
         </Link>
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900">Timeline Explorer</h1>
-        <p className="mt-2 text-sm text-zinc-600">
+        <h1 className="text-2xl font-semibold text-stone-900">Timeline Explorer</h1>
+        <p className="mt-2 text-sm text-stone-600">
           Top band: {bookSubjects.length} book subjects, with known
           residences and source-tick marks. Middle band: {archive.events.length}{' '}
           events derived from primary sources. Each tick or dot links
@@ -71,7 +71,7 @@ export default function TimelineExplorerPage() {
 
       <Section title={`Book subjects (${bookSubjects.length})`}>
         {bookSubjects.length === 0 ? (
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-stone-500">
             No people are flagged <code>is_book_subject: true</code> yet.
           </p>
         ) : (
@@ -93,16 +93,16 @@ export default function TimelineExplorerPage() {
       </Section>
 
       <details className="mt-8 group">
-        <summary className="mb-3 cursor-pointer text-sm font-semibold uppercase tracking-wide text-zinc-500 hover:text-zinc-700">
+        <summary className="mb-3 cursor-pointer text-sm font-semibold uppercase tracking-wide text-stone-500 hover:text-stone-700">
           Show external historical context
-          <span className="ml-2 font-normal normal-case text-xs text-zinc-400 group-open:hidden">
+          <span className="ml-2 font-normal normal-case text-xs text-stone-400 group-open:hidden">
             (click to expand — Famine years, Land War, WWI, etc.)
           </span>
         </summary>
         <ExternalContextBand bounds={bounds} />
       </details>
 
-      <p className="mt-12 text-xs text-zinc-500">
+      <p className="mt-12 text-xs text-stone-500">
         Residence bars show <em>from</em> → <em>to</em> dates from each
         person&apos;s <code>residences</code> field. Open-ended ranges
         extend to the edge of the chart. Source ticks below each
@@ -118,14 +118,14 @@ export default function TimelineExplorerPage() {
 function DateAxis({ bounds }: { bounds: TimelineBounds }) {
   const ticks = decadeTicks(bounds);
   return (
-    <div className="relative mb-4 h-6 border-b border-zinc-300">
+    <div className="relative mb-4 h-6 border-b border-stone-300">
       {ticks.map(({ year, percent }) => (
         <div
           key={year}
-          className="absolute top-0 -translate-x-1/2 text-xs text-zinc-500"
+          className="absolute top-0 -translate-x-1/2 text-xs text-stone-500"
           style={{ left: `${percent}%` }}
         >
-          <span className="absolute -bottom-1 left-1/2 h-2 w-px -translate-x-1/2 bg-zinc-300" />
+          <span className="absolute -bottom-1 left-1/2 h-2 w-px -translate-x-1/2 bg-stone-300" />
           {year}
         </div>
       ))}
@@ -152,7 +152,7 @@ function SubjectRow({
     .map(s => ({ id: s.id, date: s.date, label: titleForSource(s) }));
 
   return (
-    <div className="grid grid-cols-[14rem_1fr] items-center gap-3 border-b border-zinc-100 py-2">
+    <div className="grid grid-cols-[14rem_1fr] items-center gap-3 border-b border-stone-100 py-2">
       <div className="text-sm">
         <Link
           href={`/people/${person.id}`}
@@ -166,7 +166,7 @@ function SubjectRow({
           </span>
         )}
       </div>
-      <div className="relative h-8 rounded bg-zinc-50">
+      <div className="relative h-8 rounded bg-stone-50">
         {residences.map((r, i) => {
           const pos = rangeToPercent(r.date_range.from, r.date_range.to, bounds);
           if (!pos) return null;
@@ -196,7 +196,7 @@ function SubjectRow({
             <Link
               key={t.id}
               href={`/sources/${t.id}`}
-              className="absolute top-0 h-8 w-px bg-zinc-700/70 hover:w-0.5 hover:bg-zinc-900"
+              className="absolute top-0 h-8 w-px bg-stone-700/70 hover:w-0.5 hover:bg-stone-900"
               style={{ left: `${pct}%` }}
               title={`${t.date} — ${t.label}`}
             />
@@ -217,7 +217,7 @@ function EventBand({
   bounds: TimelineBounds;
 }) {
   return (
-    <div className="relative h-24 rounded bg-zinc-50">
+    <div className="relative h-24 rounded bg-stone-50">
       {events.map(e => {
         const pct = dateToPercent(e.date, bounds);
         if (pct === null) return null;
@@ -226,7 +226,7 @@ function EventBand({
           <Link
             key={e.id}
             href={`/sources/${e.source_id}`}
-            className="absolute h-3 w-3 -translate-x-1/2 rounded-full bg-zinc-700/80 hover:bg-zinc-900 hover:ring-2 hover:ring-zinc-900/30"
+            className="absolute h-3 w-3 -translate-x-1/2 rounded-full bg-stone-700/80 hover:bg-stone-900 hover:ring-2 hover:ring-stone-900/30"
             style={{
               left: `${pct}%`,
               top: `${10 + row * 26}px`,
@@ -243,7 +243,7 @@ function EventBand({
 
 function ExternalContextBand({ bounds }: { bounds: TimelineBounds }) {
   return (
-    <div className="relative h-28 rounded border border-zinc-200 bg-white">
+    <div className="relative h-28 rounded border border-stone-200 bg-white">
       {EXTERNAL_CONTEXT.map((period, i) => {
         const pos = rangeToPercent(period.from, period.to, bounds);
         if (!pos) return null;
@@ -272,7 +272,7 @@ function ExternalContextBand({ bounds }: { bounds: TimelineBounds }) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-6">
-      <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+      <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-stone-500">
         {title}
       </h2>
       {children}

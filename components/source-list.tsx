@@ -2,6 +2,7 @@
 // page. Used on theme / place / thread / timeline pages.
 
 import Link from 'next/link';
+import { sourceListing } from '@/lib/data';
 import type { Source } from '@/lib/data';
 
 export function SourceList({ sources }: { sources: Source[] }) {
@@ -25,23 +26,21 @@ export function SourceList({ sources }: { sources: Source[] }) {
 }
 
 function SourceRow({ source }: { source: Source }) {
-  if (source.type === 'clipping') {
-    return (
-      <div className="text-sm">
-        <Link href={`/sources/${source.id}`} className="font-medium hover:underline">
-          {source.date ?? 'undated'} — {source.newspaper}, p.{source.page}
-        </Link>
-        {source.headline && (
-          <span className="ml-2 text-zinc-700">{source.headline}</span>
-        )}
-        {source.summary && (
-          <p className="mt-0.5 text-xs text-zinc-600">
-            {source.summary.slice(0, 160)}
-            {source.summary.length > 160 && '…'}
-          </p>
-        )}
-      </div>
-    );
-  }
-  return null;
+  const { title, citation } = sourceListing(source);
+  return (
+    <div className="text-sm">
+      <Link href={`/sources/${source.id}`} className="font-medium hover:underline">
+        {citation}
+      </Link>
+      {title && (
+        <span className="ml-2 text-zinc-700">{title}</span>
+      )}
+      {source.summary && (
+        <p className="mt-0.5 text-xs text-zinc-600">
+          {source.summary.slice(0, 160)}
+          {source.summary.length > 160 && '…'}
+        </p>
+      )}
+    </div>
+  );
 }

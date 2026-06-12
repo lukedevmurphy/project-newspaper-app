@@ -5,7 +5,7 @@
 
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { loadArchive } from '@/lib/data';
+import { loadArchive, sourceListing } from '@/lib/data';
 import type { Archive, Clipping, PersonLink, PersonRecord, Source } from '@/lib/data';
 
 type Params = { id: string };
@@ -168,26 +168,24 @@ function ConfidenceBand({
 }
 
 function SourceRowLink({ source, link }: { source: Source; link: PersonLink }) {
-  if (source.type === 'clipping') {
-    return (
-      <div className="text-sm">
-        <Link href={`/sources/${source.id}`} className="font-medium hover:underline">
-          {source.date ?? 'undated'} — {source.newspaper}, p.{source.page}
-        </Link>
-        {source.headline && (
-          <span className="ml-2 text-zinc-700">{source.headline}</span>
+  const { title, citation } = sourceListing(source);
+  return (
+    <div className="text-sm">
+      <Link href={`/sources/${source.id}`} className="font-medium hover:underline">
+        {citation}
+      </Link>
+      {title && (
+        <span className="ml-2 text-zinc-700">{title}</span>
+      )}
+      <div className="text-xs text-zinc-500">
+        {link.role_in_story && <span>role: {link.role_in_story} · </span>}
+        confidence on this source: {link.confidence_is_my_family}
+        {link.name_as_printed && (
+          <span> · as printed: {link.name_as_printed}</span>
         )}
-        <div className="text-xs text-zinc-500">
-          {link.role_in_story && <span>role: {link.role_in_story} · </span>}
-          confidence on this source: {link.confidence_is_my_family}
-          {link.name_as_printed && (
-            <span> · as printed: {link.name_as_printed}</span>
-          )}
-        </div>
       </div>
-    );
-  }
-  return null;
+    </div>
+  );
 }
 
 function PersonFacts({

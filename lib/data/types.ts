@@ -59,10 +59,59 @@ export interface Clipping extends SourceBase {
   open_questions: string[];
 }
 
-// Future source subtypes go here, then in the Source union below.
-// e.g. CensusRecord, GedcomImport, PersonalNote, Photograph.
+// A document is any non-newspaper primary source from archive/documents/:
+// census enumerations, city directories, civil records, naturalization
+// papers, passenger lists, military records, letters, headstones, etc.
+// All 13+ document_type values share ONE metadata schema in the data repo;
+// the variation lives in the people[] entries (*_as_printed fields), so
+// one DocumentSource type covers them all and `document_type` acts as a
+// renderer-level sub-discriminator (see documentGroup below).
 
-export type Source = Clipping;
+export interface DocumentPersonLink extends PersonLink {
+  role_in_source?: string;    // head_of_household, groom, applicant, directory_entry_subject…
+  age_as_printed?: string;
+  sex_as_printed?: string;
+  birth_year_as_printed?: string;
+  birth_date_as_printed?: string;
+  birth_place_as_printed?: string;
+  death_place_as_printed?: string;
+  marital_status_as_printed?: string;
+  occupation_as_printed?: string;
+  residence_as_printed?: string;
+  naturalization_status_as_printed?: string;
+  years_in_us?: string;
+  destination_as_printed?: string;
+  note?: string;
+}
+
+export interface DocumentSource extends SourceBase {
+  type: 'document';
+  document_type: string;      // census_us_federal, city_directory, civil_record_marriage…
+  focus: 'primary' | 'secondary';
+  original_filename?: string;
+  headline: string;
+  collection: string;
+  agency: string;
+  jurisdiction: string;
+  reference: string;
+  accessed_url: string | null;
+  accessed_by?: string;
+  accessed_date?: string;
+  date_raw: string | null;    // verbatim YAML date ("c1917", "~1885") for display
+  people: DocumentPersonLink[];
+  open_questions: string[];
+}
+
+// Renderer grouping for document_type values. Bespoke renderers exist for
+// the three richest groups; everything else gets the generic document view.
+export function documentGroup(documentType: string): 'census' | 'directory' | 'vital_record' | 'generic' {
+  if (documentType.startsWith('census')) return 'census';
+  if (documentType === 'city_directory') return 'directory';
+  if (documentType.startsWith('civil_record') || documentType.startsWith('parish_record')) return 'vital_record';
+  return 'generic';
+}
+
+export type Source = Clipping | DocumentSource;
 
 // ---- People, places, threads, pages -----------------------------------
 
@@ -239,6 +288,7 @@ export interface Archive {
   themes: string[];
   tags: string[];
   sourceTypes: string[];
+  documentTypes: string[];
   threads: ThreadRecord[];
   threadsById: Map<string, ThreadRecord>;
 

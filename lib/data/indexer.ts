@@ -21,10 +21,11 @@ export function buildIndex(input: {
   themes: string[];
   tags: string[];
   sourceTypes: string[];
+  documentTypes: string[];
   threads: ThreadRecord[];
   pages: PageRecord[];
 }): Archive {
-  const { sources, people, places, themes, tags, sourceTypes, threads, pages } = input;
+  const { sources, people, places, themes, tags, sourceTypes, documentTypes, threads, pages } = input;
 
   const sourcesById = new Map(sources.map(s => [s.id, s]));
   const peopleById = new Map(people.map(p => [p.id, p]));
@@ -87,6 +88,7 @@ export function buildIndex(input: {
   const usedThemes = new Set<string>();
   const usedTags = new Set<string>();
   const usedSourceTypes = new Set<string>();
+  const usedDocumentTypes = new Set<string>();
   const usedThreads = new Set<string>();
   for (const s of sources) {
     s.places.forEach(p => usedPlaces.add(p.id));
@@ -94,11 +96,13 @@ export function buildIndex(input: {
     s.tags.forEach(t => usedTags.add(t));
     s.story_threads.forEach(t => usedThreads.add(t));
     if (s.type === 'clipping') (s as Clipping).source_type.forEach(t => usedSourceTypes.add(t));
+    if (s.type === 'document') usedDocumentTypes.add(s.document_type);
   }
   const declaredPlaces = new Set(places.map(p => p.id));
   const declaredThemes = new Set(themes);
   const declaredTags = new Set(tags);
   const declaredSourceTypes = new Set(sourceTypes);
+  const declaredDocumentTypes = new Set(documentTypes);
   const declaredThreads = new Set(threads.map(t => t.id));
 
   const usage = (declared: Set<string>, used: Set<string>) => ({
@@ -113,6 +117,7 @@ export function buildIndex(input: {
     themes: usage(declaredThemes, usedThemes),
     tags: usage(declaredTags, usedTags),
     sourceTypes: usage(declaredSourceTypes, usedSourceTypes),
+    documentTypes: usage(declaredDocumentTypes, usedDocumentTypes),
     threads: usage(declaredThreads, usedThreads),
   };
 
@@ -163,7 +168,7 @@ export function buildIndex(input: {
     sources, sourcesById,
     people, peopleById,
     places, placesById,
-    themes, tags, sourceTypes,
+    themes, tags, sourceTypes, documentTypes,
     threads, threadsById,
     pages, pagesById,
     sourcesByPersonId, sourcesByPlaceId, sourcesByTheme, sourcesByThread,
@@ -196,8 +201,8 @@ function deriveEvent(source: Source, clusterId: string): DerivedEvent {
 }
 
 function titleFor(source: Source): string {
-  if (source.type === 'clipping' && source.headline) {
-    return (source as Clipping).headline.split('/').map(p => p.trim()).filter(Boolean)[0] ?? source.headline;
+  if ('headline' in source && source.headline) {
+    return source.headline.split('/').map(p => p.trim()).filter(Boolean)[0] ?? source.headline;
   }
   // Fall back to the first sentence of the summary, capped.
   const s = source.summary.trim();

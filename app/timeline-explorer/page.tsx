@@ -297,10 +297,8 @@ function labelDateRange(dr: { from: string | null; to: string | null }): string 
 }
 
 function titleForSource(src: Archive['sources'][number]): string {
-  if (src.type === 'clipping') {
-    return src.headline || src.summary.split(/[.!?]/)[0] || src.id;
-  }
-  return src.id;
+  if ('headline' in src && src.headline) return src.headline;
+  return src.summary.split(/[.!?]/)[0] || src.id;
 }
 
 function hashRow(s: string, rows: number): number {

@@ -4,8 +4,8 @@
 // For 29 sources / a few thousand sources this is instant.
 
 import Link from 'next/link';
-import { loadArchive } from '@/lib/data';
-import type { Archive, Source } from '@/lib/data';
+import { loadArchive, sourceListing } from '@/lib/data';
+import type { Archive, DocumentPersonLink, Source } from '@/lib/data';
 
 type SearchParams = { q?: string };
 
@@ -103,7 +103,7 @@ export default async function SearchPage({
       {results.mentioned.length > 0 && (
         <SearchSection
           title={`Mentioned-only names (${results.mentioned.length})`}
-          subtitle="Names that appear in clippings but are not in the person registry."
+          subtitle="Names that appear in sources but are not in the person registry."
         >
           {results.mentioned.map(({ name, hits }) => (
             <li key={name} className="border-l-2 border-zinc-200 pl-3">
@@ -111,14 +111,14 @@ export default async function SearchPage({
               <ul className="mt-1 space-y-0.5 text-xs text-zinc-600">
                 {hits.slice(0, 5).map((hit, i) => {
                   const src = archive.sourcesById.get(hit.sourceId);
-                  if (!src || src.type !== 'clipping') return null;
+                  if (!src) return null;
                   return (
                     <li key={i}>
                       <Link
                         href={`/sources/${hit.sourceId}`}
                         className="hover:underline"
                       >
-                        {src.date} — {src.newspaper}, p.{src.page}
+                        {sourceListing(src).citation}
                       </Link>
                       {hit.mention.role_in_story && (
                         <span> ({hit.mention.role_in_story})</span>
@@ -206,8 +206,18 @@ interface MentionedHit {
 }
 interface SourceHit {
   source: Source;
-  where: Array<'headline' | 'summary' | 'transcription' | 'dateline'>;
+  where: Array<'headline' | 'summary' | 'transcription' | 'dateline' | 'people_as_printed'>;
 }
+
+// Document people carry *_as_printed fields (census household members,
+// directory entries) — searchable so household names surface even when
+// they never appear in a headline or summary.
+const SEARCHABLE_AS_PRINTED: (keyof DocumentPersonLink)[] = [
+  'name_as_printed',
+  'occupation_as_printed',
+  'residence_as_printed',
+  'birth_place_as_printed',
+];
 
 function runSearch(archive: Archive, query: string) {
   const q = query.toLowerCase();
@@ -249,12 +259,17 @@ function runSearch(archive: Archive, query: string) {
 
   const sources: SourceHit[] = [];
   for (const source of archive.sources) {
-    if (source.type !== 'clipping') continue;
     const where: SourceHit['where'] = [];
     if (source.headline.toLowerCase().includes(q)) where.push('headline');
     if (source.summary.toLowerCase().includes(q)) where.push('summary');
-    if (source.dateline.toLowerCase().includes(q)) where.push('dateline');
+    if (source.type === 'clipping' && source.dateline.toLowerCase().includes(q)) where.push('dateline');
     if (source.transcription.toLowerCase().includes(q)) where.push('transcription');
+    if (source.type === 'document') {
+      const hit = source.people.some(p =>
+        SEARCHABLE_AS_PRINTED.some(f => String(p[f] ?? '').toLowerCase().includes(q))
+      );
+      if (hit) where.push('people_as_printed');
+    }
     if (where.length > 0) sources.push({ source, where });
   }
 
@@ -303,14 +318,14 @@ function SourceSearchRow({
   matchedIn: SourceHit['where'];
   query: string;
 }) {
-  if (source.type !== 'clipping') return null;
+  const { title, citation } = sourceListing(source);
   return (
     <div className="text-sm">
       <Link href={`/sources/${source.id}`} className="font-medium hover:underline">
-        {source.date ?? 'undated'} — {source.newspaper}, p.{source.page}
+        {citation}
       </Link>
-      {source.headline && (
-        <span className="ml-2 text-zinc-700">{source.headline}</span>
+      {title && (
+        <span className="ml-2 text-zinc-700">{title}</span>
       )}
       <p className="mt-0.5 text-xs text-zinc-500">
         matched in: {matchedIn.join(', ')}

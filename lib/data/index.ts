@@ -52,6 +52,7 @@ export function loadArchive(): Archive {
 
 export { documentGroup } from './types';
 export { humanizeDocumentType, sourceListing } from './citation';
+export type { ResolvedRelationship } from './relations';
 export type {
   AiClippingSummary,
   AiPageSummary,

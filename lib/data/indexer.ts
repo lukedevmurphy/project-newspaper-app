@@ -13,6 +13,7 @@ import type {
   Source,
   ThreadRecord,
 } from './types';
+import { resolveRelationships } from './relations';
 
 export function buildIndex(input: {
   sources: Source[];
@@ -66,6 +67,31 @@ export function buildIndex(input: {
       const list = sourcesByThread.get(t) ?? [];
       list.push(source.id);
       sourcesByThread.set(t, list);
+    }
+  }
+
+  // ---- Relationship nexus ----------------------------------------------
+
+  const relationshipsByPersonId = resolveRelationships(people);
+
+  // Pairwise co-appearance: person → other person → shared source IDs.
+  // All confidence levels count — the UI shows the source list, so weak
+  // links are self-evidently attributed.
+  const coAppearancesByPersonId = new Map<string, Map<string, string[]>>();
+  for (const source of sources) {
+    const ids = [...new Set(source.people.map(p => p.id))];
+    for (const a of ids) {
+      for (const b of ids) {
+        if (a === b) continue;
+        let inner = coAppearancesByPersonId.get(a);
+        if (!inner) {
+          inner = new Map();
+          coAppearancesByPersonId.set(a, inner);
+        }
+        const list = inner.get(b) ?? [];
+        list.push(source.id);
+        inner.set(b, list);
+      }
     }
   }
 
@@ -173,6 +199,7 @@ export function buildIndex(input: {
     pages, pagesById,
     sourcesByPersonId, sourcesByPlaceId, sourcesByTheme, sourcesByThread,
     mentionedByName,
+    relationshipsByPersonId, coAppearancesByPersonId,
     events, eventsById, eventsByClusterId,
     stats,
   };

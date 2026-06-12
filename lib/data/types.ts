@@ -302,6 +302,13 @@ export interface Archive {
   sourcesByThread: Map<string, string[]>;
   mentionedByName: Map<string, { sourceId: string; mention: MentionedLink }[]>;
 
+  // Relationship nexus. relationshipsByPersonId includes inferred
+  // inverse edges (see lib/data/relations.ts); coAppearancesByPersonId
+  // maps person → other person → the concrete shared source IDs (the
+  // attribution rule: every co-appearance count is this array's length).
+  relationshipsByPersonId: Map<string, import('./relations').ResolvedRelationship[]>;
+  coAppearancesByPersonId: Map<string, Map<string, string[]>>;
+
   // Derived events (one per source). cluster_id groups crossref-linked
   // sources for the timeline UI without collapsing them.
   events: DerivedEvent[];

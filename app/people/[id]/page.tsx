@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { loadArchive, sourceListing } from '@/lib/data';
 import type { Archive, Clipping, PersonLink, PersonRecord, Source } from '@/lib/data';
+import { EgoNetwork } from '@/components/ego-network';
 
 type Params = { id: string };
 
@@ -64,6 +65,10 @@ export default async function PersonPage({
       <PersonFacts person={person} archive={archive} />
 
       <PersonRelationships person={person} archive={archive} />
+
+      <EgoNetwork person={person} archive={archive} />
+
+      <PersonCoAppearances person={person} archive={archive} />
 
       <section className="mb-8">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500">
@@ -270,31 +275,105 @@ function PersonRelationships({
   person: PersonRecord;
   archive: Archive;
 }) {
-  if (person.relationships.length === 0) return null;
+  const resolved = archive.relationshipsByPersonId.get(person.id) ?? [];
+  if (resolved.length === 0) return null;
   return (
     <section className="mb-8">
       <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
         Relationships
       </h2>
       <ul className="space-y-1 text-sm text-zinc-700">
-        {person.relationships.map((rel, i) => {
+        {resolved.map((rel, i) => {
           const target = archive.peopleById.get(rel.person);
+          const name = target ? (
+            <Link
+              href={`/people/${rel.person}`}
+              className="font-medium hover:underline"
+            >
+              {target.display_name}
+            </Link>
+          ) : (
+            <span className="text-zinc-500">{rel.person} (unresolved)</span>
+          );
           return (
             <li key={`${rel.relation}-${rel.person}-${i}`}>
-              {rel.relation.replace(/_/g, ' ')}{' '}
-              {target ? (
-                <Link
-                  href={`/people/${rel.person}`}
-                  className="font-medium hover:underline"
-                >
-                  {target.display_name}
-                </Link>
+              {rel.inverted ? (
+                // No safe inverse exists — report the other person's
+                // declaration rather than asserting a relation.
+                <>
+                  listed as <em>{rel.relation.replace(/_/g, ' ')}</em> this person by {name}
+                </>
               ) : (
-                <span className="text-zinc-500">{rel.person} (unresolved)</span>
+                <>
+                  {rel.relation.replace(/_/g, ' ')} {name}
+                </>
+              )}
+              {rel.inferred && (
+                <span
+                  className="ml-2 rounded bg-zinc-100 px-1.5 py-0.5 text-xs text-zinc-500"
+                  title={`Inferred from ${rel.declaredBy}'s entry`}
+                >
+                  inferred
+                </span>
               )}
             </li>
           );
         })}
+      </ul>
+    </section>
+  );
+}
+
+// "Appears with" — other people sharing concrete sources with this
+// person. Every count is the length of the source array it expands to.
+function PersonCoAppearances({
+  person,
+  archive,
+}: {
+  person: PersonRecord;
+  archive: Archive;
+}) {
+  const co = archive.coAppearancesByPersonId.get(person.id);
+  if (!co || co.size === 0) return null;
+  const rows = [...co.entries()]
+    .sort((a, b) => b[1].length - a[1].length);
+  const shown = rows.slice(0, 15);
+  return (
+    <section className="mb-8">
+      <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-zinc-500">
+        Appears with
+      </h2>
+      <ul className="space-y-2 text-sm">
+        {shown.map(([otherId, sourceIds]) => {
+          const other = archive.peopleById.get(otherId);
+          return (
+            <li key={otherId} className="border-l-2 border-zinc-200 pl-3">
+              <Link href={`/people/${otherId}`} className="font-medium hover:underline">
+                {other?.display_name ?? otherId}
+              </Link>
+              <span className="ml-2 text-zinc-500">
+                {sourceIds.length} shared source{sourceIds.length === 1 ? '' : 's'}
+              </span>
+              <ul className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-zinc-600">
+                {sourceIds.map(sid => {
+                  const src = archive.sourcesById.get(sid);
+                  return (
+                    <li key={sid}>
+                      <Link href={`/sources/${sid}`} className="hover:underline">
+                        {src ? sourceListing(src).citation : sid}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          );
+        })}
+        {rows.length > shown.length && (
+          <li className="text-xs text-zinc-500">
+            …and {rows.length - shown.length} more people with shared sources.
+          </li>
+        )}
       </ul>
     </section>
   );

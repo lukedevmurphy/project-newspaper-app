@@ -1,0 +1,61 @@
+{
+  "id": "1914-03-17_butte-miner_p01",
+  "input_hash": "sha256:1542f63a032ce561",
+  "prompt_version": "2026-06-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-06-12T20:47:10.940Z",
+  "regions": [
+    {
+      "kind": "engraving",
+      "bbox_pct": {
+        "l": 34,
+        "t": 42,
+        "r": 64,
+        "b": 85
+      },
+      "caption_as_printed": "All in Butte and all Irish— sketched from life by Horton",
+      "people_named_in_caption": [],
+      "description": "A decorative illustrated scene featuring an Irish-themed composition with multiple stylized figures, shamrocks, and festive St. Patrick's Day imagery, drawn in a sketch/cartoon style."
+    },
+    {
+      "kind": "portrait",
+      "bbox_pct": {
+        "l": 34,
+        "t": 85,
+        "r": 50,
+        "b": 100
+      },
+      "caption_as_printed": "FAMOUS FRENCH EDITOR IS SLAIN",
+      "people_named_in_caption": [],
+      "description": "A halftone portrait of a man, appearing to be middle-aged, in formal attire, associated with a story about a French editor being killed."
+    },
+    {
+      "kind": "portrait",
+      "bbox_pct": {
+        "l": 50,
+        "t": 85,
+        "r": 66,
+        "b": 100
+      },
+      "caption_as_printed": "MOTHER SAVES HER BABE AT RISK OF LIFE",
+      "people_named_in_caption": [
+        "Mrs. Frank Artigan"
+      ],
+      "description": "A halftone portrait of a woman, appearing to be a young adult, associated with a story about a mother saving her child."
+    },
+    {
+      "kind": "portrait",
+      "bbox_pct": {
+        "l": 66,
+        "t": 85,
+        "r": 82,
+        "b": 100
+      },
+      "caption_as_printed": "\"MOTHER\" JONES DEFIES THE OFFICIALS",
+      "people_named_in_caption": [
+        "Mother Jones"
+      ],
+      "description": "A halftone portrait of an elderly white-haired woman, associated with a story about Mother Jones defying officials and returning to strikers' camps."
+    }
+  ]
+}

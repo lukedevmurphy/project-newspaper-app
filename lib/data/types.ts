@@ -189,6 +189,32 @@ export interface PageRecord {
   full_transcription_model?: string;
 }
 
+// ---- Photo registry ------------------------------------------------------
+
+// Curated photo crops registered in archive/photos/photos.yaml (the
+// ONLY photo file the loader reads). Binaries are never bundled — the
+// app builds image URLs as NEXT_PUBLIC_IMAGE_BASE_URL + image_key
+// (Cloudflare R2 bucket; see scripts/upload-photos.mjs). Identity
+// candidates are user-curated; `confirmed` means the user said so.
+
+export interface PhotoPersonCandidate {
+  person_id: string;
+  status: 'candidate' | 'confirmed' | 'rejected';
+  confidence: number;          // 0–100
+  basis: string[];             // caption, role_context, facial_similarity
+  reasoning?: string;
+}
+
+export interface PhotoRecord {
+  id: string;
+  page_id?: string;
+  image_key: string;           // bucket object key (photos/<id>.jpg)
+  kind: 'face_crop' | 'portrait' | 'group_photo' | 'engraving' | string;
+  caption_as_printed?: string;
+  person_candidates: PhotoPersonCandidate[];
+  sources: string[];           // clipping/document IDs backing the identification
+}
+
 // ---- AI-generated clipping summaries -----------------------------------
 
 // Produced offline by scripts/generate-clipping-summaries.mjs and cached
@@ -319,6 +345,10 @@ export interface Archive {
 
   pages: PageRecord[];
   pagesById: Map<string, PageRecord>;
+
+  photos: PhotoRecord[];
+  photosByPersonId: Map<string, PhotoRecord[]>;  // confirmed candidates only
+  photosByPageId: Map<string, PhotoRecord[]>;
 
   // Cross-references
   sourcesByPersonId: Map<string, string[]>;

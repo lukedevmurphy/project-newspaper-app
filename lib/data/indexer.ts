@@ -9,6 +9,7 @@ import type {
   MentionedLink,
   PageRecord,
   PersonRecord,
+  PhotoRecord,
   PlaceRecord,
   Source,
   ThreadRecord,
@@ -25,8 +26,9 @@ export function buildIndex(input: {
   documentTypes: string[];
   threads: ThreadRecord[];
   pages: PageRecord[];
+  photos: PhotoRecord[];
 }): Archive {
-  const { sources, people, places, themes, tags, sourceTypes, documentTypes, threads, pages } = input;
+  const { sources, people, places, themes, tags, sourceTypes, documentTypes, threads, pages, photos } = input;
 
   const sourcesById = new Map(sources.map(s => [s.id, s]));
   const peopleById = new Map(people.map(p => [p.id, p]));
@@ -67,6 +69,24 @@ export function buildIndex(input: {
       const list = sourcesByThread.get(t) ?? [];
       list.push(source.id);
       sourcesByThread.set(t, list);
+    }
+  }
+
+  // ---- Photo registry ----------------------------------------------------
+
+  const photosByPersonId = new Map<string, PhotoRecord[]>();
+  const photosByPageId = new Map<string, PhotoRecord[]>();
+  for (const photo of photos) {
+    for (const c of photo.person_candidates) {
+      if (c.status !== 'confirmed') continue;  // candidates stay out of person pages
+      const list = photosByPersonId.get(c.person_id) ?? [];
+      list.push(photo);
+      photosByPersonId.set(c.person_id, list);
+    }
+    if (photo.page_id) {
+      const list = photosByPageId.get(photo.page_id) ?? [];
+      list.push(photo);
+      photosByPageId.set(photo.page_id, list);
     }
   }
 
@@ -197,6 +217,7 @@ export function buildIndex(input: {
     themes, tags, sourceTypes, documentTypes,
     threads, threadsById,
     pages, pagesById,
+    photos, photosByPersonId, photosByPageId,
     sourcesByPersonId, sourcesByPlaceId, sourcesByTheme, sourcesByThread,
     mentionedByName,
     relationshipsByPersonId, coAppearancesByPersonId,

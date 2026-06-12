@@ -1,0 +1,28 @@
+{
+  "id": "1919-03-14_butte-miner_p01",
+  "input_hash": "sha256:ad497bacb5b11c42",
+  "prompt_version": "2026-06-12-v1",
+  "model": "claude-sonnet-4-6",
+  "generated_at": "2026-06-12T20:47:18.256Z",
+  "regions": [
+    {
+      "kind": "group_photo",
+      "bbox_pct": {
+        "l": 27,
+        "t": 32,
+        "r": 72,
+        "b": 62
+      },
+      "caption_as_printed": "Reading left to right: W. J. Jewell; Edward Fitzpatrick, county president of the A. O. H. and grand marshal of the parade; James J. Murphy, state organizer; Judge J. A. Lynch, chairman of the St. Patrick's day committee; James J. Connolly, secretary of committee, and Rev. Father James O'Brien, prefect of section No. 1, A. O. H.",
+      "people_named_in_caption": [
+        "W. J. Jewell",
+        "Edward Fitzpatrick",
+        "James J. Murphy",
+        "Judge J. A. Lynch",
+        "James J. Connolly",
+        "Father James O'Brien"
+      ],
+      "description": "A group photograph of six men posed together, some seated and some standing, dressed in formal early 20th-century attire including suits and clerical collar. The image appears to be a halftone portrait grouping associated with St. Patrick's Day celebration leadership."
+    }
+  ]
+}

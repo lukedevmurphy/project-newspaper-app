@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { loadArchive, sourceListing } from '@/lib/data';
 import type { Archive, Clipping, PersonLink, PersonRecord, Source } from '@/lib/data';
+import Image from 'next/image';
+import { photoUrl } from '@/lib/data';
 import { EgoNetwork } from '@/components/ego-network';
 import { isStorySubject } from '@/lib/story/subjects';
 
@@ -47,6 +49,7 @@ export default async function PersonPage({
       </nav>
 
       <header className="mb-8">
+        <PersonPortrait person={person} archive={archive} />
         <h1 className="text-2xl font-semibold text-zinc-900">{person.display_name}</h1>
         {person.also_known_as.length > 0 && (
           <p className="mt-2 text-sm text-zinc-500">
@@ -273,6 +276,50 @@ function PersonFacts({
         )}
       </dl>
     </section>
+  );
+}
+
+// Header portrait — the first confirmed photo for this person, served
+// from the external image bucket. Renders nothing when no confirmed
+// photo exists or NEXT_PUBLIC_IMAGE_BASE_URL is unset.
+function PersonPortrait({ person, archive }: { person: PersonRecord; archive: Archive }) {
+  const photo = (archive.photosByPersonId.get(person.id) ?? [])
+    .find(p => p.kind === 'face_crop' || p.kind === 'portrait')
+    ?? archive.photosByPersonId.get(person.id)?.[0];
+  if (!photo) return null;
+  const url = photoUrl(photo);
+  if (!url) return null;
+  const candidate = photo.person_candidates.find(c => c.person_id === person.id);
+  return (
+    <figure className="float-right ml-6 mb-4 w-36">
+      <Image
+        src={url}
+        alt={photo.caption_as_printed ?? person.display_name}
+        width={288}
+        height={360}
+        className="rounded border border-zinc-200"
+      />
+      <figcaption className="mt-1 text-xs text-zinc-500">
+        {photo.caption_as_printed && <span className="italic">&ldquo;{photo.caption_as_printed}&rdquo; </span>}
+        {photo.page_id && (
+          <Link href={`/pages/${photo.page_id}`} className="hover:underline">
+            from {photo.page_id}
+          </Link>
+        )}
+        {candidate && <span> · identification confidence {candidate.confidence}</span>}
+        {photo.sources.length > 0 && (
+          <span>
+            {' · '}
+            {photo.sources.map((sid, i) => (
+              <span key={sid}>
+                {i > 0 && ', '}
+                <Link href={`/sources/${sid}`} className="hover:underline">source</Link>
+              </span>
+            ))}
+          </span>
+        )}
+      </figcaption>
+    </figure>
   );
 }
 

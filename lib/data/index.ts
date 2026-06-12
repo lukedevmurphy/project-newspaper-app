@@ -7,6 +7,7 @@ import {
   loadDocuments,
   loadPages,
   loadPeople,
+  loadPhotos,
   loadPlaces,
   loadThreads,
   loadVocabList,
@@ -38,6 +39,7 @@ export function loadArchive(): Archive {
   }
 
   const pages = loadPages(dataRoot);
+  const photos = loadPhotos(dataRoot);
   const people = loadPeople(dataRoot);
   const places = loadPlaces(dataRoot);
   const themes = loadVocabList(dataRoot, 'themes');
@@ -46,12 +48,13 @@ export function loadArchive(): Archive {
   const documentTypes = loadVocabList(dataRoot, 'document_types');
   const threads = loadThreads(dataRoot);
 
-  cached = buildIndex({ sources, people, places, themes, tags, sourceTypes, documentTypes, threads, pages });
+  cached = buildIndex({ sources, people, places, themes, tags, sourceTypes, documentTypes, threads, pages, photos });
   return cached;
 }
 
 export { documentGroup } from './types';
 export { humanizeDocumentType, sourceListing } from './citation';
+export { photoUrl } from './photo-url';
 export type { ResolvedRelationship } from './relations';
 export type {
   AiChapterNarrative,
@@ -72,6 +75,8 @@ export type {
   PersonLink,
   PersonRecord,
   PersonRelationship,
+  PhotoPersonCandidate,
+  PhotoRecord,
   PlaceLink,
   PlaceRecord,
   Residence,

@@ -20,6 +20,7 @@ import type {
   PageRecord,
   PersonLink,
   PersonRecord,
+  PhotoRecord,
   PlaceLink,
   PlaceRecord,
   ThreadRecord,
@@ -32,6 +33,9 @@ const PAGE_FILES_ALLOWED = new Set(['page_metadata.yaml', 'fullpage_transcriptio
 // transcription.md is the curated verbatim text; transcription_claude.md is
 // the raw vision output. notes.md and source.{png,jpg,pdf} are NEVER read.
 const DOCUMENT_FILES_ALLOWED = new Set(['metadata.yaml', 'transcription.md', 'transcription_claude.md']);
+// The photo registry is the ONLY file read under archive/photos/ — the
+// jpgs, .notes.md, CONFIDENCE.md etc. never reach the app.
+const PHOTO_FILES_ALLOWED = new Set(['photos.yaml']);
 
 // ---- Path resolution ---------------------------------------------------
 
@@ -462,6 +466,37 @@ function normalizeResidences(raw: unknown): PersonRecord['residences'] {
       notes: typeof r.notes === 'string' ? r.notes : undefined,
     };
   });
+}
+
+export function loadPhotos(dataRoot: string): PhotoRecord[] {
+  if (!PHOTO_FILES_ALLOWED.has('photos.yaml')) return [];
+  const path = join(dataRoot, 'archive', 'photos', 'photos.yaml');
+  if (!existsSync(path)) return [];
+
+  const raw = readYaml<Record<string, Record<string, unknown>>>(path);
+  if (!raw) return [];
+
+  return Object.entries(raw).map(([id, p]) => ({
+    id,
+    page_id: typeof p.page_id === 'string' ? p.page_id : undefined,
+    image_key: String(p.image_key ?? ''),
+    kind: String(p.kind ?? 'portrait'),
+    caption_as_printed: typeof p.caption_as_printed === 'string' ? p.caption_as_printed : undefined,
+    person_candidates: Array.isArray(p.person_candidates)
+      ? p.person_candidates.map(item => {
+          const c = item as Record<string, unknown>;
+          return {
+            person_id: String(c.person_id ?? ''),
+            status: (c.status === 'confirmed' || c.status === 'rejected' ? c.status : 'candidate') as
+              PhotoRecord['person_candidates'][number]['status'],
+            confidence: typeof c.confidence === 'number' ? c.confidence : 0,
+            basis: Array.isArray(c.basis) ? c.basis.map(String) : [],
+            reasoning: typeof c.reasoning === 'string' ? c.reasoning : undefined,
+          };
+        })
+      : [],
+    sources: Array.isArray(p.sources) ? (p.sources as string[]) : [],
+  })).filter(p => p.image_key);
 }
 
 export function loadPlaces(dataRoot: string): PlaceRecord[] {

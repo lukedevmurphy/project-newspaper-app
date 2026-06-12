@@ -4,9 +4,10 @@
 // placement), and observed juxtapositions. Linked from the source-detail
 // page's "On page:" footer.
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { loadAiPageSummary, loadArchive } from '@/lib/data';
+import { loadAiPageSummary, loadArchive, photoUrl } from '@/lib/data';
 import type {
   AiPageSummary,
   Archive,
@@ -121,6 +122,8 @@ export default async function PageDetail({
         </Section>
       )}
 
+      <PagePhotos page={page} archive={archive} />
+
       {page.full_transcription && (
         <Section title="Full page transcription">
           <details className="rounded border border-zinc-200 bg-zinc-50 p-4 text-sm">
@@ -212,6 +215,68 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       </h2>
       {children}
     </section>
+  );
+}
+
+// Registered photo crops from this page (archive/photos/photos.yaml),
+// served from the external image bucket. Candidate-status badges show
+// whether the user has confirmed each identification.
+function PagePhotos({ page, archive }: { page: PageRecord; archive: Archive }) {
+  const photos = archive.photosByPageId.get(page.id) ?? [];
+  if (photos.length === 0) return null;
+  return (
+    <Section title="Photographs on this page">
+      <ul className="flex flex-wrap gap-6">
+        {photos.map(photo => {
+          const url = photoUrl(photo);
+          return (
+            <li key={photo.id} className="w-44">
+              {url ? (
+                <Image
+                  src={url}
+                  alt={photo.caption_as_printed ?? photo.id}
+                  width={352}
+                  height={440}
+                  className="rounded border border-zinc-200"
+                />
+              ) : (
+                <div className="rounded border border-dashed border-zinc-300 p-3 text-xs text-zinc-500">
+                  registered crop (image bucket not configured)
+                </div>
+              )}
+              <p className="mt-1 text-xs text-zinc-600">
+                {photo.caption_as_printed && (
+                  <span className="italic">&ldquo;{photo.caption_as_printed.slice(0, 120)}{photo.caption_as_printed.length > 120 ? '…' : ''}&rdquo;</span>
+                )}
+              </p>
+              <ul className="mt-1 space-y-0.5 text-xs">
+                {photo.person_candidates.map(c => {
+                  const person = archive.peopleById.get(c.person_id);
+                  return (
+                    <li key={c.person_id}>
+                      <Link href={`/people/${c.person_id}`} className="hover:underline">
+                        {(person?.display_name ?? c.person_id).split('(')[0].trim()}
+                      </Link>{' '}
+                      <span
+                        className={
+                          c.status === 'confirmed'
+                            ? 'rounded bg-amber-100 px-1 py-0.5 text-amber-900'
+                            : c.status === 'rejected'
+                            ? 'rounded bg-zinc-100 px-1 py-0.5 text-zinc-400 line-through'
+                            : 'rounded bg-zinc-100 px-1 py-0.5 text-zinc-600'
+                        }
+                      >
+                        {c.status} {c.confidence}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
   );
 }
 

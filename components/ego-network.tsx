@@ -25,22 +25,29 @@ export function EgoNetwork({ person, archive }: { person: PersonRecord; archive:
   const relationships = archive.relationshipsByPersonId.get(person.id) ?? [];
   const co = archive.coAppearancesByPersonId.get(person.id) ?? new Map<string, string[]>();
 
+  // Only people that resolve in the registry become nodes — an unknown
+  // ID in a source's people[] must not render a dead /people/ link
+  // (same guard as lib/nexus/graph.ts).
   const byId = new Map<string, Neighbor>();
   for (const rel of relationships) {
     if (rel.inverted) continue; // listings, not asserted relations
     if (byId.has(rel.person)) continue;
+    const target = archive.peopleById.get(rel.person);
+    if (!target) continue;
     byId.set(rel.person, {
       id: rel.person,
-      name: shortName(archive.peopleById.get(rel.person)?.display_name ?? rel.person),
+      name: shortName(target.display_name),
       relation: rel.relation.replace(/_/g, ' '),
       sharedCount: co.get(rel.person)?.length ?? 0,
     });
   }
   for (const [otherId, sourceIds] of co.entries()) {
     if (byId.has(otherId)) continue;
+    const target = archive.peopleById.get(otherId);
+    if (!target) continue;
     byId.set(otherId, {
       id: otherId,
-      name: shortName(archive.peopleById.get(otherId)?.display_name ?? otherId),
+      name: shortName(target.display_name),
       sharedCount: sourceIds.length,
     });
   }

@@ -311,15 +311,19 @@ function PersonPortrait({ person, archive }: { person: PersonRecord; archive: Ar
       <figcaption className="mt-1 text-xs text-stone-500">
         {photo.caption_as_printed && <span className="italic">&ldquo;{photo.caption_as_printed}&rdquo; </span>}
         {photo.page_id && (
-          <Link href={`/pages/${photo.page_id}`} className="hover:underline">
-            from {photo.page_id}
-          </Link>
+          archive.pagesById.has(photo.page_id) ? (
+            <Link href={`/pages/${photo.page_id}`} className="hover:underline">
+              from {photo.page_id}
+            </Link>
+          ) : (
+            <span>from {photo.page_id}</span>
+          )
         )}
         {candidate && <span> · identification confidence {candidate.confidence}</span>}
-        {photo.sources.length > 0 && (
+        {photo.sources.filter(sid => archive.sourcesById.has(sid)).length > 0 && (
           <span>
             {' · '}
-            {photo.sources.map((sid, i) => (
+            {photo.sources.filter(sid => archive.sourcesById.has(sid)).map((sid, i) => (
               <span key={sid}>
                 {i > 0 && ', '}
                 <Link href={`/sources/${sid}`} className="hover:underline">source</Link>

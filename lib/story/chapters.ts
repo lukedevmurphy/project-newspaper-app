@@ -260,7 +260,7 @@ function decadeSpine(
     list.push(d.id);
     buckets.set(decade, list);
   }
-  let ordered = [...buckets.entries()].sort((a, b) => a[0] - b[0]);
+  const ordered = [...buckets.entries()].sort((a, b) => a[0] - b[0]);
 
   // Merge thin buckets into the previous (else next) neighbor so the
   // storyboard doesn't fragment into one-source chapters.

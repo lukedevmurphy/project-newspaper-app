@@ -78,14 +78,19 @@ export default async function PageDetail({
               const placement = aiSummary?.clipping_placements.find(p => p.clipping_id === cid);
               return (
                 <li key={cid} className="border-l-2 border-stone-200 pl-3">
-                  <Link
-                    href={`/sources/${cid}`}
-                    className="font-medium hover:underline"
-                  >
-                    {clipping && clipping.type === 'clipping' && clipping.headline
-                      ? clipping.headline
-                      : cid}
-                  </Link>
+                  {clipping ? (
+                    <Link
+                      href={`/sources/${cid}`}
+                      className="font-medium hover:underline"
+                    >
+                      {clipping.type === 'clipping' && clipping.headline
+                        ? clipping.headline
+                        : cid}
+                    </Link>
+                  ) : (
+                    // Clipping listed on the page but not yet in the archive.
+                    <code className="rounded bg-stone-100 px-1 py-0.5 text-xs">{cid}</code>
+                  )}
                   {clipping && clipping.type === 'clipping' && (
                     <p className="mt-0.5 text-xs text-stone-500">
                       {clipping.date}{clipping.dateline ? ` · ${clipping.dateline}` : ''}
@@ -254,9 +259,13 @@ function PagePhotos({ page, archive }: { page: PageRecord; archive: Archive }) {
                   const person = archive.peopleById.get(c.person_id);
                   return (
                     <li key={c.person_id}>
-                      <Link href={`/people/${c.person_id}`} className="hover:underline">
-                        {(person?.display_name ?? c.person_id).split('(')[0].trim()}
-                      </Link>{' '}
+                      {person ? (
+                        <Link href={`/people/${c.person_id}`} className="hover:underline">
+                          {person.display_name.split('(')[0].trim()}
+                        </Link>
+                      ) : (
+                        <span>{c.person_id}</span>
+                      )}{' '}
                       <span
                         className={
                           c.status === 'confirmed'

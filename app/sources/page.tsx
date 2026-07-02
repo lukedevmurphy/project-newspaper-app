@@ -82,7 +82,11 @@ export default function AllSourcesPage() {
       </header>
 
       {/* ---- Horizontal year/month calendar strip ---- */}
-      <section className="mb-12" aria-label="Horizontal timeline">
+      <details open className="mb-12">
+        <summary className="mb-4 cursor-pointer text-sm font-semibold uppercase tracking-wide text-stone-500 hover:text-stone-700">
+          Calendar — scroll sideways by year
+        </summary>
+        <section aria-label="Horizontal timeline">
         <div className="overflow-x-auto rounded-lg border border-amber-200/70 bg-paper/60 pb-2 [scroll-snap-type:x_proximity]">
           <div className="flex items-stretch gap-0 px-2">
             {years.map((bucket, i) => {
@@ -134,13 +138,15 @@ export default function AllSourcesPage() {
             )}
           </div>
         </div>
-      </section>
+        </section>
+      </details>
 
       {/* ---- Vertical timeline rail ---- */}
-      <section aria-label="Vertical timeline" className="mx-auto max-w-3xl">
-        <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-stone-500">
+      <details open className="mx-auto block max-w-3xl">
+        <summary className="mb-4 cursor-pointer text-sm font-semibold uppercase tracking-wide text-stone-500 hover:text-stone-700">
           Timeline, oldest first
-        </h2>
+        </summary>
+        <section aria-label="Vertical timeline">
         <div className="relative border-l-2 border-amber-300/70 pl-6">
           {years.map(bucket => (
             <div key={bucket.year} className="relative mb-8">
@@ -198,7 +204,8 @@ export default function AllSourcesPage() {
             </div>
           )}
         </div>
-      </section>
+        </section>
+      </details>
     </main>
   );
 }

@@ -69,7 +69,7 @@ function ClippingDetail({
       <SummarySection source={source} />
 
       {aiSummary && (
-        <Section title="Narrative">
+        <CollapsibleSection title="Narrative" defaultOpen>
           <p className="text-stone-700 leading-relaxed">{aiSummary.summary}</p>
           {aiSummary.key_quotes.length > 0 && (
             <ul className="mt-4 space-y-2">
@@ -86,13 +86,13 @@ function ClippingDetail({
           <p className="mt-3 text-xs text-stone-400">
             AI-generated ({aiSummary.model}). Verify against the transcription before quoting.
           </p>
-        </Section>
+        </CollapsibleSection>
       )}
 
       <PeopleSection source={source} archive={archive} />
       <MentionedSection source={source} />
       <PlacesSection source={source} archive={archive} />
-      <ThemesSection source={source} />
+      <ThemesSection source={source} archive={archive} />
       <ThreadsSection source={source} archive={archive} />
       <TagsSection source={source} />
 
@@ -113,9 +113,14 @@ function ClippingDetail({
         {source.page_id && (
           <p className="mt-1">
             On page:{' '}
-            <Link href={`/pages/${source.page_id}`} className="hover:underline">
-              {source.page_id}
-            </Link>
+            {archive.pagesById.has(source.page_id) ? (
+              <Link href={`/pages/${source.page_id}`} className="hover:underline">
+                {source.page_id}
+              </Link>
+            ) : (
+              // Page not yet in the archive — name it without linking.
+              <code className="rounded bg-stone-100 px-1 py-0.5">{source.page_id}</code>
+            )}
           </p>
         )}
         {source.clipped_by && source.clipped_date && (
@@ -196,7 +201,7 @@ function DocumentDetail({
       <PeopleSection source={source} archive={archive} title={group === 'generic' ? 'People' : 'People — link detail'} />
       <MentionedSection source={source} />
       <PlacesSection source={source} archive={archive} />
-      <ThemesSection source={source} />
+      <ThemesSection source={source} archive={archive} />
       <ThreadsSection source={source} archive={archive} />
       <TagsSection source={source} />
       <CrossrefsSection source={source} archive={archive} />
@@ -302,9 +307,9 @@ function CensusHouseholdTable({ source, archive }: { source: DocumentSource; arc
               return (
                 <tr key={`${p.id}-${i}`} className="border-b border-stone-100 align-top">
                   <td className="py-1.5 pr-3">
-                    <Link href={`/people/${p.id}`} className="font-medium hover:underline">
+                    <PersonName id={p.id} archive={archive} weight="font-medium">
                       {p.name_as_printed ?? person?.display_name ?? p.id}
-                    </Link>
+                    </PersonName>
                   </td>
                   {active.map(c => (
                     <td key={c.key} className="py-1.5 pr-3 text-stone-700">
@@ -337,9 +342,9 @@ function DirectoryEntries({ source, archive }: { source: DocumentSource; archive
           return (
             <li key={`${p.id}-${i}`} className="border-l-2 border-stone-200 pl-3">
               <div className="font-serif text-stone-800">
-                <Link href={`/people/${p.id}`} className="font-semibold hover:underline">
+                <PersonName id={p.id} archive={archive} weight="font-semibold">
                   {p.name_as_printed ?? person?.display_name ?? p.id}
-                </Link>
+                </PersonName>
                 {p.occupation_as_printed && <span> — {p.occupation_as_printed}</span>}
                 {p.residence_as_printed && <span>, r {p.residence_as_printed}</span>}
               </div>
@@ -383,9 +388,9 @@ function VitalRecordParties({ source, archive }: { source: DocumentSource; archi
                 {(p.role_in_source ?? 'named').replace(/_/g, ' ')}
               </div>
               <div>
-                <Link href={`/people/${p.id}`} className="font-medium hover:underline">
+                <PersonName id={p.id} archive={archive} weight="font-medium">
                   {p.name_as_printed ?? person?.display_name ?? p.id}
-                </Link>
+                </PersonName>
                 {person && person.display_name !== p.name_as_printed && (
                   <span className="ml-1 text-sm text-stone-500">(= {person.display_name})</span>
                 )}
@@ -431,9 +436,9 @@ function PeopleSection({
           return (
             <li key={`${link.id}-${i}`} className="border-l-2 border-stone-200 pl-3">
               <div>
-                <Link href={`/people/${link.id}`} className="font-medium hover:underline">
+                <PersonName id={link.id} archive={archive} weight="font-medium">
                   {person?.display_name ?? link.id}
-                </Link>
+                </PersonName>
                 {link.name_as_printed && person?.display_name !== link.name_as_printed && (
                   <span className="ml-1 text-sm text-stone-500">
                     (as printed: {link.name_as_printed})
@@ -517,9 +522,14 @@ function PlacesSection({ source, archive }: { source: Source; archive: Archive }
           const place = archive.placesById.get(link.id);
           return (
             <li key={`${link.id}-${i}`}>
-              <Link href={`/places/${link.id}`} className="hover:underline">
-                {place?.display ?? link.id}
-              </Link>
+              {place ? (
+                <Link href={`/places/${link.id}`} className="hover:underline">
+                  {place.display}
+                </Link>
+              ) : (
+                // Place not in vocab/places.yaml — name it without linking.
+                <span className="text-stone-600">{link.id}</span>
+              )}
               {link.role && <span className="text-stone-500"> ({link.role})</span>}
             </li>
           );
@@ -529,19 +539,24 @@ function PlacesSection({ source, archive }: { source: Source; archive: Archive }
   );
 }
 
-function ThemesSection({ source }: { source: Source }) {
+function ThemesSection({ source, archive }: { source: Source; archive: Archive }) {
   if (source.themes.length === 0) return null;
   return (
     <Section title="Themes">
       <ul className="flex flex-wrap gap-2 text-sm">
         {source.themes.map(theme => (
           <li key={theme}>
-            <Link
-              href={`/themes/${theme}`}
-              className="rounded bg-stone-100 px-2 py-0.5 hover:bg-stone-200"
-            >
-              {theme}
-            </Link>
+            {archive.themes.includes(theme) ? (
+              <Link
+                href={`/themes/${theme}`}
+                className="rounded bg-stone-100 px-2 py-0.5 hover:bg-stone-200"
+              >
+                {theme}
+              </Link>
+            ) : (
+              // Theme not declared in vocab — /themes/[id] would 404.
+              <span className="rounded bg-stone-100 px-2 py-0.5 text-stone-500">{theme}</span>
+            )}
           </li>
         ))}
       </ul>
@@ -558,9 +573,14 @@ function ThreadsSection({ source, archive }: { source: Source; archive: Archive 
           const thread = archive.threadsById.get(tid);
           return (
             <li key={tid}>
-              <Link href={`/threads/${tid}`} className="hover:underline">
-                {thread?.display ?? tid}
-              </Link>
+              {thread ? (
+                <Link href={`/threads/${tid}`} className="hover:underline">
+                  {thread.display}
+                </Link>
+              ) : (
+                // Thread not declared in vocab/threads.yaml — no page to link.
+                <span className="text-stone-600">{tid}</span>
+              )}
             </li>
           );
         })}
@@ -592,6 +612,19 @@ function CrossrefsSection({ source, archive }: { source: Source; archive: Archiv
         {source.crossrefs.map(refId => {
           const other = archive.sourcesById.get(refId);
           if (!other) {
+            // Crossrefs may point at a full newspaper page rather than a
+            // clipping/document (e.g. parade coverage spanning a whole page).
+            const page = archive.pagesById.get(refId);
+            if (page) {
+              return (
+                <li key={refId}>
+                  <Link href={`/pages/${refId}`} className="hover:underline">
+                    {page.newspaper}, {page.date}, p.{page.page}
+                  </Link>
+                  <span className="ml-1 text-xs text-stone-500">(full page)</span>
+                </li>
+              );
+            }
             return (
               <li key={refId}>
                 <code className="rounded bg-stone-100 px-1 py-0.5 text-xs">{refId}</code>
@@ -617,7 +650,7 @@ function CrossrefsSection({ source, archive }: { source: Source; archive: Archiv
 function TranscriptionSection({ source }: { source: Source }) {
   if (!source.transcription) return null;
   return (
-    <Section title="Transcription">
+    <CollapsibleSection title="Transcription">
       <div className="rounded border border-stone-200 bg-stone-50 p-4 text-sm">
         <TranscriptionStatusBadge
           status={source.transcription_status}
@@ -627,7 +660,7 @@ function TranscriptionSection({ source }: { source: Source }) {
           {source.transcription}
         </div>
       </div>
-    </Section>
+    </CollapsibleSection>
   );
 }
 
@@ -652,6 +685,53 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       </h2>
       {children}
     </section>
+  );
+}
+
+// Same section, but collapsible — pure HTML <details>, no client JS. The
+// section title is the toggle; the body folds away. Used for the long-form
+// sections (Transcription, Narrative) so the detail page stays scannable.
+function CollapsibleSection({
+  title,
+  defaultOpen = false,
+  children,
+}: {
+  title: string;
+  defaultOpen?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mb-8">
+      <details open={defaultOpen}>
+        <summary className="mb-2 cursor-pointer text-sm font-semibold uppercase tracking-wide text-stone-500 hover:text-stone-700">
+          {title}
+        </summary>
+        {children}
+      </details>
+    </section>
+  );
+}
+
+// Person-name link that only links when the ID resolves in the registry —
+// unknown IDs render as plain text so the page never links to a 404.
+function PersonName({
+  id,
+  archive,
+  weight,
+  children,
+}: {
+  id: string;
+  archive: Archive;
+  weight: string;
+  children: React.ReactNode;
+}) {
+  if (!archive.peopleById.has(id)) {
+    return <span className={weight}>{children}</span>;
+  }
+  return (
+    <Link href={`/people/${id}`} className={`${weight} hover:underline`}>
+      {children}
+    </Link>
   );
 }
 

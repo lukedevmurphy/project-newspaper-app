@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/clone-data.mjs",
+    "prebuild": "node scripts/clone-data.mjs && node scripts/check-integrity.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
